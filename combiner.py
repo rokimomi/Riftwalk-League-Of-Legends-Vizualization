@@ -15,8 +15,6 @@ import pprint
 json_data=open('game1.txt')
 game_1 = json.load(json_data)
 
-print game_1
-
 json_data=open('game1time.txt')
 game_1_time = json.load(json_data)
 
@@ -49,23 +47,36 @@ for time in game_2_time:
 
 game_combined = game_1 + game_2
 
+json_game_combined = json.dumps(game_combined)
+
+
 ##
 
 # combine the two game from 0-150
 
 game_combined_time = {}
 
-
 for time in range(0, 150):
     game_combined_time[time] = game_1_time[time]
     game_combined_time[time]['playerPositions'] += game_2_time[time]['playerPositions']
 
+json_game_combined_time = json.dumps(game_combined_time)
+
 # final output
 
-#print game_combined
-#print game_combined_time
+print json.dumps(game_1)
+print json.dumps(game_1_time)
 
-#for game in game_combined:
-#    print game
-#    print str(game['championImg']),
+print '\n'
 
+print json_game_combined
+print json_game_combined_time
+
+
+
+"""
+data = {}
+data['key'] = 'value'
+json_data = json.dumps(data)
+print json_data
+"""
