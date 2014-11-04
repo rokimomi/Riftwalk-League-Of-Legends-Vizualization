@@ -1,0 +1,1183 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="Dive into your games with next level statistics, including full game minimaps, buy orders, skill orders, and beautiful graphs." name="description">
+<meta content="league of legends,lol,lol stats,lol statistics,game search,minimap,spells,runes,masteries,buy order,skill order" name="keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="/img/thumb.png" property="og:image">
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"ed43a5818ea6e4decb465ea5b23c6d10",petok:"21dda1959293950bdcec9a4d37054e4de41f6cc6-1413094076-1800",zone:"riftwalk.gg",rocket:"0",apps:{"trumpet":{"message":"Riftwalk.gg is preparing to go offline after Riot shuts down scraping on Oct 1. Only the game archive works."},"usrvc":{"key":"b5aoqNLuPMLCbnDQ45STHw","type":"new_env","tab_label":"Feedback"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href="/img/icon.ico" rel="shortcut icon">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/rickshaw.min.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.cleanup = function() {
+	$.event.trigger({
+		type: "cleanup",
+	});
+}
+window.unbind = function() {
+	$(document).off();
+}
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); 
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+	var time = "";
+
+	if (hours > 0) {
+		time = hours + ":";
+	}
+
+	if (minutes > 9) {
+		time += minutes;
+	} else {
+		time += "0" + minutes;
+	}
+
+	time += ":";
+
+	if (seconds > 9) {
+		time += seconds;
+	} else {
+		time += "0" + seconds;
+	}
+
+    return time;
+}	
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53248541-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<title>League of Legends Game Overview Statistics - Riftwalk.gg</title>
+</link></link></link></link></link></meta></meta></meta></meta></head>
+<body>
+<div class="block summoners-rift">
+<nav class="navbar navbar-light" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="/">Riftwalk.gg</a>
+</div>
+<div class="navbar-right">
+<ul class="nav navbar-nav">
+<li class="responsive-hide "><a href="/">Game Search</a></li>
+<li><a href="/game-archive">Game Archive</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container meta-data">
+<div class="row">
+<div class="col-sm-3">
+<div>Ranked Solo 5v5</div>
+<div>Queue</div>
+</div>
+<div class="no-margin col-sm-4">
+<div>North America</div>
+<div>Region</div>
+</div>
+<div class="col-sm-1 col-sm-offset-1">
+<div>1105</div>
+<div>MMR</div>
+</div>
+<div class="col-sm-1" id="meta-data-length">
+<div>15:00</div>
+<div>Length</div>
+</div>
+<div class="col-sm-2" id="meta-data-played">
+<div>
+47 days ago
+</div>
+<div>Played</div>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:20px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-9113595788112078" data-ad-slot="2914919530" style="display:inline-block;width:728px;height:90px"></ins>
+<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+</div>
+<div id="content">
+<div class="container">
+<div class="nav-icons pull-right">
+<div class="active" id="tables-nav">
+<span class="fa fa-table"></span> Tables
+</div>
+<div id="graphs-nav">
+<span class="fa fa-bar-chart-o"></span> Graphs
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-3 game-nav">
+<div class="active">
+<div class="purple">
+<a href="/game/na/1508611833">
+<div class="icon small">
+<img height="32px" src="/img/minimap/summoners-rift-tiny.jpg" width="32px">
+</img></div>
+Overview
+</a>
+</div>
+</div>
+<div>
+<div class="blue">
+<a href="/game/na/1508611833/summoner/49192644">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion0.png') -110px -74px no-repeat;"></div>
+</div>
+roffogoble
+</a>
+</div>
+</div>
+<div>
+<div class="blue">
+<a href="/game/na/1508611833/summoner/23906472">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -38px -74px no-repeat;"></div>
+</div>
+9mareWarrior
+</a>
+</div>
+</div>
+<div>
+<div class="blue">
+<a href="/game/na/1508611833/summoner/37250802">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -74px -2px no-repeat;"></div>
+</div>
+breezecb
+</a>
+</div>
+</div>
+<div>
+<div class="blue">
+<a href="/game/na/1508611833/summoner/32190723">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -38px -2px no-repeat;"></div>
+</div>
+Ragnarok311
+</a>
+</div>
+</div>
+<div>
+<div class="blue">
+<a href="/game/na/1508611833/summoner/37292968">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion2.png') -254px -2px no-repeat;"></div>
+</div>
+JangoFett154
+</a>
+</div>
+</div>
+<div>
+<div class="red">
+<a href="/game/na/1508611833/summoner/52298994">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -38px -74px no-repeat;"></div>
+</div>
+DirtyTaco123
+</a>
+</div>
+</div>
+<div>
+<div class="red">
+<a href="/game/na/1508611833/summoner/39810651">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion2.png') -38px -74px no-repeat;"></div>
+</div>
+fidodido2468
+</a>
+</div>
+</div>
+<div>
+<div class="red">
+<a href="/game/na/1508611833/summoner/20472901">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion0.png') -110px -2px no-repeat;"></div>
+</div>
+Dagalo
+</a>
+</div>
+</div>
+<div>
+<div class="red">
+<a href="/game/na/1508611833/summoner/29339631">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -182px -74px no-repeat;"></div>
+</div>
+jro7923
+</a>
+</div>
+</div>
+<div>
+<div class="red">
+<a href="/game/na/1508611833/summoner/36299786">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -218px -38px no-repeat;"></div>
+</div>
+shadows11123
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-9 game-data" id="tables-container">
+<div class="clearfix"></div>
+<h3 class="team blue">Blue Team
+</h3>
+<div class="table-responsive">
+<table class="table team-overview blue">
+<thead>
+<tr>
+<th class="summoner">Summoner</th>
+<th>Level</th>
+<th>KDA</th>
+<th>Gold</th>
+<th>Spells</th>
+<th>Items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion0.png') -110px -74px no-repeat;"></div>
+</div>
+roffogoble
+</td>
+<td>11</td>
+<td>6/1/0</td>
+<td>5.3k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -146px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -74px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -326px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -74px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -38px -74px no-repeat;"></div>
+</div>
+9mareWarrior
+</td>
+<td>9</td>
+<td>0/1/5</td>
+<td>4.4k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -182px -38px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -254px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -326px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -290px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -2px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -326px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -74px -2px no-repeat;"></div>
+</div>
+breezecb
+</td>
+<td>9</td>
+<td>4/1/0</td>
+<td>6.0k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -326px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -38px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -110px -218px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -38px -2px no-repeat;"></div>
+</div>
+Ragnarok311
+</td>
+<td>8</td>
+<td>0/1/4</td>
+<td>3.6k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -182px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -38px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -38px -254px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -254px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -290px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion2.png') -254px -2px no-repeat;"></div>
+</div>
+JangoFett154
+</td>
+<td>11</td>
+<td>6/1/0</td>
+<td>5.7k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -146px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -182px -110px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -326px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -326px -110px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -38px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -254px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pull-right">
+<span class="small">Bans:</span>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -290px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -74px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -254px -74px no-repeat;"></div>
+</div>
+</div>
+<div class="clearfix"></div>
+<h3 class="team red">Red Team
+</h3>
+<div class="table-responsive">
+<table class="table team-overview red">
+<thead>
+<tr>
+<th class="summoner">Summoner</th>
+<th>Level</th>
+<th>KDA</th>
+<th>Gold</th>
+<th>Spells</th>
+<th>Items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -38px -74px no-repeat;"></div>
+</div>
+DirtyTaco123
+</td>
+<td>8</td>
+<td>0/5/1</td>
+<td>3.1k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -146px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -326px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -182px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -182px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion2.png') -38px -74px no-repeat;"></div>
+</div>
+fidodido2468
+</td>
+<td>9</td>
+<td>0/4/1</td>
+<td>3.2k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -146px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -38px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -2px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -290px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -2px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -326px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -38px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion0.png') -110px -2px no-repeat;"></div>
+</div>
+Dagalo
+</td>
+<td>7</td>
+<td>1/2/2</td>
+<td>2.8k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -326px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -182px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -290px -110px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -290px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -182px -74px no-repeat;"></div>
+</div>
+jro7923
+</td>
+<td>8</td>
+<td>1/2/1</td>
+<td>3.9k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -326px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -218px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -326px -146px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -38px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -110px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -254px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="summoner">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -218px -38px no-repeat;"></div>
+</div>
+shadows11123
+</td>
+<td>8</td>
+<td>3/3/1</td>
+<td>4.3k</td>
+<td>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -182px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_spell0.png') -146px -2px no-repeat;"></div>
+</div>
+</td>
+<td style="text-align:left">
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item1.png') -182px -110px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -290px -74px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -38px -254px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item0.png') -218px -38px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_item2.png') -290px -2px no-repeat;"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pull-right">
+<span class="small">Bans:</span>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion0.png') -290px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion3.png') -146px -2px no-repeat;"></div>
+</div>
+<div class="icon small">
+<div style="width: 36px; height: 36px; background: url('/img/sprite/small_champion1.png') -146px -74px no-repeat;"></div>
+</div>
+</div>
+<div class="clearfix"></div>
+<h3>Team Statistics</h3>
+<div class="game-overview">
+<div class="row">
+<div class="col-sm-4">
+<div>
+<span class="blue">24,975</span> vs <span class="red">17,309</span>
+</div>
+<div>Total Gold</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">144,211</span> vs <span class="red">77,763</span>
+</div>
+<div>Damage Dealt</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">19,522</span> vs <span class="red">34,666</span>
+</div>
+<div>Damage Received</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div>
+<span class="blue">2</span> vs <span class="red">0</span>
+</div>
+<div>Turrets Destroyed</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">0</span> vs <span class="red">0</span>
+</div>
+<div>Inhibitors Destroyed</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">9.6</span> vs <span class="red">8.0</span>
+</div>
+<div>Average Level</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div>
+<span class="blue">284</span> vs <span class="red">198</span>
+</div>
+<div>Creeps Killed</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">37</span> vs <span class="red">25</span>
+</div>
+<div>Monsters Killed</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">335</span> vs <span class="red">351</span>
+</div>
+<div>Spells Cast</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div>
+<span class="blue">16</span> vs <span class="red">16</span>
+</div>
+<div>Wards Placed</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">0</span> vs <span class="red">0</span>
+</div>
+<div>Baron Kills</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">1</span> vs <span class="red">0</span>
+</div>
+<div>Dragon Kills</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div>
+<span class="blue">3</span> vs <span class="red">2</span>
+</div>
+<div>Blue Buff Kills</div>
+</div>
+<div class="col-sm-4">
+<div>
+<span class="blue">2</span> vs <span class="red">2</span>
+</div>
+<div>Red Buff Kills</div>
+</div>
+</div>
+</div>
+<h3>Minimap</h3>
+<div class="minimap"></div>
+<h3>Event Log</h3>
+<div class="row">
+<div class="col-sm-12 event-log">
+<div><span class="time" data-time="1">[00:02]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Doran's Ring</span></div>
+<div><span class="time" data-time="2">[00:02]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="5">[00:05]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="5">[00:06]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="5">[00:06]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="6">[00:06]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="7">[00:07]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="9">[00:10]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="9">[00:10]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Doran's Blade</span></div>
+<div><span class="time" data-time="10">[00:11]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="12">[00:13]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="13">[00:13]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="13">[00:14]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Doran's Shield</span></div>
+<div><span class="time" data-time="14">[00:14]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="14">[00:15]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="14">[00:15]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="14">[00:15]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="15">[00:15]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="15">[00:15]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Relic Shield</span></div>
+<div><span class="time" data-time="16">[00:16]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Stealth Ward</span></div>
+<div><span class="time" data-time="16">[00:16]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Crystalline Flask</span></div>
+<div><span class="time" data-time="16">[00:16]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Hunter's Machete</span></div>
+<div><span class="time" data-time="16">[00:17]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="17">[00:17]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="17">[00:17]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="17">[00:18]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="17">[00:18]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="17">[00:18]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Long Sword</span></div>
+<div><span class="time" data-time="18">[00:18]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Sweeping Lens (Trinket)</span></div>
+<div><span class="time" data-time="18">[00:18]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Sweeping Lens (Trinket)</span></div>
+<div><span class="time" data-time="18">[00:19]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="21">[00:22]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Hunter's Machete</span></div>
+<div><span class="time" data-time="21">[00:22]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="30">[00:30]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Relic Shield</span></div>
+<div><span class="time" data-time="31">[00:31]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Stealth Ward</span></div>
+<div><span class="time" data-time="34">[00:34]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="35">[00:35]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Sweeping Lens (Trinket)</span></div>
+<div><span class="time" data-time="40">[00:40]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="40">[00:40]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Doran's Blade</span></div>
+<div><span class="time" data-time="40">[00:40]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Warding Totem (Trinket)</span></div>
+<div><span class="time" data-time="127">[02:07]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="camp">Blue Buff</span></div>
+<div><span class="time" data-time="131">[02:11]</span> <span class="blue">Malphite (9mareWarrior)</span> has slain <span class="camp">Blue Buff</span></div>
+<div><span class="time" data-time="191">[03:11]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="camp">Red Buff</span></div>
+<div><span class="time" data-time="243">[04:03]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Vampiric Scepter</span></div>
+<div><span class="time" data-time="255">[04:15]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Madred's Razors</span></div>
+<div><span class="time" data-time="262">[04:22]</span> <span class="blue">Tristana (breezecb)</span> has slain <span class="red">Jinx (jro7923)</span></div>
+<div><span class="time" data-time="266">[04:27]</span> <span class="blue">Malphite (9mareWarrior)</span> has slain <span class="camp">Red Buff</span></div>
+<div><span class="time" data-time="275">[04:35]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="276">[04:36]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="290">[04:51]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Zed (DirtyTaco123)</span></div>
+<div><span class="time" data-time="303">[05:03]</span> <span class="blue">Tristana (breezecb)</span> has slain <span class="red">Alistar (Dagalo)</span></div>
+<div><span class="time" data-time="318">[05:19]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Ruby Crystal</span></div>
+<div><span class="time" data-time="321">[05:21]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Stealth Ward</span></div>
+<div><span class="time" data-time="330">[05:31]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Fiendish Codex</span></div>
+<div><span class="time" data-time="331">[05:32]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="331">[05:32]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="335">[05:35]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Sion (fidodido2468)</span></div>
+<div><span class="time" data-time="352">[05:52]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="353">[05:53]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="354">[05:54]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="354">[05:55]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="355">[05:55]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="355">[05:55]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="370">[06:11]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="371">[06:11]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="371">[06:12]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="371">[06:12]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="372">[06:12]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="372">[06:12]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="374">[06:14]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="374">[06:15]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="378">[06:19]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Spirit Stone</span></div>
+<div><span class="time" data-time="410">[06:51]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Warwick (shadows11123)</span></div>
+<div><span class="time" data-time="416">[06:56]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Long Sword</span></div>
+<div><span class="time" data-time="427">[07:07]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Sion (fidodido2468)</span></div>
+<div><span class="time" data-time="451">[07:32]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Long Sword</span></div>
+<div><span class="time" data-time="464">[07:44]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Doran's Ring</span></div>
+<div><span class="time" data-time="464">[07:45]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="465">[07:45]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="466">[07:46]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="466">[07:47]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="467">[07:47]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="467">[07:48]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="camp">Blue Buff</span></div>
+<div><span class="time" data-time="471">[07:51]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Bilgewater Cutlass</span></div>
+<div><span class="time" data-time="479">[08:00]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Amplifying Tome</span></div>
+<div><span class="time" data-time="481">[08:02]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="481">[08:02]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="482">[08:03]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="483">[08:03]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="488">[08:09]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">The Brutalizer</span></div>
+<div><span class="time" data-time="491">[08:11]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Ruby Crystal</span></div>
+<div><span class="time" data-time="494">[08:14]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Ionian Boots of Lucidity</span></div>
+<div><span class="time" data-time="496">[08:16]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="496">[08:16]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="503">[08:24]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="blue">Tristana (breezecb)</span></div>
+<div><span class="time" data-time="515">[08:36]</span> <span class="red">Jinx (jro7923)</span> has slain <span class="blue">Thresh (Ragnarok311)</span></div>
+<div><span class="time" data-time="522">[08:42]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">B. F. Sword</span></div>
+<div><span class="time" data-time="522">[08:43]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Pickaxe</span></div>
+<div><span class="time" data-time="523">[08:44]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Zed (DirtyTaco123)</span></div>
+<div><span class="time" data-time="524">[08:44]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="524">[08:45]</span> <span class="blue">Malphite (9mareWarrior)</span> has slain <span class="camp">Blue Buff</span></div>
+<div><span class="time" data-time="531">[08:52]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Null-Magic Mantle</span></div>
+<div><span class="time" data-time="533">[08:54]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Wriggle's Lantern</span></div>
+<div><span class="time" data-time="536">[08:56]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="536">[08:57]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="539">[08:59]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Targon's Brace</span></div>
+<div><span class="time" data-time="542">[09:02]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Cloth Armor</span></div>
+<div><span class="time" data-time="543">[09:04]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Stealth Ward</span></div>
+<div><span class="time" data-time="545">[09:05]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Vision Ward</span></div>
+<div><span class="time" data-time="546">[09:06]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Stealth Ward</span></div>
+<div><span class="time" data-time="570">[09:31]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="camp">Red Buff</span></div>
+<div><span class="time" data-time="598">[09:59]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Sion (fidodido2468)</span></div>
+<div><span class="time" data-time="599">[10:00]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">B. F. Sword</span></div>
+<div><span class="time" data-time="603">[10:03]</span> <span class="red">Alistar (Dagalo)</span> has slain <span class="blue">Malphite (9mareWarrior)</span></div>
+<div><span class="time" data-time="606">[10:06]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="blue">Pantheon (JangoFett154)</span></div>
+<div><span class="time" data-time="612">[10:12]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Dagger</span></div>
+<div><span class="time" data-time="617">[10:17]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="617">[10:17]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="621">[10:22]</span> <span class="blue">Pantheon (JangoFett154)</span> purchased <span class="item">Ruby Crystal</span></div>
+<div><span class="time" data-time="622">[10:22]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Vampiric Scepter</span></div>
+<div><span class="time" data-time="632">[10:32]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Zed (DirtyTaco123)</span></div>
+<div><span class="time" data-time="632">[10:32]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="634">[10:34]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Fiendish Codex</span></div>
+<div><span class="time" data-time="642">[10:43]</span> <span class="red">Warwick (shadows11123)</span> has slain <span class="blue">Fizz (roffogoble)</span></div>
+<div><span class="time" data-time="647">[10:48]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Dagger</span></div>
+<div><span class="time" data-time="670">[11:11]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Recurve Bow</span></div>
+<div><span class="time" data-time="673">[11:13]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Cloth Armor</span></div>
+<div><span class="time" data-time="675">[11:15]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Vision Ward</span></div>
+<div><span class="time" data-time="677">[11:17]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Ruby Sightstone</span></div>
+<div><span class="time" data-time="677">[11:17]</span> <span class="blue">Tristana (breezecb)</span> has slain <span class="red">Jinx (jro7923)</span></div>
+<div><span class="time" data-time="677">[11:18]</span> <span class="blue">Malphite (9mareWarrior)</span> has slain <span class="camp">Red Buff</span></div>
+<div><span class="time" data-time="688">[11:28]</span> <span class="blue">Thresh (Ragnarok311)</span> destroyed the <span class="red">Bottom Outer Turret</span></div>
+<div><span class="time" data-time="710">[11:50]</span> <span class="red">Jinx (jro7923)</span> purchased <span class="item">Berserker's Greaves</span></div>
+<div><span class="time" data-time="714">[11:54]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Ruby Crystal</span></div>
+<div><span class="time" data-time="717">[11:58]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="718">[11:58]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="719">[11:59]</span> <span class="blue">Thresh (Ragnarok311)</span> purchased <span class="item">Ninja Tabi</span></div>
+<div><span class="time" data-time="722">[12:02]</span> <span class="blue">Tristana (breezecb)</span> purchased <span class="item">Infinity Edge</span></div>
+<div><span class="time" data-time="742">[12:23]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Zed (DirtyTaco123)</span></div>
+<div><span class="time" data-time="747">[12:27]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Warwick (shadows11123)</span></div>
+<div><span class="time" data-time="760">[12:40]</span> <span class="red">Zed (DirtyTaco123)</span> purchased <span class="item">Dagger</span></div>
+<div><span class="time" data-time="762">[12:43]</span> <span class="red">Warwick (shadows11123)</span> purchased <span class="item">Ninja Tabi</span></div>
+<div><span class="time" data-time="768">[12:48]</span> <span class="blue">Fizz (roffogoble)</span> destroyed the <span class="red">Middle Outer Turret</span></div>
+<div><span class="time" data-time="771">[12:52]</span> <span class="blue">Tristana (breezecb)</span> has slain <span class="red">Alistar (Dagalo)</span></div>
+<div><span class="time" data-time="788">[13:09]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="camp">Blue Buff</span></div>
+<div><span class="time" data-time="811">[13:32]</span> <span class="blue">Malphite (9mareWarrior)</span> has slain <span class="camp">Dragon</span></div>
+<div><span class="time" data-time="812">[13:32]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Boots of Speed</span></div>
+<div><span class="time" data-time="817">[13:37]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="817">[13:37]</span> <span class="red">Alistar (Dagalo)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="826">[13:47]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Amplifying Tome</span></div>
+<div><span class="time" data-time="829">[13:49]</span> <span class="blue">Fizz (roffogoble)</span> purchased <span class="item">Sapphire Crystal</span></div>
+<div><span class="time" data-time="831">[13:51]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Warwick (shadows11123)</span></div>
+<div><span class="time" data-time="839">[13:59]</span> <span class="blue">Pantheon (JangoFett154)</span> has slain <span class="red">Sion (fidodido2468)</span></div>
+<div><span class="time" data-time="865">[14:26]</span> <span class="red">Sion (fidodido2468)</span> purchased <span class="item">Pickaxe</span></div>
+<div><span class="time" data-time="875">[14:36]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="876">[14:36]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="876">[14:36]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Health Potion</span></div>
+<div><span class="time" data-time="878">[14:38]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="878">[14:39]</span> <span class="blue">Malphite (9mareWarrior)</span> purchased <span class="item">Mana Potion</span></div>
+<div><span class="time" data-time="884">[14:45]</span> <span class="blue">Fizz (roffogoble)</span> has slain <span class="red">Zed (DirtyTaco123)</span></div>
+</div>
+</div>
+</div>
+<div class="col-sm-9 game-data" id="graphs-container" style="display:none;">
+<h3>Gold Earned</h3>
+<div class="graph-container">
+<div class="y-axis" id="gold-earned-y-axis"></div>
+<div class="graph" id="gold-earned-graph"></div>
+</div>
+<h3>Experience Earned</h3>
+<div class="graph-container">
+<div class="y-axis" id="experience-earned-y-axis"></div>
+<div class="graph" id="experience-earned-graph"></div>
+</div>
+<h3>Damage Dealt</h3>
+<div class="graph-container">
+<div class="y-axis" id="damage-dealt-y-axis"></div>
+<div class="graph" id="damage-dealt-graph"></div>
+</div>
+<h3>Damage Received</h3>
+<div class="graph-container">
+<div class="y-axis" id="damage-received-y-axis"></div>
+<div class="graph" id="damage-received-graph"></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+window.cleanup();
+window.unbind();
+
+$('.show-more').on('click', function() {
+	var elem = $(this).parent().find('.extra-breakdown');
+	if (elem.is(':hidden')) {
+		elem.css('display', '');
+		if ($(this).text() === 'Show more...') {
+			$(this).text('Show less...');
+		} else if ($(this).text() === 'Show breakdown') {
+			$(this).text('Hide breakdown');
+		}
+	} else {
+		elem.css('display', 'none');
+		if ($(this).text() === 'Show less...') {
+			$(this).text('Show more...');
+		} else if ($(this).text() === 'Hide breakdown') {
+			$(this).text('Show breakdown');
+		}
+	}
+
+	return false;
+});
+
+$('.nav-icons div').on('click', function() {
+	updateNav($(this), true);
+});
+
+$(document).ready(function() {
+	var navElem = $(document.location.hash+'-nav');
+	if (navElem.length) {
+		updateNav(navElem, true);
+	}
+});
+
+$(window).on('hashchange', function() {
+	var navElem = $(document.location.hash+'-nav');
+	if (navElem.length) {
+		updateNav(navElem, true);
+	} else {
+		updateNav($('#tables-nav'), false);
+	}
+});
+
+function updateNav(navElem, changeHash) {
+	var active = navElem.parent().find('.active');
+	active.removeClass('active');
+	$('#'+$.trim(active.text()).toLowerCase()+'-container').css('display', 'none');
+
+	navElem.addClass('active');
+	var dest = $.trim(navElem.text()).toLowerCase();
+	$('#'+dest+'-container').css('display', '');
+
+	if (changeHash) {
+		document.location.hash = dest;
+	}
+
+	$.event.trigger({
+		type: "resize.rangeslider"
+	});
+}
+</script>
+<script src="/js/minimap.js" type="text/javascript"></script>
+<script src="/js/rangeslider.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var minimap = new Minimap(
+			 1 ,
+			"summoners-rift",
+			 900 ,
+			 0 ,
+			 -280 ,
+			 0 ,
+			 14250 , 
+			 14350 ,
+			[{"name":"roffogoble","unitID":8,"championImg":"Fizz.png","teamID":100},{"name":"9mareWarrior","unitID":1,"championImg":"Malphite.png","teamID":100},{"name":"breezecb","unitID":5,"championImg":"Tristana.png","teamID":100},{"name":"Ragnarok311","unitID":3,"championImg":"Thresh.png","teamID":100},{"name":"JangoFett154","unitID":6,"championImg":"Pantheon.png","teamID":100},{"name":"DirtyTaco123","unitID":9,"championImg":"Zed.png","teamID":200},{"name":"fidodido2468","unitID":7,"championImg":"Sion.png","teamID":200},{"name":"Dagalo","unitID":0,"championImg":"Alistar.png","teamID":200},{"name":"jro7923","unitID":2,"championImg":"Jinx.png","teamID":200},{"name":"shadows11123","unitID":4,"championImg":"Warwick.png","teamID":200}],
+			[{"x":1342,"y":2030,"team":"blue"},{"x":12118,"y":12877,"team":"red"},{"x":13206,"y":10475,"team":"red"},{"x":1106,"y":6479,"team":"blue"},{"x":1768,"y":1589,"team":"blue"},{"x":3747,"y":1041,"team":"blue"},{"x":8549,"y":8289,"team":"red"},{"x":13460,"y":4284,"team":"red"},{"x":575,"y":10220,"team":"blue"},{"x":3234,"y":3447,"team":"blue"},{"x":803,"y":4052,"team":"blue"},{"x":7537,"y":13191,"team":"red"},{"x":10744,"y":11010,"team":"red"},{"x":12921,"y":8005,"team":"red"},{"x":4641,"y":4592,"team":"blue"},{"x":5439,"y":6176,"team":"blue"},{"x":6513,"y":1263,"team":"blue"},{"x":10098,"y":809,"team":"blue"},{"x":10262,"y":13466,"team":"red"},{"x":3912,"y":13655,"team":"red"},{"x":12662,"y":12443,"team":"red"},{"x":9361,"y":9893,"team":"red"}],
+			[{"x":839,"y":3359,"team":"blue"},{"x":2788,"y":2980,"team":"blue"},{"x":3036,"y":1034,"team":"blue"},{"x":10959,"y":13435,"team":"red"},{"x":11239,"y":11470,"team":"red"},{"x":13209,"y":11174,"team":"red"}],
+			[{"time":0,"playerPositions":[{"unitID":8,"position":{"x":-33,"y":344}},{"unitID":5,"position":{"x":52,"y":470}},{"unitID":6,"position":{"x":235,"y":135}},{"unitID":7,"position":{"x":13869,"y":14302}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":13810,"y":14026}},{"unitID":1,"position":{"x":247,"y":489}},{"unitID":3,"position":{"x":217,"y":425}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13705,"y":13954}}]},{"time":5,"playerPositions":[{"unitID":1,"position":{"x":247,"y":489}},{"unitID":3,"position":{"x":217,"y":425}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13705,"y":13954}},{"unitID":8,"position":{"x":-33,"y":344}},{"unitID":5,"position":{"x":52,"y":470}},{"unitID":6,"position":{"x":235,"y":135}},{"unitID":7,"position":{"x":13869,"y":14302}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":13810,"y":14026}}]},{"time":10,"playerPositions":[{"unitID":8,"position":{"x":355,"y":701}},{"unitID":5,"position":{"x":52,"y":470}},{"unitID":6,"position":{"x":235,"y":135}},{"unitID":7,"position":{"x":13869,"y":14302}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":13810,"y":14026}},{"unitID":1,"position":{"x":247,"y":489}},{"unitID":3,"position":{"x":217,"y":425}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13705,"y":13954}}]},{"time":15,"playerPositions":[{"unitID":1,"position":{"x":247,"y":489}},{"unitID":3,"position":{"x":217,"y":425}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13763,"y":12851}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":337,"y":287}},{"unitID":6,"position":{"x":235,"y":135}},{"unitID":7,"position":{"x":14061,"y":14067}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":13835,"y":14343}}]},{"time":20,"playerPositions":[{"unitID":1,"position":{"x":195,"y":179}},{"unitID":3,"position":{"x":401,"y":339}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13787,"y":11519}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":1937,"y":435}},{"unitID":6,"position":{"x":-43,"y":469}},{"unitID":7,"position":{"x":14061,"y":14067}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":13835,"y":14343}}]},{"time":25,"playerPositions":[{"unitID":1,"position":{"x":195,"y":179}},{"unitID":3,"position":{"x":2583,"y":569}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13787,"y":11519}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":1937,"y":435}},{"unitID":6,"position":{"x":323,"y":3221}},{"unitID":7,"position":{"x":9845,"y":13793}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":12733,"y":9601}}]},{"time":30,"playerPositions":[{"unitID":1,"position":{"x":195,"y":179}},{"unitID":3,"position":{"x":2583,"y":569}},{"unitID":9,"position":{"x":13976,"y":14247}},{"unitID":2,"position":{"x":13787,"y":11519}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":1937,"y":435}},{"unitID":6,"position":{"x":323,"y":3221}},{"unitID":7,"position":{"x":9845,"y":13793}},{"unitID":0,"position":{"x":13903,"y":14089}},{"unitID":4,"position":{"x":12733,"y":9601}}]},{"time":35,"playerPositions":[{"unitID":1,"position":{"x":195,"y":179}},{"unitID":3,"position":{"x":2583,"y":569}},{"unitID":9,"position":{"x":10923,"y":10651}},{"unitID":2,"position":{"x":11863,"y":7059}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":1937,"y":435}},{"unitID":6,"position":{"x":631,"y":8285}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":40,"playerPositions":[{"unitID":1,"position":{"x":195,"y":179}},{"unitID":3,"position":{"x":2583,"y":569}},{"unitID":9,"position":{"x":10923,"y":10651}},{"unitID":2,"position":{"x":11863,"y":7059}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":1937,"y":435}},{"unitID":6,"position":{"x":631,"y":8285}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":45,"playerPositions":[{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10243,"y":999}},{"unitID":6,"position":{"x":1177,"y":9987}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":8775,"y":1067}},{"unitID":9,"position":{"x":10923,"y":10651}},{"unitID":2,"position":{"x":10927,"y":5975}}]},{"time":50,"playerPositions":[{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10243,"y":999}},{"unitID":6,"position":{"x":1177,"y":9987}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":8775,"y":1067}},{"unitID":9,"position":{"x":10923,"y":10651}},{"unitID":2,"position":{"x":10927,"y":5975}}]},{"time":55,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7883,"y":7743}},{"unitID":2,"position":{"x":10927,"y":5975}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":60,"playerPositions":[{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":13869,"y":13987}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7883,"y":7743}},{"unitID":2,"position":{"x":10927,"y":5975}}]},{"time":65,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7619,"y":7635}},{"unitID":2,"position":{"x":10927,"y":5975}},{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":70,"playerPositions":[{"unitID":8,"position":{"x":1205,"y":2119}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7619,"y":7635}},{"unitID":2,"position":{"x":10927,"y":5975}}]},{"time":75,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7619,"y":7635}},{"unitID":2,"position":{"x":10337,"y":4965}},{"unitID":8,"position":{"x":5881,"y":6279}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":80,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7619,"y":7635}},{"unitID":2,"position":{"x":10337,"y":4965}},{"unitID":8,"position":{"x":5881,"y":6279}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":85,"playerPositions":[{"unitID":8,"position":{"x":5563,"y":5991}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7797,"y":7575}},{"unitID":2,"position":{"x":10379,"y":4949}}]},{"time":90,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7797,"y":7575}},{"unitID":2,"position":{"x":10379,"y":4949}},{"unitID":8,"position":{"x":5563,"y":5991}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":11193,"y":6461}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":95,"playerPositions":[{"unitID":8,"position":{"x":5563,"y":5991}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":10651,"y":5257}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7797,"y":7575}},{"unitID":2,"position":{"x":10303,"y":5097}}]},{"time":100,"playerPositions":[{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7561,"y":8069}},{"unitID":2,"position":{"x":10815,"y":5765}},{"unitID":8,"position":{"x":5563,"y":5991}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":2609,"y":9309}},{"unitID":7,"position":{"x":4957,"y":13529}},{"unitID":0,"position":{"x":10651,"y":5257}},{"unitID":4,"position":{"x":11027,"y":6555}}]},{"time":105,"playerPositions":[{"unitID":8,"position":{"x":5563,"y":5991}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":3367,"y":9057}},{"unitID":7,"position":{"x":4501,"y":11673}},{"unitID":0,"position":{"x":10651,"y":5257}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":2367,"y":6481}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":6853,"y":8901}},{"unitID":2,"position":{"x":10669,"y":6441}}]},{"time":110,"playerPositions":[{"unitID":8,"position":{"x":5775,"y":6305}},{"unitID":5,"position":{"x":10065,"y":653}},{"unitID":6,"position":{"x":3367,"y":9057}},{"unitID":7,"position":{"x":5301,"y":11255}},{"unitID":0,"position":{"x":10743,"y":6655}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":3341,"y":7633}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":6157,"y":9755}},{"unitID":2,"position":{"x":10669,"y":6441}}]},{"time":115,"playerPositions":[{"unitID":8,"position":{"x":6767,"y":7289}},{"unitID":5,"position":{"x":10099,"y":1445}},{"unitID":6,"position":{"x":3405,"y":7739}},{"unitID":7,"position":{"x":6049,"y":11187}},{"unitID":0,"position":{"x":10663,"y":6675}},{"unitID":4,"position":{"x":11027,"y":6555}},{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":10553,"y":1101}},{"unitID":9,"position":{"x":7061,"y":8575}},{"unitID":2,"position":{"x":11241,"y":6503}}]},{"time":120,"playerPositions":[{"unitID":8,"position":{"x":6759,"y":6957}},{"unitID":5,"position":{"x":10663,"y":1469}},{"unitID":6,"position":{"x":3409,"y":7765}},{"unitID":7,"position":{"x":4125,"y":11447}},{"unitID":0,"position":{"x":10649,"y":6691}},{"unitID":4,"position":{"x":10649,"y":6913}},{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":10571,"y":981}},{"unitID":9,"position":{"x":7187,"y":7593}},{"unitID":2,"position":{"x":10811,"y":6475}}]},{"time":125,"playerPositions":[{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":12343,"y":1525}},{"unitID":9,"position":{"x":7359,"y":7355}},{"unitID":2,"position":{"x":11323,"y":6443}},{"unitID":8,"position":{"x":6511,"y":7225}},{"unitID":5,"position":{"x":11743,"y":1937}},{"unitID":6,"position":{"x":3347,"y":8143}},{"unitID":7,"position":{"x":2425,"y":12787}},{"unitID":0,"position":{"x":12073,"y":5601}},{"unitID":4,"position":{"x":10649,"y":6913}}]},{"time":130,"playerPositions":[{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":12145,"y":1671}},{"unitID":9,"position":{"x":7169,"y":7231}},{"unitID":2,"position":{"x":12501,"y":4935}},{"unitID":8,"position":{"x":6479,"y":7451}},{"unitID":5,"position":{"x":11813,"y":2001}},{"unitID":6,"position":{"x":3081,"y":9727}},{"unitID":7,"position":{"x":2563,"y":12803}},{"unitID":0,"position":{"x":12663,"y":4713}},{"unitID":4,"position":{"x":10649,"y":6913}}]},{"time":135,"playerPositions":[{"unitID":8,"position":{"x":6311,"y":7049}},{"unitID":5,"position":{"x":11747,"y":2111}},{"unitID":6,"position":{"x":2401,"y":11125}},{"unitID":7,"position":{"x":1987,"y":12367}},{"unitID":0,"position":{"x":13051,"y":2793}},{"unitID":4,"position":{"x":10565,"y":6715}},{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":12183,"y":1777}},{"unitID":9,"position":{"x":7117,"y":7113}},{"unitID":2,"position":{"x":12439,"y":3123}}]},{"time":140,"playerPositions":[{"unitID":8,"position":{"x":6345,"y":7145}},{"unitID":5,"position":{"x":11759,"y":2027}},{"unitID":6,"position":{"x":1643,"y":12079}},{"unitID":7,"position":{"x":2393,"y":12641}},{"unitID":0,"position":{"x":13019,"y":2301}},{"unitID":4,"position":{"x":10565,"y":6715}},{"unitID":1,"position":{"x":3669,"y":7769}},{"unitID":3,"position":{"x":12183,"y":1777}},{"unitID":9,"position":{"x":7031,"y":7125}},{"unitID":2,"position":{"x":12321,"y":2757}}]},{"time":145,"playerPositions":[{"unitID":8,"position":{"x":6357,"y":6899}},{"unitID":5,"position":{"x":11737,"y":1973}},{"unitID":6,"position":{"x":1477,"y":12657}},{"unitID":7,"position":{"x":2455,"y":12767}},{"unitID":0,"position":{"x":12465,"y":2051}},{"unitID":4,"position":{"x":12127,"y":6337}},{"unitID":1,"position":{"x":2783,"y":7463}},{"unitID":3,"position":{"x":12297,"y":1543}},{"unitID":9,"position":{"x":6919,"y":7211}},{"unitID":2,"position":{"x":12443,"y":2771}}]},{"time":150,"playerPositions":[{"unitID":1,"position":{"x":3255,"y":6035}},{"unitID":3,"position":{"x":12377,"y":1951}},{"unitID":9,"position":{"x":6809,"y":7437}},{"unitID":2,"position":{"x":12467,"y":2665}},{"unitID":8,"position":{"x":7117,"y":6955}},{"unitID":5,"position":{"x":12025,"y":2011}},{"unitID":6,"position":{"x":2051,"y":12441}},{"unitID":7,"position":{"x":1699,"y":13035}},{"unitID":0,"position":{"x":12321,"y":2383}},{"unitID":4,"position":{"x":12127,"y":6337}}]},{"time":155,"playerPositions":[{"unitID":8,"position":{"x":6529,"y":7247}},{"unitID":5,"position":{"x":11879,"y":2023}},{"unitID":6,"position":{"x":1459,"y":12295}},{"unitID":7,"position":{"x":1769,"y":12691}},{"unitID":0,"position":{"x":12663,"y":2619}},{"unitID":4,"position":{"x":12127,"y":6337}},{"unitID":1,"position":{"x":3255,"y":6035}},{"unitID":3,"position":{"x":12385,"y":1921}},{"unitID":9,"position":{"x":6935,"y":7521}},{"unitID":2,"position":{"x":12285,"y":2589}}]},{"time":160,"playerPositions":[{"unitID":8,"position":{"x":6275,"y":6643}},{"unitID":5,"position":{"x":11613,"y":2129}},{"unitID":6,"position":{"x":1631,"y":12513}},{"unitID":7,"position":{"x":2399,"y":12553}},{"unitID":0,"position":{"x":13227,"y":2773}},{"unitID":4,"position":{"x":12127,"y":6337}},{"unitID":1,"position":{"x":3255,"y":6035}},{"unitID":3,"position":{"x":12515,"y":1763}},{"unitID":9,"position":{"x":6867,"y":7115}},{"unitID":2,"position":{"x":12185,"y":2835}}]},{"time":165,"playerPositions":[{"unitID":1,"position":{"x":3255,"y":6035}},{"unitID":3,"position":{"x":12053,"y":2041}},{"unitID":9,"position":{"x":6947,"y":6545}},{"unitID":2,"position":{"x":12325,"y":2885}},{"unitID":8,"position":{"x":6141,"y":7009}},{"unitID":5,"position":{"x":11711,"y":2015}},{"unitID":6,"position":{"x":1435,"y":12207}},{"unitID":7,"position":{"x":2543,"y":12851}},{"unitID":0,"position":{"x":12577,"y":2723}},{"unitID":4,"position":{"x":10533,"y":7433}}]},{"time":170,"playerPositions":[{"unitID":8,"position":{"x":5951,"y":6147}},{"unitID":5,"position":{"x":11901,"y":2269}},{"unitID":6,"position":{"x":2095,"y":12551}},{"unitID":7,"position":{"x":2659,"y":13101}},{"unitID":0,"position":{"x":12919,"y":3189}},{"unitID":4,"position":{"x":9695,"y":8407}},{"unitID":1,"position":{"x":3925,"y":5811}},{"unitID":3,"position":{"x":12099,"y":1893}},{"unitID":9,"position":{"x":6599,"y":6721}},{"unitID":2,"position":{"x":12501,"y":2951}}]},{"time":175,"playerPositions":[{"unitID":8,"position":{"x":6111,"y":6887}},{"unitID":5,"position":{"x":11937,"y":2441}},{"unitID":6,"position":{"x":2157,"y":12553}},{"unitID":7,"position":{"x":2845,"y":12815}},{"unitID":0,"position":{"x":13063,"y":3319}},{"unitID":4,"position":{"x":8099,"y":9893}},{"unitID":1,"position":{"x":5139,"y":5189}},{"unitID":3,"position":{"x":12829,"y":2045}},{"unitID":9,"position":{"x":7037,"y":7039}},{"unitID":2,"position":{"x":12973,"y":3605}}]},{"time":180,"playerPositions":[{"unitID":1,"position":{"x":6707,"y":4769}},{"unitID":3,"position":{"x":13175,"y":2567}},{"unitID":9,"position":{"x":6927,"y":6753}},{"unitID":2,"position":{"x":12945,"y":3709}},{"unitID":8,"position":{"x":6173,"y":6407}},{"unitID":5,"position":{"x":12025,"y":2851}},{"unitID":6,"position":{"x":2469,"y":12783}},{"unitID":7,"position":{"x":3243,"y":12881}},{"unitID":0,"position":{"x":12885,"y":3733}},{"unitID":4,"position":{"x":6933,"y":10651}}]},{"time":185,"playerPositions":[{"unitID":8,"position":{"x":5887,"y":6459}},{"unitID":5,"position":{"x":11979,"y":2483}},{"unitID":6,"position":{"x":2333,"y":12877}},{"unitID":7,"position":{"x":2927,"y":12973}},{"unitID":0,"position":{"x":12731,"y":3545}},{"unitID":4,"position":{"x":6721,"y":10519}},{"unitID":1,"position":{"x":8177,"y":5663}},{"unitID":3,"position":{"x":11757,"y":2543}},{"unitID":9,"position":{"x":6561,"y":7203}},{"unitID":2,"position":{"x":12985,"y":3445}}]},{"time":190,"playerPositions":[{"unitID":8,"position":{"x":6841,"y":6799}},{"unitID":5,"position":{"x":11715,"y":2461}},{"unitID":6,"position":{"x":2237,"y":12769}},{"unitID":7,"position":{"x":3305,"y":12905}},{"unitID":0,"position":{"x":12993,"y":2813}},{"unitID":4,"position":{"x":6721,"y":10519}},{"unitID":1,"position":{"x":7323,"y":7041}},{"unitID":3,"position":{"x":11821,"y":2269}},{"unitID":9,"position":{"x":7015,"y":7133}},{"unitID":2,"position":{"x":12697,"y":2873}}]},{"time":195,"playerPositions":[{"unitID":8,"position":{"x":7147,"y":7913}},{"unitID":5,"position":{"x":11837,"y":2351}},{"unitID":6,"position":{"x":2575,"y":12751}},{"unitID":7,"position":{"x":2811,"y":13071}},{"unitID":0,"position":{"x":12865,"y":3109}},{"unitID":4,"position":{"x":6721,"y":10519}},{"unitID":1,"position":{"x":7087,"y":7765}},{"unitID":3,"position":{"x":12749,"y":1953}},{"unitID":9,"position":{"x":6557,"y":9187}},{"unitID":2,"position":{"x":12637,"y":3073}}]},{"time":200,"playerPositions":[{"unitID":1,"position":{"x":7359,"y":9755}},{"unitID":3,"position":{"x":12921,"y":2083}},{"unitID":9,"position":{"x":7901,"y":9977}},{"unitID":2,"position":{"x":12549,"y":3087}},{"unitID":8,"position":{"x":6721,"y":9097}},{"unitID":5,"position":{"x":11881,"y":2465}},{"unitID":6,"position":{"x":2367,"y":12683}},{"unitID":7,"position":{"x":2893,"y":12741}},{"unitID":0,"position":{"x":13107,"y":2807}},{"unitID":4,"position":{"x":6721,"y":10519}}]},{"time":205,"playerPositions":[{"unitID":8,"position":{"x":6727,"y":7329}},{"unitID":5,"position":{"x":11965,"y":2411}},{"unitID":6,"position":{"x":2877,"y":12945}},{"unitID":7,"position":{"x":3671,"y":13369}},{"unitID":0,"position":{"x":13119,"y":3499}},{"unitID":4,"position":{"x":6777,"y":10775}},{"unitID":1,"position":{"x":6739,"y":8851}},{"unitID":3,"position":{"x":12819,"y":2065}},{"unitID":9,"position":{"x":8081,"y":10117}},{"unitID":2,"position":{"x":12913,"y":3319}}]},{"time":210,"playerPositions":[{"unitID":8,"position":{"x":6049,"y":6955}},{"unitID":5,"position":{"x":12535,"y":2757}},{"unitID":6,"position":{"x":3199,"y":13023}},{"unitID":7,"position":{"x":3743,"y":13595}},{"unitID":0,"position":{"x":12985,"y":4117}},{"unitID":4,"position":{"x":6603,"y":9355}},{"unitID":1,"position":{"x":7037,"y":7537}},{"unitID":3,"position":{"x":12703,"y":2625}},{"unitID":9,"position":{"x":8081,"y":10117}},{"unitID":2,"position":{"x":12711,"y":3733}}]},{"time":215,"playerPositions":[{"unitID":8,"position":{"x":6325,"y":6733}},{"unitID":5,"position":{"x":12315,"y":2691}},{"unitID":6,"position":{"x":2639,"y":12701}},{"unitID":7,"position":{"x":3605,"y":13459}},{"unitID":0,"position":{"x":12891,"y":3159}},{"unitID":4,"position":{"x":7529,"y":9471}},{"unitID":1,"position":{"x":6557,"y":6421}},{"unitID":3,"position":{"x":12337,"y":2441}},{"unitID":9,"position":{"x":8081,"y":10117}},{"unitID":2,"position":{"x":12919,"y":3383}}]},{"time":220,"playerPositions":[{"unitID":8,"position":{"x":5879,"y":6695}},{"unitID":5,"position":{"x":11985,"y":2471}},{"unitID":6,"position":{"x":2933,"y":13361}},{"unitID":7,"position":{"x":3503,"y":13413}},{"unitID":0,"position":{"x":12697,"y":2193}},{"unitID":4,"position":{"x":7529,"y":9471}},{"unitID":1,"position":{"x":7321,"y":5065}},{"unitID":3,"position":{"x":12419,"y":1451}},{"unitID":9,"position":{"x":8265,"y":8907}},{"unitID":2,"position":{"x":12479,"y":3185}}]},{"time":225,"playerPositions":[{"unitID":8,"position":{"x":6193,"y":6627}},{"unitID":5,"position":{"x":12037,"y":2091}},{"unitID":6,"position":{"x":3113,"y":13351}},{"unitID":7,"position":{"x":3747,"y":13489}},{"unitID":0,"position":{"x":13097,"y":3559}},{"unitID":4,"position":{"x":7529,"y":9471}},{"unitID":1,"position":{"x":6493,"y":4995}},{"unitID":3,"position":{"x":13027,"y":2317}},{"unitID":9,"position":{"x":7231,"y":7407}},{"unitID":2,"position":{"x":12775,"y":3151}}]},{"time":230,"playerPositions":[{"unitID":8,"position":{"x":6083,"y":6679}},{"unitID":5,"position":{"x":12147,"y":2119}},{"unitID":6,"position":{"x":3061,"y":13211}},{"unitID":7,"position":{"x":4047,"y":13475}},{"unitID":0,"position":{"x":12975,"y":2499}},{"unitID":4,"position":{"x":7529,"y":9471}},{"unitID":1,"position":{"x":6493,"y":4995}},{"unitID":3,"position":{"x":12985,"y":2213}},{"unitID":9,"position":{"x":7009,"y":6811}},{"unitID":2,"position":{"x":12769,"y":3115}}]},{"time":235,"playerPositions":[{"unitID":1,"position":{"x":6493,"y":4995}},{"unitID":3,"position":{"x":12831,"y":2401}},{"unitID":9,"position":{"x":7639,"y":7015}},{"unitID":2,"position":{"x":12801,"y":3865}},{"unitID":8,"position":{"x":7535,"y":6927}},{"unitID":5,"position":{"x":12433,"y":2407}},{"unitID":6,"position":{"x":3267,"y":12859}},{"unitID":7,"position":{"x":3815,"y":13345}},{"unitID":0,"position":{"x":12879,"y":3407}},{"unitID":4,"position":{"x":7399,"y":10511}}]},{"time":240,"playerPositions":[{"unitID":8,"position":{"x":6897,"y":7147}},{"unitID":5,"position":{"x":12645,"y":2953}},{"unitID":6,"position":{"x":3015,"y":13079}},{"unitID":7,"position":{"x":3545,"y":13167}},{"unitID":0,"position":{"x":13575,"y":3873}},{"unitID":4,"position":{"x":6685,"y":12233}},{"unitID":1,"position":{"x":6493,"y":4995}},{"unitID":3,"position":{"x":12405,"y":3059}},{"unitID":9,"position":{"x":7973,"y":7921}},{"unitID":2,"position":{"x":12917,"y":4025}}]},{"time":245,"playerPositions":[{"unitID":1,"position":{"x":6595,"y":4699}},{"unitID":3,"position":{"x":11967,"y":1971}},{"unitID":9,"position":{"x":7503,"y":7277}},{"unitID":2,"position":{"x":12551,"y":3071}},{"unitID":8,"position":{"x":7015,"y":7073}},{"unitID":5,"position":{"x":11951,"y":2289}},{"unitID":6,"position":{"x":1721,"y":12255}},{"unitID":7,"position":{"x":4037,"y":13413}},{"unitID":0,"position":{"x":13165,"y":2783}},{"unitID":4,"position":{"x":6245,"y":12151}}]},{"time":250,"playerPositions":[{"unitID":1,"position":{"x":7313,"y":3699}},{"unitID":3,"position":{"x":11433,"y":3211}},{"unitID":9,"position":{"x":7949,"y":7679}},{"unitID":2,"position":{"x":12675,"y":2443}},{"unitID":8,"position":{"x":7083,"y":7213}},{"unitID":5,"position":{"x":11829,"y":2205}},{"unitID":6,"position":{"x":1811,"y":12361}},{"unitID":7,"position":{"x":4145,"y":13071}},{"unitID":0,"position":{"x":12361,"y":2947}},{"unitID":4,"position":{"x":6245,"y":12151}}]},{"time":255,"playerPositions":[{"unitID":8,"position":{"x":7265,"y":7551}},{"unitID":5,"position":{"x":11751,"y":2009}},{"unitID":6,"position":{"x":1755,"y":12203}},{"unitID":7,"position":{"x":2711,"y":12705}},{"unitID":0,"position":{"x":11639,"y":2521}},{"unitID":4,"position":{"x":6245,"y":12151}},{"unitID":1,"position":{"x":7313,"y":3699}},{"unitID":3,"position":{"x":11503,"y":2203}},{"unitID":9,"position":{"x":8137,"y":7901}},{"unitID":2,"position":{"x":12137,"y":2451}}]},{"time":260,"playerPositions":[{"unitID":1,"position":{"x":7313,"y":3699}},{"unitID":3,"position":{"x":12031,"y":2577}},{"unitID":9,"position":{"x":8129,"y":7707}},{"unitID":2,"position":{"x":12561,"y":3001}},{"unitID":8,"position":{"x":6567,"y":7571}},{"unitID":5,"position":{"x":11811,"y":2121}},{"unitID":6,"position":{"x":1981,"y":12261}},{"unitID":7,"position":{"x":3119,"y":12857}},{"unitID":0,"position":{"x":12255,"y":2783}},{"unitID":4,"position":{"x":6245,"y":12151}}]},{"time":265,"playerPositions":[{"unitID":8,"position":{"x":7151,"y":7235}},{"unitID":5,"position":{"x":12621,"y":3299}},{"unitID":6,"position":{"x":2075,"y":12603}},{"unitID":7,"position":{"x":3327,"y":12805}},{"unitID":0,"position":{"x":12715,"y":3281}},{"unitID":4,"position":{"x":6245,"y":12151}},{"unitID":1,"position":{"x":7313,"y":3699}},{"unitID":3,"position":{"x":12733,"y":3161}},{"unitID":9,"position":{"x":7889,"y":7703}},{"unitID":2,"position":{"x":12819,"y":3445}}]},{"time":270,"playerPositions":[{"unitID":8,"position":{"x":7135,"y":7361}},{"unitID":5,"position":{"x":12371,"y":3071}},{"unitID":6,"position":{"x":2073,"y":12529}},{"unitID":7,"position":{"x":4293,"y":13299}},{"unitID":0,"position":{"x":13001,"y":4223}},{"unitID":4,"position":{"x":13679,"y":13303}},{"unitID":1,"position":{"x":7035,"y":3439}},{"unitID":3,"position":{"x":12557,"y":2559}},{"unitID":9,"position":{"x":7791,"y":7831}},{"unitID":2,"position":{"x":12819,"y":3445}}]},{"time":275,"playerPositions":[{"unitID":8,"position":{"x":7433,"y":7567}},{"unitID":5,"position":{"x":12245,"y":2373}},{"unitID":6,"position":{"x":1693,"y":12605}},{"unitID":7,"position":{"x":2791,"y":13029}},{"unitID":0,"position":{"x":12711,"y":3329}},{"unitID":4,"position":{"x":13001,"y":11441}},{"unitID":1,"position":{"x":7943,"y":2189}},{"unitID":3,"position":{"x":12567,"y":2325}},{"unitID":9,"position":{"x":7805,"y":7749}},{"unitID":2,"position":{"x":13933,"y":14169}}]},{"time":280,"playerPositions":[{"unitID":1,"position":{"x":8011,"y":2405}},{"unitID":3,"position":{"x":13045,"y":2515}},{"unitID":9,"position":{"x":7991,"y":7803}},{"unitID":2,"position":{"x":13697,"y":13399}},{"unitID":8,"position":{"x":7659,"y":7499}},{"unitID":5,"position":{"x":12049,"y":2667}},{"unitID":6,"position":{"x":1749,"y":12525}},{"unitID":7,"position":{"x":2387,"y":12423}},{"unitID":0,"position":{"x":12985,"y":4057}},{"unitID":4,"position":{"x":13001,"y":11441}}]},{"time":285,"playerPositions":[{"unitID":1,"position":{"x":8011,"y":2405}},{"unitID":3,"position":{"x":12177,"y":2323}},{"unitID":9,"position":{"x":7937,"y":7909}},{"unitID":2,"position":{"x":13603,"y":12091}},{"unitID":8,"position":{"x":7661,"y":7445}},{"unitID":5,"position":{"x":12503,"y":2461}},{"unitID":6,"position":{"x":1857,"y":12865}},{"unitID":7,"position":{"x":2151,"y":12541}},{"unitID":0,"position":{"x":13195,"y":4321}},{"unitID":4,"position":{"x":13001,"y":11441}}]},{"time":290,"playerPositions":[{"unitID":1,"position":{"x":8011,"y":2405}},{"unitID":3,"position":{"x":12169,"y":2833}},{"unitID":9,"position":{"x":8585,"y":8689}},{"unitID":2,"position":{"x":13459,"y":9979}},{"unitID":8,"position":{"x":7859,"y":8037}},{"unitID":5,"position":{"x":12769,"y":2259}},{"unitID":6,"position":{"x":1899,"y":12861}},{"unitID":7,"position":{"x":2943,"y":12949}},{"unitID":0,"position":{"x":13143,"y":4135}},{"unitID":4,"position":{"x":11605,"y":6829}}]},{"time":295,"playerPositions":[{"unitID":8,"position":{"x":6745,"y":7021}},{"unitID":5,"position":{"x":12875,"y":3603}},{"unitID":6,"position":{"x":2261,"y":12913}},{"unitID":7,"position":{"x":3893,"y":13317}},{"unitID":0,"position":{"x":13081,"y":4675}},{"unitID":4,"position":{"x":12109,"y":6409}},{"unitID":1,"position":{"x":8011,"y":2405}},{"unitID":3,"position":{"x":12915,"y":3315}},{"unitID":9,"position":{"x":8585,"y":8689}},{"unitID":2,"position":{"x":13351,"y":8585}}]},{"time":300,"playerPositions":[{"unitID":8,"position":{"x":7347,"y":7541}},{"unitID":5,"position":{"x":13031,"y":3471}},{"unitID":6,"position":{"x":2445,"y":12969}},{"unitID":7,"position":{"x":3571,"y":13299}},{"unitID":0,"position":{"x":13037,"y":4097}},{"unitID":4,"position":{"x":12089,"y":6411}},{"unitID":1,"position":{"x":7093,"y":2625}},{"unitID":3,"position":{"x":12749,"y":3741}},{"unitID":9,"position":{"x":8585,"y":8689}},{"unitID":2,"position":{"x":13195,"y":6537}}]},{"time":305,"playerPositions":[{"unitID":1,"position":{"x":6603,"y":4345}},{"unitID":3,"position":{"x":12781,"y":3487}},{"unitID":9,"position":{"x":8585,"y":8689}},{"unitID":2,"position":{"x":13031,"y":4603}},{"unitID":8,"position":{"x":7373,"y":7719}},{"unitID":5,"position":{"x":12965,"y":3439}},{"unitID":6,"position":{"x":2647,"y":13031}},{"unitID":7,"position":{"x":3385,"y":13181}},{"unitID":0,"position":{"x":12859,"y":3951}},{"unitID":4,"position":{"x":10727,"y":5579}}]},{"time":310,"playerPositions":[{"unitID":8,"position":{"x":7309,"y":7521}},{"unitID":5,"position":{"x":12523,"y":3027}},{"unitID":6,"position":{"x":2649,"y":12931}},{"unitID":7,"position":{"x":2985,"y":12981}},{"unitID":0,"position":{"x":12859,"y":3951}},{"unitID":4,"position":{"x":10727,"y":5579}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":13003,"y":2837}},{"unitID":9,"position":{"x":13933,"y":14169}},{"unitID":2,"position":{"x":13049,"y":4155}}]},{"time":315,"playerPositions":[{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":13135,"y":2767}},{"unitID":9,"position":{"x":13467,"y":13399}},{"unitID":2,"position":{"x":13031,"y":4067}},{"unitID":8,"position":{"x":7365,"y":7621}},{"unitID":5,"position":{"x":12467,"y":2809}},{"unitID":6,"position":{"x":2587,"y":13035}},{"unitID":7,"position":{"x":3219,"y":13063}},{"unitID":0,"position":{"x":12859,"y":3951}},{"unitID":4,"position":{"x":7541,"y":7187}}]},{"time":320,"playerPositions":[{"unitID":8,"position":{"x":5569,"y":6089}},{"unitID":5,"position":{"x":12639,"y":3073}},{"unitID":6,"position":{"x":2963,"y":13217}},{"unitID":7,"position":{"x":4077,"y":13527}},{"unitID":0,"position":{"x":12859,"y":3951}},{"unitID":4,"position":{"x":6685,"y":7045}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12441,"y":3119}},{"unitID":9,"position":{"x":12763,"y":12335}},{"unitID":2,"position":{"x":13065,"y":4051}}]},{"time":325,"playerPositions":[{"unitID":8,"position":{"x":5569,"y":6089}},{"unitID":5,"position":{"x":12541,"y":3105}},{"unitID":6,"position":{"x":3061,"y":13295}},{"unitID":7,"position":{"x":3957,"y":13505}},{"unitID":0,"position":{"x":13895,"y":13723}},{"unitID":4,"position":{"x":7541,"y":7379}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12951,"y":3247}},{"unitID":9,"position":{"x":10697,"y":10491}},{"unitID":2,"position":{"x":13005,"y":4171}}]},{"time":330,"playerPositions":[{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12169,"y":2367}},{"unitID":9,"position":{"x":10183,"y":10033}},{"unitID":2,"position":{"x":13009,"y":4249}},{"unitID":8,"position":{"x":5569,"y":6089}},{"unitID":5,"position":{"x":12469,"y":2879}},{"unitID":6,"position":{"x":3061,"y":13295}},{"unitID":7,"position":{"x":3607,"y":13469}},{"unitID":0,"position":{"x":13875,"y":13491}},{"unitID":4,"position":{"x":8453,"y":7299}}]},{"time":335,"playerPositions":[{"unitID":8,"position":{"x":5569,"y":6089}},{"unitID":5,"position":{"x":11697,"y":2007}},{"unitID":6,"position":{"x":3041,"y":13281}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":13743,"y":11503}},{"unitID":4,"position":{"x":9879,"y":8055}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":11701,"y":1885}},{"unitID":9,"position":{"x":8171,"y":8059}},{"unitID":2,"position":{"x":12465,"y":2891}}]},{"time":340,"playerPositions":[{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12225,"y":1537}},{"unitID":9,"position":{"x":7569,"y":7397}},{"unitID":2,"position":{"x":12667,"y":2953}},{"unitID":8,"position":{"x":37,"y":281}},{"unitID":5,"position":{"x":11529,"y":2251}},{"unitID":6,"position":{"x":2721,"y":13073}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":13743,"y":11503}},{"unitID":4,"position":{"x":10563,"y":8337}}]},{"time":345,"playerPositions":[{"unitID":8,"position":{"x":1529,"y":2469}},{"unitID":5,"position":{"x":11467,"y":2029}},{"unitID":6,"position":{"x":2983,"y":13179}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":13743,"y":11503}},{"unitID":4,"position":{"x":10557,"y":8351}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12225,"y":1537}},{"unitID":9,"position":{"x":7109,"y":7181}},{"unitID":2,"position":{"x":12455,"y":2889}}]},{"time":350,"playerPositions":[{"unitID":8,"position":{"x":2385,"y":3221}},{"unitID":5,"position":{"x":11795,"y":2483}},{"unitID":6,"position":{"x":3225,"y":12955}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":13189,"y":5619}},{"unitID":4,"position":{"x":9939,"y":8609}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12225,"y":1537}},{"unitID":9,"position":{"x":7183,"y":7207}},{"unitID":2,"position":{"x":12813,"y":3769}}]},{"time":355,"playerPositions":[{"unitID":8,"position":{"x":3943,"y":4531}},{"unitID":5,"position":{"x":11989,"y":2623}},{"unitID":6,"position":{"x":3051,"y":12771}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":13157,"y":4103}},{"unitID":4,"position":{"x":8199,"y":9851}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12973,"y":2169}},{"unitID":9,"position":{"x":6643,"y":6383}},{"unitID":2,"position":{"x":12957,"y":3621}}]},{"time":360,"playerPositions":[{"unitID":8,"position":{"x":5717,"y":5925}},{"unitID":5,"position":{"x":12619,"y":2927}},{"unitID":6,"position":{"x":3223,"y":12865}},{"unitID":7,"position":{"x":3619,"y":13351}},{"unitID":0,"position":{"x":12905,"y":3991}},{"unitID":4,"position":{"x":6503,"y":11157}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12969,"y":2409}},{"unitID":9,"position":{"x":6271,"y":6567}},{"unitID":2,"position":{"x":12677,"y":3959}}]},{"time":365,"playerPositions":[{"unitID":8,"position":{"x":6831,"y":6579}},{"unitID":5,"position":{"x":12167,"y":2397}},{"unitID":6,"position":{"x":2237,"y":12825}},{"unitID":7,"position":{"x":3229,"y":13099}},{"unitID":0,"position":{"x":12859,"y":3785}},{"unitID":4,"position":{"x":4345,"y":11347}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12379,"y":1845}},{"unitID":9,"position":{"x":7113,"y":6705}},{"unitID":2,"position":{"x":12441,"y":3135}}]},{"time":370,"playerPositions":[{"unitID":8,"position":{"x":5989,"y":6711}},{"unitID":5,"position":{"x":12061,"y":2375}},{"unitID":6,"position":{"x":2625,"y":13077}},{"unitID":7,"position":{"x":3093,"y":13053}},{"unitID":0,"position":{"x":13033,"y":3447}},{"unitID":4,"position":{"x":2881,"y":11619}},{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":11939,"y":2437}},{"unitID":9,"position":{"x":7177,"y":6957}},{"unitID":2,"position":{"x":12857,"y":2911}}]},{"time":375,"playerPositions":[{"unitID":1,"position":{"x":6551,"y":5005}},{"unitID":3,"position":{"x":12583,"y":2199}},{"unitID":9,"position":{"x":7017,"y":6757}},{"unitID":2,"position":{"x":12743,"y":3063}},{"unitID":8,"position":{"x":6439,"y":6559}},{"unitID":5,"position":{"x":12103,"y":2313}},{"unitID":6,"position":{"x":2215,"y":12871}},{"unitID":7,"position":{"x":2423,"y":13015}},{"unitID":0,"position":{"x":12661,"y":3337}},{"unitID":4,"position":{"x":2071,"y":12669}}]},{"time":380,"playerPositions":[{"unitID":8,"position":{"x":6681,"y":6695}},{"unitID":5,"position":{"x":12095,"y":2429}},{"unitID":6,"position":{"x":903,"y":11223}},{"unitID":7,"position":{"x":1231,"y":12101}},{"unitID":0,"position":{"x":12667,"y":3403}},{"unitID":4,"position":{"x":1257,"y":12071}},{"unitID":1,"position":{"x":45,"y":271}},{"unitID":3,"position":{"x":12629,"y":2187}},{"unitID":9,"position":{"x":7317,"y":6935}},{"unitID":2,"position":{"x":12621,"y":3551}}]},{"time":385,"playerPositions":[{"unitID":1,"position":{"x":1511,"y":12101}},{"unitID":3,"position":{"x":12965,"y":2667}},{"unitID":9,"position":{"x":7439,"y":7519}},{"unitID":2,"position":{"x":12839,"y":3591}},{"unitID":8,"position":{"x":6865,"y":7467}},{"unitID":5,"position":{"x":12231,"y":2613}},{"unitID":6,"position":{"x":1177,"y":11357}},{"unitID":7,"position":{"x":1875,"y":12609}},{"unitID":0,"position":{"x":12797,"y":3749}},{"unitID":4,"position":{"x":1699,"y":12387}}]},{"time":390,"playerPositions":[{"unitID":1,"position":{"x":2305,"y":12245}},{"unitID":3,"position":{"x":12473,"y":2979}},{"unitID":9,"position":{"x":7751,"y":8073}},{"unitID":2,"position":{"x":12775,"y":4271}},{"unitID":8,"position":{"x":7001,"y":7359}},{"unitID":5,"position":{"x":12599,"y":3075}},{"unitID":6,"position":{"x":2161,"y":12449}},{"unitID":7,"position":{"x":3325,"y":13089}},{"unitID":0,"position":{"x":13123,"y":3949}},{"unitID":4,"position":{"x":2821,"y":12889}}]},{"time":395,"playerPositions":[{"unitID":1,"position":{"x":2047,"y":12213}},{"unitID":3,"position":{"x":12661,"y":2235}},{"unitID":9,"position":{"x":7815,"y":7815}},{"unitID":2,"position":{"x":13231,"y":3767}},{"unitID":8,"position":{"x":7447,"y":7719}},{"unitID":5,"position":{"x":12469,"y":2823}},{"unitID":6,"position":{"x":2179,"y":12573}},{"unitID":7,"position":{"x":2453,"y":12979}},{"unitID":0,"position":{"x":13047,"y":3495}},{"unitID":4,"position":{"x":3011,"y":12873}}]},{"time":400,"playerPositions":[{"unitID":1,"position":{"x":2337,"y":12277}},{"unitID":3,"position":{"x":12747,"y":2223}},{"unitID":9,"position":{"x":8009,"y":8275}},{"unitID":2,"position":{"x":12683,"y":3305}},{"unitID":8,"position":{"x":7171,"y":7355}},{"unitID":5,"position":{"x":12053,"y":2529}},{"unitID":6,"position":{"x":2187,"y":12463}},{"unitID":7,"position":{"x":2897,"y":13089}},{"unitID":0,"position":{"x":12495,"y":3249}},{"unitID":4,"position":{"x":2525,"y":13131}}]},{"time":405,"playerPositions":[{"unitID":1,"position":{"x":2033,"y":12499}},{"unitID":3,"position":{"x":12927,"y":2409}},{"unitID":9,"position":{"x":8499,"y":7983}},{"unitID":2,"position":{"x":12785,"y":3443}},{"unitID":8,"position":{"x":7605,"y":7593}},{"unitID":5,"position":{"x":12091,"y":2689}},{"unitID":6,"position":{"x":2021,"y":12511}},{"unitID":7,"position":{"x":2293,"y":12547}},{"unitID":0,"position":{"x":12915,"y":3209}},{"unitID":4,"position":{"x":2349,"y":12765}}]},{"time":410,"playerPositions":[{"unitID":8,"position":{"x":7599,"y":7775}},{"unitID":5,"position":{"x":12333,"y":2845}},{"unitID":6,"position":{"x":1679,"y":12525}},{"unitID":7,"position":{"x":1833,"y":12389}},{"unitID":0,"position":{"x":12951,"y":3667}},{"unitID":4,"position":{"x":1989,"y":12639}},{"unitID":1,"position":{"x":1961,"y":12383}},{"unitID":3,"position":{"x":12261,"y":2719}},{"unitID":9,"position":{"x":8905,"y":8325}},{"unitID":2,"position":{"x":12927,"y":3715}}]},{"time":415,"playerPositions":[{"unitID":8,"position":{"x":6587,"y":6903}},{"unitID":5,"position":{"x":12299,"y":2763}},{"unitID":6,"position":{"x":1991,"y":12685}},{"unitID":7,"position":{"x":2105,"y":13085}},{"unitID":0,"position":{"x":12859,"y":3539}},{"unitID":4,"position":{"x":1989,"y":12639}},{"unitID":1,"position":{"x":2043,"y":12879}},{"unitID":3,"position":{"x":12409,"y":2751}},{"unitID":9,"position":{"x":8905,"y":8325}},{"unitID":2,"position":{"x":12661,"y":4023}}]},{"time":420,"playerPositions":[{"unitID":8,"position":{"x":6839,"y":7209}},{"unitID":5,"position":{"x":12601,"y":3165}},{"unitID":6,"position":{"x":2073,"y":13191}},{"unitID":7,"position":{"x":1727,"y":13077}},{"unitID":0,"position":{"x":13043,"y":3693}},{"unitID":4,"position":{"x":1989,"y":12639}},{"unitID":1,"position":{"x":1975,"y":13303}},{"unitID":3,"position":{"x":12829,"y":3085}},{"unitID":9,"position":{"x":9049,"y":8587}},{"unitID":2,"position":{"x":12725,"y":3897}}]},{"time":425,"playerPositions":[{"unitID":1,"position":{"x":1371,"y":12779}},{"unitID":3,"position":{"x":11965,"y":2411}},{"unitID":9,"position":{"x":7759,"y":7695}},{"unitID":2,"position":{"x":12569,"y":3317}},{"unitID":8,"position":{"x":6813,"y":7243}},{"unitID":5,"position":{"x":12299,"y":2745}},{"unitID":6,"position":{"x":1319,"y":12785}},{"unitID":7,"position":{"x":1583,"y":13087}},{"unitID":0,"position":{"x":13139,"y":3519}},{"unitID":4,"position":{"x":1989,"y":12639}}]},{"time":430,"playerPositions":[{"unitID":1,"position":{"x":1647,"y":12595}},{"unitID":3,"position":{"x":11709,"y":2235}},{"unitID":9,"position":{"x":8021,"y":7837}},{"unitID":2,"position":{"x":12641,"y":2841}},{"unitID":8,"position":{"x":7073,"y":7605}},{"unitID":5,"position":{"x":11781,"y":2207}},{"unitID":6,"position":{"x":1607,"y":12805}},{"unitID":7,"position":{"x":1583,"y":13087}},{"unitID":0,"position":{"x":13035,"y":3281}},{"unitID":4,"position":{"x":13933,"y":14169}}]},{"time":435,"playerPositions":[{"unitID":1,"position":{"x":2267,"y":12521}},{"unitID":3,"position":{"x":11593,"y":2023}},{"unitID":9,"position":{"x":8175,"y":7771}},{"unitID":2,"position":{"x":12505,"y":2643}},{"unitID":8,"position":{"x":7351,"y":7407}},{"unitID":5,"position":{"x":11711,"y":1975}},{"unitID":6,"position":{"x":1893,"y":12455}},{"unitID":7,"position":{"x":1583,"y":13087}},{"unitID":0,"position":{"x":12463,"y":2803}},{"unitID":4,"position":{"x":13933,"y":14169}}]},{"time":440,"playerPositions":[{"unitID":1,"position":{"x":3057,"y":13201}},{"unitID":3,"position":{"x":11865,"y":2689}},{"unitID":9,"position":{"x":8351,"y":7929}},{"unitID":2,"position":{"x":12807,"y":2727}},{"unitID":8,"position":{"x":7917,"y":7619}},{"unitID":5,"position":{"x":11913,"y":2205}},{"unitID":6,"position":{"x":1811,"y":12399}},{"unitID":7,"position":{"x":1583,"y":13087}},{"unitID":0,"position":{"x":12551,"y":2955}},{"unitID":4,"position":{"x":13181,"y":12703}}]},{"time":445,"playerPositions":[{"unitID":8,"position":{"x":7325,"y":7403}},{"unitID":5,"position":{"x":11809,"y":1991}},{"unitID":6,"position":{"x":2299,"y":12601}},{"unitID":7,"position":{"x":1583,"y":13087}},{"unitID":0,"position":{"x":12473,"y":3049}},{"unitID":4,"position":{"x":13181,"y":12703}},{"unitID":1,"position":{"x":3653,"y":13627}},{"unitID":3,"position":{"x":12295,"y":1835}},{"unitID":9,"position":{"x":8001,"y":7581}},{"unitID":2,"position":{"x":12365,"y":2649}}]},{"time":450,"playerPositions":[{"unitID":8,"position":{"x":6441,"y":6907}},{"unitID":5,"position":{"x":11661,"y":3027}},{"unitID":6,"position":{"x":3893,"y":13241}},{"unitID":7,"position":{"x":13137,"y":13983}},{"unitID":0,"position":{"x":13163,"y":3689}},{"unitID":4,"position":{"x":13181,"y":12703}},{"unitID":1,"position":{"x":3653,"y":13627}},{"unitID":3,"position":{"x":12525,"y":2477}},{"unitID":9,"position":{"x":8879,"y":8831}},{"unitID":2,"position":{"x":12805,"y":3775}}]},{"time":455,"playerPositions":[{"unitID":1,"position":{"x":3323,"y":13357}},{"unitID":3,"position":{"x":12707,"y":2005}},{"unitID":9,"position":{"x":8879,"y":8831}},{"unitID":2,"position":{"x":12539,"y":3351}},{"unitID":8,"position":{"x":6117,"y":6577}},{"unitID":5,"position":{"x":11881,"y":2255}},{"unitID":6,"position":{"x":3063,"y":13463}},{"unitID":7,"position":{"x":12783,"y":13993}},{"unitID":0,"position":{"x":12885,"y":3249}},{"unitID":4,"position":{"x":13181,"y":12703}}]},{"time":460,"playerPositions":[{"unitID":1,"position":{"x":2437,"y":13391}},{"unitID":3,"position":{"x":11709,"y":2595}},{"unitID":9,"position":{"x":8879,"y":8831}},{"unitID":2,"position":{"x":12447,"y":2619}},{"unitID":8,"position":{"x":6117,"y":6577}},{"unitID":5,"position":{"x":11731,"y":2123}},{"unitID":6,"position":{"x":2657,"y":13245}},{"unitID":7,"position":{"x":12783,"y":13993}},{"unitID":0,"position":{"x":12791,"y":2613}},{"unitID":4,"position":{"x":11233,"y":7001}}]},{"time":465,"playerPositions":[{"unitID":8,"position":{"x":6117,"y":6577}},{"unitID":5,"position":{"x":11687,"y":2067}},{"unitID":6,"position":{"x":2953,"y":13263}},{"unitID":7,"position":{"x":12783,"y":13993}},{"unitID":0,"position":{"x":12587,"y":2743}},{"unitID":4,"position":{"x":10619,"y":6913}},{"unitID":1,"position":{"x":2489,"y":13383}},{"unitID":3,"position":{"x":12219,"y":1521}},{"unitID":9,"position":{"x":13925,"y":14153}},{"unitID":2,"position":{"x":12339,"y":2813}}]},{"time":470,"playerPositions":[{"unitID":8,"position":{"x":6117,"y":6577}},{"unitID":5,"position":{"x":11867,"y":2583}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":12783,"y":13993}},{"unitID":0,"position":{"x":12541,"y":2931}},{"unitID":4,"position":{"x":10429,"y":6855}},{"unitID":1,"position":{"x":2489,"y":13383}},{"unitID":3,"position":{"x":12735,"y":2105}},{"unitID":9,"position":{"x":13637,"y":13605}},{"unitID":2,"position":{"x":12567,"y":2759}}]},{"time":475,"playerPositions":[{"unitID":8,"position":{"x":745,"y":1173}},{"unitID":5,"position":{"x":11995,"y":2549}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":5221,"y":13457}},{"unitID":0,"position":{"x":13027,"y":3787}},{"unitID":4,"position":{"x":10543,"y":6717}},{"unitID":1,"position":{"x":2489,"y":13383}},{"unitID":3,"position":{"x":12675,"y":1807}},{"unitID":9,"position":{"x":12883,"y":12451}},{"unitID":2,"position":{"x":12805,"y":3985}}]},{"time":480,"playerPositions":[{"unitID":1,"position":{"x":2489,"y":13383}},{"unitID":3,"position":{"x":12863,"y":2297}},{"unitID":9,"position":{"x":12883,"y":12451}},{"unitID":2,"position":{"x":12915,"y":4033}},{"unitID":8,"position":{"x":1891,"y":1507}},{"unitID":5,"position":{"x":12547,"y":3003}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":3691,"y":13481}},{"unitID":0,"position":{"x":13221,"y":3967}},{"unitID":4,"position":{"x":11801,"y":6397}}]},{"time":485,"playerPositions":[{"unitID":1,"position":{"x":73,"y":301}},{"unitID":3,"position":{"x":12829,"y":2145}},{"unitID":9,"position":{"x":10799,"y":10559}},{"unitID":2,"position":{"x":13001,"y":3591}},{"unitID":8,"position":{"x":2897,"y":2605}},{"unitID":5,"position":{"x":12331,"y":2663}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":3257,"y":13223}},{"unitID":0,"position":{"x":13167,"y":3571}},{"unitID":4,"position":{"x":12097,"y":6347}}]},{"time":490,"playerPositions":[{"unitID":1,"position":{"x":73,"y":301}},{"unitID":3,"position":{"x":11909,"y":2713}},{"unitID":9,"position":{"x":8705,"y":8715}},{"unitID":2,"position":{"x":13061,"y":3417}},{"unitID":8,"position":{"x":2897,"y":2605}},{"unitID":5,"position":{"x":12411,"y":2593}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":2753,"y":12925}},{"unitID":0,"position":{"x":12885,"y":3725}},{"unitID":4,"position":{"x":12077,"y":6349}}]},{"time":495,"playerPositions":[{"unitID":8,"position":{"x":5457,"y":5259}},{"unitID":5,"position":{"x":12433,"y":2937}},{"unitID":6,"position":{"x":2509,"y":13457}},{"unitID":7,"position":{"x":2427,"y":12821}},{"unitID":0,"position":{"x":12731,"y":3507}},{"unitID":4,"position":{"x":11607,"y":6361}},{"unitID":1,"position":{"x":985,"y":2909}},{"unitID":3,"position":{"x":12061,"y":2747}},{"unitID":9,"position":{"x":7461,"y":7625}},{"unitID":2,"position":{"x":12775,"y":3615}}]},{"time":500,"playerPositions":[{"unitID":8,"position":{"x":6233,"y":6253}},{"unitID":5,"position":{"x":12605,"y":3037}},{"unitID":6,"position":{"x":183,"y":1061}},{"unitID":7,"position":{"x":2245,"y":12659}},{"unitID":0,"position":{"x":13405,"y":3967}},{"unitID":4,"position":{"x":11587,"y":3501}},{"unitID":1,"position":{"x":985,"y":2909}},{"unitID":3,"position":{"x":12561,"y":2755}},{"unitID":9,"position":{"x":6947,"y":7207}},{"unitID":2,"position":{"x":12715,"y":3715}}]},{"time":505,"playerPositions":[{"unitID":8,"position":{"x":6633,"y":7061}},{"unitID":5,"position":{"x":11679,"y":2149}},{"unitID":6,"position":{"x":235,"y":1877}},{"unitID":7,"position":{"x":2169,"y":12201}},{"unitID":0,"position":{"x":12627,"y":2691}},{"unitID":4,"position":{"x":11971,"y":2351}},{"unitID":1,"position":{"x":985,"y":2909}},{"unitID":3,"position":{"x":11585,"y":1935}},{"unitID":9,"position":{"x":7485,"y":7257}},{"unitID":2,"position":{"x":12057,"y":2665}}]},{"time":510,"playerPositions":[{"unitID":1,"position":{"x":3379,"y":7601}},{"unitID":3,"position":{"x":10401,"y":877}},{"unitID":9,"position":{"x":7347,"y":6985}},{"unitID":2,"position":{"x":11105,"y":1603}},{"unitID":8,"position":{"x":6245,"y":6751}},{"unitID":5,"position":{"x":11679,"y":2149}},{"unitID":6,"position":{"x":235,"y":1877}},{"unitID":7,"position":{"x":1111,"y":11301}},{"unitID":0,"position":{"x":11549,"y":1777}},{"unitID":4,"position":{"x":10569,"y":1061}}]},{"time":515,"playerPositions":[{"unitID":8,"position":{"x":6327,"y":6857}},{"unitID":5,"position":{"x":11679,"y":2149}},{"unitID":6,"position":{"x":235,"y":1877}},{"unitID":7,"position":{"x":1195,"y":11161}},{"unitID":0,"position":{"x":10321,"y":1001}},{"unitID":4,"position":{"x":9393,"y":1015}},{"unitID":1,"position":{"x":3379,"y":7601}},{"unitID":3,"position":{"x":9137,"y":857}},{"unitID":9,"position":{"x":7327,"y":6791}},{"unitID":2,"position":{"x":9753,"y":965}}]},{"time":520,"playerPositions":[{"unitID":8,"position":{"x":6631,"y":6797}},{"unitID":5,"position":{"x":11679,"y":2149}},{"unitID":6,"position":{"x":235,"y":1877}},{"unitID":7,"position":{"x":1275,"y":11633}},{"unitID":0,"position":{"x":8933,"y":1633}},{"unitID":4,"position":{"x":8755,"y":1841}},{"unitID":1,"position":{"x":3379,"y":7601}},{"unitID":3,"position":{"x":9149,"y":791}},{"unitID":9,"position":{"x":6559,"y":7009}},{"unitID":2,"position":{"x":9185,"y":2219}}]},{"time":525,"playerPositions":[{"unitID":8,"position":{"x":6219,"y":6969}},{"unitID":5,"position":{"x":111,"y":277}},{"unitID":6,"position":{"x":883,"y":10643}},{"unitID":7,"position":{"x":1105,"y":11155}},{"unitID":0,"position":{"x":8903,"y":1983}},{"unitID":4,"position":{"x":8755,"y":1841}},{"unitID":1,"position":{"x":3379,"y":7601}},{"unitID":3,"position":{"x":9149,"y":791}},{"unitID":9,"position":{"x":6701,"y":7165}},{"unitID":2,"position":{"x":9793,"y":2229}}]},{"time":530,"playerPositions":[{"unitID":8,"position":{"x":6557,"y":7325}},{"unitID":5,"position":{"x":753,"y":341}},{"unitID":6,"position":{"x":1431,"y":11855}},{"unitID":7,"position":{"x":1641,"y":11987}},{"unitID":0,"position":{"x":9293,"y":2227}},{"unitID":4,"position":{"x":8755,"y":1841}},{"unitID":1,"position":{"x":2973,"y":8509}},{"unitID":3,"position":{"x":9149,"y":791}},{"unitID":9,"position":{"x":6701,"y":7165}},{"unitID":2,"position":{"x":11563,"y":2485}}]},{"time":535,"playerPositions":[{"unitID":1,"position":{"x":3279,"y":10311}},{"unitID":3,"position":{"x":27,"y":265}},{"unitID":9,"position":{"x":6701,"y":7165}},{"unitID":2,"position":{"x":11689,"y":2139}},{"unitID":8,"position":{"x":6685,"y":7249}},{"unitID":5,"position":{"x":753,"y":341}},{"unitID":6,"position":{"x":1007,"y":11109}},{"unitID":7,"position":{"x":2759,"y":12833}},{"unitID":0,"position":{"x":10479,"y":1839}},{"unitID":4,"position":{"x":13915,"y":14161}}]},{"time":540,"playerPositions":[{"unitID":8,"position":{"x":6873,"y":7109}},{"unitID":5,"position":{"x":753,"y":341}},{"unitID":6,"position":{"x":983,"y":10855}},{"unitID":7,"position":{"x":3729,"y":13703}},{"unitID":0,"position":{"x":11479,"y":1661}},{"unitID":4,"position":{"x":13603,"y":13939}},{"unitID":1,"position":{"x":3823,"y":11585}},{"unitID":3,"position":{"x":27,"y":265}},{"unitID":9,"position":{"x":6701,"y":7165}},{"unitID":2,"position":{"x":12025,"y":2161}}]},{"time":545,"playerPositions":[{"unitID":1,"position":{"x":3279,"y":10079}},{"unitID":3,"position":{"x":27,"y":265}},{"unitID":9,"position":{"x":13933,"y":14169}},{"unitID":2,"position":{"x":11519,"y":1825}},{"unitID":8,"position":{"x":6939,"y":7205}},{"unitID":5,"position":{"x":753,"y":341}},{"unitID":6,"position":{"x":1157,"y":10961}},{"unitID":7,"position":{"x":4075,"y":13757}},{"unitID":0,"position":{"x":11613,"y":1411}},{"unitID":4,"position":{"x":13603,"y":13939}}]},{"time":550,"playerPositions":[{"unitID":1,"position":{"x":2817,"y":8147}},{"unitID":3,"position":{"x":1041,"y":405}},{"unitID":9,"position":{"x":13567,"y":13565}},{"unitID":2,"position":{"x":11937,"y":1603}},{"unitID":8,"position":{"x":7255,"y":7411}},{"unitID":5,"position":{"x":8259,"y":1039}},{"unitID":6,"position":{"x":1235,"y":11423}},{"unitID":7,"position":{"x":3825,"y":13539}},{"unitID":0,"position":{"x":11857,"y":1535}},{"unitID":4,"position":{"x":13603,"y":13939}}]},{"time":555,"playerPositions":[{"unitID":8,"position":{"x":7783,"y":7685}},{"unitID":5,"position":{"x":9909,"y":1247}},{"unitID":6,"position":{"x":1409,"y":11613}},{"unitID":7,"position":{"x":4057,"y":13753}},{"unitID":0,"position":{"x":11551,"y":1781}},{"unitID":4,"position":{"x":8917,"y":12913}},{"unitID":1,"position":{"x":1917,"y":8175}},{"unitID":3,"position":{"x":2939,"y":561}},{"unitID":9,"position":{"x":13567,"y":13565}},{"unitID":2,"position":{"x":11691,"y":1581}}]},{"time":560,"playerPositions":[{"unitID":8,"position":{"x":8351,"y":8095}},{"unitID":5,"position":{"x":10289,"y":1507}},{"unitID":6,"position":{"x":1307,"y":11771}},{"unitID":7,"position":{"x":3649,"y":13493}},{"unitID":0,"position":{"x":11189,"y":1191}},{"unitID":4,"position":{"x":8213,"y":12373}},{"unitID":1,"position":{"x":1917,"y":8175}},{"unitID":3,"position":{"x":2939,"y":561}},{"unitID":9,"position":{"x":13567,"y":13565}},{"unitID":2,"position":{"x":11589,"y":1329}}]},{"time":565,"playerPositions":[{"unitID":8,"position":{"x":8351,"y":8095}},{"unitID":5,"position":{"x":10091,"y":1117}},{"unitID":6,"position":{"x":1763,"y":11943}},{"unitID":7,"position":{"x":3627,"y":13763}},{"unitID":0,"position":{"x":11135,"y":1153}},{"unitID":4,"position":{"x":6713,"y":10517}},{"unitID":1,"position":{"x":2321,"y":7871}},{"unitID":3,"position":{"x":6727,"y":813}},{"unitID":9,"position":{"x":10275,"y":10065}},{"unitID":2,"position":{"x":11337,"y":1291}}]},{"time":570,"playerPositions":[{"unitID":8,"position":{"x":7557,"y":7351}},{"unitID":5,"position":{"x":10167,"y":1375}},{"unitID":6,"position":{"x":2713,"y":13011}},{"unitID":7,"position":{"x":3583,"y":13061}},{"unitID":0,"position":{"x":10969,"y":1673}},{"unitID":4,"position":{"x":6713,"y":10517}},{"unitID":1,"position":{"x":2949,"y":7171}},{"unitID":3,"position":{"x":8899,"y":1173}},{"unitID":9,"position":{"x":8659,"y":8179}},{"unitID":2,"position":{"x":10995,"y":1559}}]},{"time":575,"playerPositions":[{"unitID":8,"position":{"x":7767,"y":7781}},{"unitID":5,"position":{"x":10197,"y":1231}},{"unitID":6,"position":{"x":2505,"y":13201}},{"unitID":7,"position":{"x":3319,"y":13233}},{"unitID":0,"position":{"x":10537,"y":1495}},{"unitID":4,"position":{"x":6611,"y":10627}},{"unitID":1,"position":{"x":2949,"y":7171}},{"unitID":3,"position":{"x":10137,"y":1271}},{"unitID":9,"position":{"x":8151,"y":8157}},{"unitID":2,"position":{"x":10921,"y":1687}}]},{"time":580,"playerPositions":[{"unitID":8,"position":{"x":7139,"y":7231}},{"unitID":5,"position":{"x":10125,"y":1287}},{"unitID":6,"position":{"x":2877,"y":13229}},{"unitID":7,"position":{"x":3595,"y":13259}},{"unitID":0,"position":{"x":11141,"y":1677}},{"unitID":4,"position":{"x":7405,"y":10499}},{"unitID":1,"position":{"x":6935,"y":5903}},{"unitID":3,"position":{"x":10855,"y":1561}},{"unitID":9,"position":{"x":7869,"y":7895}},{"unitID":2,"position":{"x":12251,"y":2363}}]},{"time":585,"playerPositions":[{"unitID":1,"position":{"x":8717,"y":5447}},{"unitID":3,"position":{"x":10927,"y":1047}},{"unitID":9,"position":{"x":7831,"y":7959}},{"unitID":2,"position":{"x":13143,"y":2985}},{"unitID":8,"position":{"x":6615,"y":6749}},{"unitID":5,"position":{"x":10125,"y":1287}},{"unitID":6,"position":{"x":3009,"y":13281}},{"unitID":7,"position":{"x":3955,"y":13417}},{"unitID":0,"position":{"x":12665,"y":2787}},{"unitID":4,"position":{"x":6513,"y":9429}}]},{"time":590,"playerPositions":[{"unitID":1,"position":{"x":10211,"y":5309}},{"unitID":3,"position":{"x":11373,"y":1411}},{"unitID":9,"position":{"x":7095,"y":6661}},{"unitID":2,"position":{"x":13599,"y":4085}},{"unitID":8,"position":{"x":6039,"y":6201}},{"unitID":5,"position":{"x":10789,"y":1655}},{"unitID":6,"position":{"x":3195,"y":13539}},{"unitID":7,"position":{"x":3777,"y":13305}},{"unitID":0,"position":{"x":13301,"y":3693}},{"unitID":4,"position":{"x":4799,"y":11247}}]},{"time":595,"playerPositions":[{"unitID":8,"position":{"x":7539,"y":6763}},{"unitID":5,"position":{"x":11629,"y":2077}},{"unitID":6,"position":{"x":3227,"y":13385}},{"unitID":7,"position":{"x":3827,"y":13521}},{"unitID":0,"position":{"x":13301,"y":3693}},{"unitID":4,"position":{"x":3107,"y":11445}},{"unitID":1,"position":{"x":12383,"y":4825}},{"unitID":3,"position":{"x":11717,"y":2109}},{"unitID":9,"position":{"x":7521,"y":6895}},{"unitID":2,"position":{"x":13599,"y":4085}}]},{"time":600,"playerPositions":[{"unitID":1,"position":{"x":12667,"y":4733}},{"unitID":3,"position":{"x":12285,"y":3025}},{"unitID":9,"position":{"x":8495,"y":8483}},{"unitID":2,"position":{"x":13599,"y":4085}},{"unitID":8,"position":{"x":6463,"y":6969}},{"unitID":5,"position":{"x":12443,"y":2767}},{"unitID":6,"position":{"x":3051,"y":13341}},{"unitID":7,"position":{"x":3231,"y":13493}},{"unitID":0,"position":{"x":13373,"y":4063}},{"unitID":4,"position":{"x":2595,"y":12697}}]},{"time":605,"playerPositions":[{"unitID":1,"position":{"x":13347,"y":3523}},{"unitID":3,"position":{"x":12459,"y":3167}},{"unitID":9,"position":{"x":8495,"y":8483}},{"unitID":2,"position":{"x":13953,"y":13917}},{"unitID":8,"position":{"x":6491,"y":6989}},{"unitID":5,"position":{"x":12841,"y":3523}},{"unitID":6,"position":{"x":2247,"y":12983}},{"unitID":7,"position":{"x":3231,"y":13493}},{"unitID":0,"position":{"x":13319,"y":6141}},{"unitID":4,"position":{"x":2347,"y":13003}}]},{"time":610,"playerPositions":[{"unitID":1,"position":{"x":13347,"y":3523}},{"unitID":3,"position":{"x":12691,"y":3625}},{"unitID":9,"position":{"x":8495,"y":8483}},{"unitID":2,"position":{"x":13819,"y":12783}},{"unitID":8,"position":{"x":7595,"y":7723}},{"unitID":5,"position":{"x":12819,"y":3445}},{"unitID":6,"position":{"x":1855,"y":12463}},{"unitID":7,"position":{"x":3231,"y":13493}},{"unitID":0,"position":{"x":13597,"y":6739}},{"unitID":4,"position":{"x":2823,"y":12963}}]},{"time":615,"playerPositions":[{"unitID":8,"position":{"x":7317,"y":7453}},{"unitID":5,"position":{"x":13021,"y":3733}},{"unitID":6,"position":{"x":1855,"y":12463}},{"unitID":7,"position":{"x":3231,"y":13493}},{"unitID":0,"position":{"x":13597,"y":6739}},{"unitID":4,"position":{"x":2823,"y":12963}},{"unitID":1,"position":{"x":13347,"y":3523}},{"unitID":3,"position":{"x":13373,"y":3691}},{"unitID":9,"position":{"x":9025,"y":8677}},{"unitID":2,"position":{"x":13645,"y":10533}}]},{"time":620,"playerPositions":[{"unitID":1,"position":{"x":13347,"y":3523}},{"unitID":3,"position":{"x":13373,"y":3691}},{"unitID":9,"position":{"x":8627,"y":8145}},{"unitID":2,"position":{"x":13543,"y":9357}},{"unitID":8,"position":{"x":7701,"y":7787}},{"unitID":5,"position":{"x":13021,"y":3733}},{"unitID":6,"position":{"x":1855,"y":12463}},{"unitID":7,"position":{"x":3231,"y":13493}},{"unitID":0,"position":{"x":13371,"y":5279}},{"unitID":4,"position":{"x":3865,"y":12125}}]},{"time":625,"playerPositions":[{"unitID":8,"position":{"x":7595,"y":7527}},{"unitID":5,"position":{"x":12817,"y":3433}},{"unitID":6,"position":{"x":1855,"y":12463}},{"unitID":7,"position":{"x":13485,"y":14045}},{"unitID":0,"position":{"x":13159,"y":4231}},{"unitID":4,"position":{"x":3865,"y":12125}},{"unitID":1,"position":{"x":27,"y":265}},{"unitID":3,"position":{"x":12755,"y":3251}},{"unitID":9,"position":{"x":8685,"y":8661}},{"unitID":2,"position":{"x":13433,"y":7923}}]},{"time":630,"playerPositions":[{"unitID":8,"position":{"x":7723,"y":7593}},{"unitID":5,"position":{"x":12603,"y":3139}},{"unitID":6,"position":{"x":1855,"y":12463}},{"unitID":7,"position":{"x":11351,"y":13907}},{"unitID":0,"position":{"x":13035,"y":4191}},{"unitID":4,"position":{"x":6425,"y":9207}},{"unitID":1,"position":{"x":27,"y":265}},{"unitID":3,"position":{"x":12049,"y":2977}},{"unitID":9,"position":{"x":8409,"y":7683}},{"unitID":2,"position":{"x":13367,"y":6971}}]},{"time":635,"playerPositions":[{"unitID":8,"position":{"x":7905,"y":7699}},{"unitID":5,"position":{"x":11815,"y":2121}},{"unitID":6,"position":{"x":163,"y":507}},{"unitID":7,"position":{"x":4071,"y":13595}},{"unitID":0,"position":{"x":13025,"y":4275}},{"unitID":4,"position":{"x":6615,"y":8097}},{"unitID":1,"position":{"x":581,"y":491}},{"unitID":3,"position":{"x":11461,"y":2609}},{"unitID":9,"position":{"x":8711,"y":8153}},{"unitID":2,"position":{"x":13067,"y":4699}}]},{"time":640,"playerPositions":[{"unitID":1,"position":{"x":581,"y":491}},{"unitID":3,"position":{"x":12711,"y":2119}},{"unitID":9,"position":{"x":8711,"y":8153}},{"unitID":2,"position":{"x":12839,"y":3205}},{"unitID":8,"position":{"x":6893,"y":6571}},{"unitID":5,"position":{"x":11845,"y":2431}},{"unitID":6,"position":{"x":163,"y":507}},{"unitID":7,"position":{"x":2823,"y":12713}},{"unitID":0,"position":{"x":13123,"y":3541}},{"unitID":4,"position":{"x":7171,"y":6789}}]},{"time":645,"playerPositions":[{"unitID":8,"position":{"x":6377,"y":6325}},{"unitID":5,"position":{"x":12267,"y":2721}},{"unitID":6,"position":{"x":163,"y":507}},{"unitID":7,"position":{"x":2317,"y":12835}},{"unitID":0,"position":{"x":13097,"y":4219}},{"unitID":4,"position":{"x":7083,"y":7001}},{"unitID":1,"position":{"x":2911,"y":2579}},{"unitID":3,"position":{"x":12901,"y":2921}},{"unitID":9,"position":{"x":8711,"y":8153}},{"unitID":2,"position":{"x":12659,"y":3873}}]},{"time":650,"playerPositions":[{"unitID":8,"position":{"x":6377,"y":6325}},{"unitID":5,"position":{"x":12485,"y":2981}},{"unitID":6,"position":{"x":163,"y":507}},{"unitID":7,"position":{"x":2307,"y":12649}},{"unitID":0,"position":{"x":13251,"y":4249}},{"unitID":4,"position":{"x":7851,"y":7805}},{"unitID":1,"position":{"x":2911,"y":2579}},{"unitID":3,"position":{"x":12337,"y":2909}},{"unitID":9,"position":{"x":8711,"y":8153}},{"unitID":2,"position":{"x":12897,"y":4249}}]},{"time":655,"playerPositions":[{"unitID":1,"position":{"x":5991,"y":3029}},{"unitID":3,"position":{"x":13149,"y":3243}},{"unitID":9,"position":{"x":8711,"y":8153}},{"unitID":2,"position":{"x":13071,"y":4169}},{"unitID":8,"position":{"x":6377,"y":6325}},{"unitID":5,"position":{"x":12437,"y":3029}},{"unitID":6,"position":{"x":989,"y":7517}},{"unitID":7,"position":{"x":2025,"y":12521}},{"unitID":0,"position":{"x":13285,"y":4309}},{"unitID":4,"position":{"x":7645,"y":7547}}]},{"time":660,"playerPositions":[{"unitID":1,"position":{"x":7285,"y":3707}},{"unitID":3,"position":{"x":12349,"y":2789}},{"unitID":9,"position":{"x":12739,"y":13449}},{"unitID":2,"position":{"x":13163,"y":4179}},{"unitID":8,"position":{"x":6377,"y":6325}},{"unitID":5,"position":{"x":11973,"y":2463}},{"unitID":6,"position":{"x":989,"y":7517}},{"unitID":7,"position":{"x":1899,"y":12273}},{"unitID":0,"position":{"x":13051,"y":4159}},{"unitID":4,"position":{"x":8657,"y":8145}}]},{"time":665,"playerPositions":[{"unitID":8,"position":{"x":6377,"y":6325}},{"unitID":5,"position":{"x":12073,"y":2421}},{"unitID":6,"position":{"x":1521,"y":12037}},{"unitID":7,"position":{"x":2235,"y":12529}},{"unitID":0,"position":{"x":13051,"y":4159}},{"unitID":4,"position":{"x":8657,"y":8145}},{"unitID":1,"position":{"x":7285,"y":3707}},{"unitID":3,"position":{"x":10649,"y":3111}},{"unitID":9,"position":{"x":11903,"y":12425}},{"unitID":2,"position":{"x":12989,"y":3317}}]},{"time":670,"playerPositions":[{"unitID":1,"position":{"x":7285,"y":3707}},{"unitID":3,"position":{"x":12049,"y":3005}},{"unitID":9,"position":{"x":9995,"y":10401}},{"unitID":2,"position":{"x":12805,"y":2845}},{"unitID":8,"position":{"x":27,"y":265}},{"unitID":5,"position":{"x":11725,"y":2379}},{"unitID":6,"position":{"x":1647,"y":11971}},{"unitID":7,"position":{"x":2155,"y":12283}},{"unitID":0,"position":{"x":13051,"y":4159}},{"unitID":4,"position":{"x":8657,"y":8145}}]},{"time":675,"playerPositions":[{"unitID":1,"position":{"x":7285,"y":3707}},{"unitID":3,"position":{"x":13095,"y":3209}},{"unitID":9,"position":{"x":9995,"y":10401}},{"unitID":2,"position":{"x":13049,"y":3291}},{"unitID":8,"position":{"x":27,"y":265}},{"unitID":5,"position":{"x":11945,"y":2603}},{"unitID":6,"position":{"x":1647,"y":12169}},{"unitID":7,"position":{"x":2969,"y":12925}},{"unitID":0,"position":{"x":13051,"y":4159}},{"unitID":4,"position":{"x":13935,"y":14151}}]},{"time":680,"playerPositions":[{"unitID":1,"position":{"x":7285,"y":3707}},{"unitID":3,"position":{"x":12823,"y":2525}},{"unitID":9,"position":{"x":7757,"y":7761}},{"unitID":2,"position":{"x":13177,"y":3513}},{"unitID":8,"position":{"x":27,"y":265}},{"unitID":5,"position":{"x":12375,"y":3017}},{"unitID":6,"position":{"x":1657,"y":12015}},{"unitID":7,"position":{"x":2969,"y":12925}},{"unitID":0,"position":{"x":13861,"y":13457}},{"unitID":4,"position":{"x":13829,"y":13509}}]},{"time":685,"playerPositions":[{"unitID":1,"position":{"x":6501,"y":4337}},{"unitID":3,"position":{"x":13207,"y":3431}},{"unitID":9,"position":{"x":7031,"y":7201}},{"unitID":2,"position":{"x":13177,"y":3513}},{"unitID":8,"position":{"x":27,"y":265}},{"unitID":5,"position":{"x":12861,"y":3349}},{"unitID":6,"position":{"x":1779,"y":12285}},{"unitID":7,"position":{"x":2969,"y":12925}},{"unitID":0,"position":{"x":13769,"y":12499}},{"unitID":4,"position":{"x":13303,"y":10227}}]},{"time":690,"playerPositions":[{"unitID":8,"position":{"x":2415,"y":2381}},{"unitID":5,"position":{"x":12997,"y":3457}},{"unitID":6,"position":{"x":1779,"y":12285}},{"unitID":7,"position":{"x":2969,"y":12925}},{"unitID":0,"position":{"x":13647,"y":10841}},{"unitID":4,"position":{"x":12785,"y":9639}},{"unitID":1,"position":{"x":6535,"y":5029}},{"unitID":3,"position":{"x":13049,"y":3675}},{"unitID":9,"position":{"x":7187,"y":7205}},{"unitID":2,"position":{"x":13177,"y":3513}}]},{"time":695,"playerPositions":[{"unitID":1,"position":{"x":6535,"y":5029}},{"unitID":3,"position":{"x":13301,"y":2771}},{"unitID":9,"position":{"x":6805,"y":6699}},{"unitID":2,"position":{"x":13177,"y":3513}},{"unitID":8,"position":{"x":3441,"y":3389}},{"unitID":5,"position":{"x":12881,"y":3277}},{"unitID":6,"position":{"x":1975,"y":12695}},{"unitID":7,"position":{"x":2969,"y":12925}},{"unitID":0,"position":{"x":13507,"y":8835}},{"unitID":4,"position":{"x":11423,"y":6999}}]},{"time":700,"playerPositions":[{"unitID":1,"position":{"x":7185,"y":5019}},{"unitID":3,"position":{"x":13301,"y":2771}},{"unitID":9,"position":{"x":5995,"y":6243}},{"unitID":2,"position":{"x":13177,"y":3513}},{"unitID":8,"position":{"x":4515,"y":4681}},{"unitID":5,"position":{"x":12881,"y":3795}},{"unitID":6,"position":{"x":1939,"y":12715}},{"unitID":7,"position":{"x":3153,"y":13017}},{"unitID":0,"position":{"x":13507,"y":8835}},{"unitID":4,"position":{"x":12129,"y":6389}}]},{"time":705,"playerPositions":[{"unitID":8,"position":{"x":5341,"y":5563}},{"unitID":5,"position":{"x":13019,"y":3447}},{"unitID":6,"position":{"x":2355,"y":12857}},{"unitID":7,"position":{"x":3717,"y":13109}},{"unitID":0,"position":{"x":13275,"y":5495}},{"unitID":4,"position":{"x":11407,"y":6367}},{"unitID":1,"position":{"x":6661,"y":6311}},{"unitID":3,"position":{"x":13301,"y":2771}},{"unitID":9,"position":{"x":6453,"y":6999}},{"unitID":2,"position":{"x":13177,"y":3513}}]},{"time":710,"playerPositions":[{"unitID":1,"position":{"x":6101,"y":6033}},{"unitID":3,"position":{"x":13301,"y":2771}},{"unitID":9,"position":{"x":6777,"y":7391}},{"unitID":2,"position":{"x":13177,"y":3513}},{"unitID":8,"position":{"x":6271,"y":6627}},{"unitID":5,"position":{"x":13143,"y":2851}},{"unitID":6,"position":{"x":2431,"y":12555}},{"unitID":7,"position":{"x":3717,"y":13109}},{"unitID":0,"position":{"x":13201,"y":4729}},{"unitID":4,"position":{"x":10733,"y":5501}}]},{"time":715,"playerPositions":[{"unitID":8,"position":{"x":6681,"y":7071}},{"unitID":5,"position":{"x":13143,"y":2851}},{"unitID":6,"position":{"x":2431,"y":12555}},{"unitID":7,"position":{"x":3603,"y":13543}},{"unitID":0,"position":{"x":13061,"y":3551}},{"unitID":4,"position":{"x":11261,"y":3909}},{"unitID":1,"position":{"x":3697,"y":5877}},{"unitID":3,"position":{"x":13301,"y":2771}},{"unitID":9,"position":{"x":8691,"y":6933}},{"unitID":2,"position":{"x":13923,"y":14153}}]},{"time":720,"playerPositions":[{"unitID":1,"position":{"x":3385,"y":6093}},{"unitID":3,"position":{"x":957,"y":367}},{"unitID":9,"position":{"x":7523,"y":7327}},{"unitID":2,"position":{"x":13557,"y":11209}},{"unitID":8,"position":{"x":6741,"y":7215}},{"unitID":5,"position":{"x":389,"y":305}},{"unitID":6,"position":{"x":2933,"y":13133}},{"unitID":7,"position":{"x":3549,"y":13497}},{"unitID":0,"position":{"x":12847,"y":3287}},{"unitID":4,"position":{"x":12015,"y":3015}}]},{"time":725,"playerPositions":[{"unitID":8,"position":{"x":7561,"y":7485}},{"unitID":5,"position":{"x":1457,"y":407}},{"unitID":6,"position":{"x":2859,"y":13277}},{"unitID":7,"position":{"x":3363,"y":13383}},{"unitID":0,"position":{"x":12097,"y":3023}},{"unitID":4,"position":{"x":10385,"y":4381}},{"unitID":1,"position":{"x":3399,"y":6081}},{"unitID":3,"position":{"x":957,"y":367}},{"unitID":9,"position":{"x":7735,"y":7507}},{"unitID":2,"position":{"x":13557,"y":11209}}]},{"time":730,"playerPositions":[{"unitID":1,"position":{"x":4495,"y":5579}},{"unitID":3,"position":{"x":4829,"y":785}},{"unitID":9,"position":{"x":8005,"y":7559}},{"unitID":2,"position":{"x":13557,"y":11209}},{"unitID":8,"position":{"x":7203,"y":7445}},{"unitID":5,"position":{"x":2687,"y":519}},{"unitID":6,"position":{"x":2333,"y":12925}},{"unitID":7,"position":{"x":3369,"y":13315}},{"unitID":0,"position":{"x":11541,"y":3491}},{"unitID":4,"position":{"x":9807,"y":4923}}]},{"time":735,"playerPositions":[{"unitID":8,"position":{"x":7221,"y":7371}},{"unitID":5,"position":{"x":3995,"y":647}},{"unitID":6,"position":{"x":2629,"y":12943}},{"unitID":7,"position":{"x":3369,"y":13315}},{"unitID":0,"position":{"x":12621,"y":3531}},{"unitID":4,"position":{"x":7031,"y":6505}},{"unitID":1,"position":{"x":6567,"y":4333}},{"unitID":3,"position":{"x":4829,"y":785}},{"unitID":9,"position":{"x":7693,"y":7643}},{"unitID":2,"position":{"x":13557,"y":11209}}]},{"time":740,"playerPositions":[{"unitID":1,"position":{"x":7231,"y":5519}},{"unitID":3,"position":{"x":4829,"y":785}},{"unitID":9,"position":{"x":7213,"y":7355}},{"unitID":2,"position":{"x":12869,"y":4381}},{"unitID":8,"position":{"x":6841,"y":7177}},{"unitID":5,"position":{"x":5297,"y":819}},{"unitID":6,"position":{"x":2677,"y":13125}},{"unitID":7,"position":{"x":4073,"y":13605}},{"unitID":0,"position":{"x":13005,"y":3869}},{"unitID":4,"position":{"x":7321,"y":7313}}]},{"time":745,"playerPositions":[{"unitID":1,"position":{"x":7263,"y":7383}},{"unitID":3,"position":{"x":11045,"y":1715}},{"unitID":9,"position":{"x":8127,"y":7663}},{"unitID":2,"position":{"x":12969,"y":3987}},{"unitID":8,"position":{"x":7577,"y":7175}},{"unitID":5,"position":{"x":7263,"y":969}},{"unitID":6,"position":{"x":2887,"y":12919}},{"unitID":7,"position":{"x":4077,"y":13627}},{"unitID":0,"position":{"x":12815,"y":3703}},{"unitID":4,"position":{"x":7373,"y":7215}}]},{"time":750,"playerPositions":[{"unitID":1,"position":{"x":7251,"y":7271}},{"unitID":3,"position":{"x":11597,"y":2659}},{"unitID":9,"position":{"x":8127,"y":7663}},{"unitID":2,"position":{"x":13003,"y":3887}},{"unitID":8,"position":{"x":7063,"y":7169}},{"unitID":5,"position":{"x":9517,"y":1101}},{"unitID":6,"position":{"x":3107,"y":13043}},{"unitID":7,"position":{"x":3755,"y":13755}},{"unitID":0,"position":{"x":13051,"y":3557}},{"unitID":4,"position":{"x":7875,"y":7541}}]},{"time":755,"playerPositions":[{"unitID":1,"position":{"x":7645,"y":7949}},{"unitID":3,"position":{"x":11001,"y":3435}},{"unitID":9,"position":{"x":8127,"y":7663}},{"unitID":2,"position":{"x":11855,"y":3037}},{"unitID":8,"position":{"x":7379,"y":7463}},{"unitID":5,"position":{"x":11299,"y":2131}},{"unitID":6,"position":{"x":1713,"y":12821}},{"unitID":7,"position":{"x":3353,"y":13327}},{"unitID":0,"position":{"x":11545,"y":3173}},{"unitID":4,"position":{"x":7875,"y":7541}}]},{"time":760,"playerPositions":[{"unitID":1,"position":{"x":8325,"y":8153}},{"unitID":3,"position":{"x":11151,"y":3429}},{"unitID":9,"position":{"x":8127,"y":7663}},{"unitID":2,"position":{"x":11581,"y":3579}},{"unitID":8,"position":{"x":8229,"y":8021}},{"unitID":5,"position":{"x":11433,"y":2375}},{"unitID":6,"position":{"x":2653,"y":13011}},{"unitID":7,"position":{"x":3173,"y":13269}},{"unitID":0,"position":{"x":11429,"y":2615}},{"unitID":4,"position":{"x":7875,"y":7541}}]},{"time":765,"playerPositions":[{"unitID":8,"position":{"x":8341,"y":8095}},{"unitID":5,"position":{"x":11427,"y":2457}},{"unitID":6,"position":{"x":2897,"y":13267}},{"unitID":7,"position":{"x":3173,"y":13269}},{"unitID":0,"position":{"x":11249,"y":3025}},{"unitID":4,"position":{"x":7875,"y":7541}},{"unitID":1,"position":{"x":8325,"y":8153}},{"unitID":3,"position":{"x":11097,"y":3223}},{"unitID":9,"position":{"x":13933,"y":14169}},{"unitID":2,"position":{"x":11037,"y":4353}}]},{"time":770,"playerPositions":[{"unitID":8,"position":{"x":7951,"y":7855}},{"unitID":5,"position":{"x":11149,"y":3569}},{"unitID":6,"position":{"x":3095,"y":13105}},{"unitID":7,"position":{"x":3627,"y":13403}},{"unitID":0,"position":{"x":11347,"y":3559}},{"unitID":4,"position":{"x":7875,"y":7541}},{"unitID":1,"position":{"x":8817,"y":7251}},{"unitID":3,"position":{"x":11229,"y":3859}},{"unitID":9,"position":{"x":13933,"y":14169}},{"unitID":2,"position":{"x":11613,"y":5021}}]},{"time":775,"playerPositions":[{"unitID":1,"position":{"x":8817,"y":7251}},{"unitID":3,"position":{"x":11121,"y":3539}},{"unitID":9,"position":{"x":13921,"y":14155}},{"unitID":2,"position":{"x":12925,"y":5061}},{"unitID":8,"position":{"x":8271,"y":7353}},{"unitID":5,"position":{"x":11277,"y":2149}},{"unitID":6,"position":{"x":3101,"y":12831}},{"unitID":7,"position":{"x":4325,"y":13085}},{"unitID":0,"position":{"x":11347,"y":3559}},{"unitID":4,"position":{"x":13139,"y":13669}}]},{"time":780,"playerPositions":[{"unitID":1,"position":{"x":10879,"y":6745}},{"unitID":3,"position":{"x":12043,"y":2283}},{"unitID":9,"position":{"x":13921,"y":14155}},{"unitID":2,"position":{"x":12925,"y":5061}},{"unitID":8,"position":{"x":10325,"y":6815}},{"unitID":5,"position":{"x":11249,"y":1999}},{"unitID":6,"position":{"x":3039,"y":12825}},{"unitID":7,"position":{"x":3731,"y":13341}},{"unitID":0,"position":{"x":11347,"y":3559}},{"unitID":4,"position":{"x":11081,"y":13647}}]},{"time":785,"playerPositions":[{"unitID":8,"position":{"x":10791,"y":6795}},{"unitID":5,"position":{"x":11575,"y":1865}},{"unitID":6,"position":{"x":2571,"y":13021}},{"unitID":7,"position":{"x":3071,"y":13015}},{"unitID":0,"position":{"x":11347,"y":3559}},{"unitID":4,"position":{"x":11081,"y":13647}},{"unitID":1,"position":{"x":10745,"y":6773}},{"unitID":3,"position":{"x":11999,"y":1359}},{"unitID":9,"position":{"x":13603,"y":13529}},{"unitID":2,"position":{"x":12925,"y":5061}}]},{"time":790,"playerPositions":[{"unitID":1,"position":{"x":10865,"y":6011}},{"unitID":3,"position":{"x":11301,"y":1587}},{"unitID":9,"position":{"x":12435,"y":12565}},{"unitID":2,"position":{"x":12925,"y":5061}},{"unitID":8,"position":{"x":10791,"y":6795}},{"unitID":5,"position":{"x":11513,"y":2039}},{"unitID":6,"position":{"x":2389,"y":13011}},{"unitID":7,"position":{"x":3185,"y":13189}},{"unitID":0,"position":{"x":11347,"y":3559}},{"unitID":4,"position":{"x":11081,"y":13647}}]},{"time":795,"playerPositions":[{"unitID":1,"position":{"x":9837,"y":5409}},{"unitID":3,"position":{"x":12333,"y":2613}},{"unitID":9,"position":{"x":12435,"y":12565}},{"unitID":2,"position":{"x":13151,"y":6321}},{"unitID":8,"position":{"x":10785,"y":6083}},{"unitID":5,"position":{"x":11929,"y":2323}},{"unitID":6,"position":{"x":2791,"y":13057}},{"unitID":7,"position":{"x":3671,"y":13385}},{"unitID":0,"position":{"x":13933,"y":14169}},{"unitID":4,"position":{"x":11081,"y":13647}}]},{"time":800,"playerPositions":[{"unitID":8,"position":{"x":9985,"y":4571}},{"unitID":5,"position":{"x":11931,"y":3015}},{"unitID":6,"position":{"x":2919,"y":13087}},{"unitID":7,"position":{"x":3983,"y":13207}},{"unitID":0,"position":{"x":13933,"y":14169}},{"unitID":4,"position":{"x":4067,"y":11463}},{"unitID":1,"position":{"x":9495,"y":4457}},{"unitID":3,"position":{"x":12137,"y":2881}},{"unitID":9,"position":{"x":8957,"y":9731}},{"unitID":2,"position":{"x":13151,"y":6321}}]},{"time":805,"playerPositions":[{"unitID":1,"position":{"x":9495,"y":4457}},{"unitID":3,"position":{"x":10461,"y":4199}},{"unitID":9,"position":{"x":8757,"y":8699}},{"unitID":2,"position":{"x":13189,"y":5389}},{"unitID":8,"position":{"x":9717,"y":4411}},{"unitID":5,"position":{"x":10567,"y":4191}},{"unitID":6,"position":{"x":3007,"y":12845}},{"unitID":7,"position":{"x":3841,"y":13285}},{"unitID":0,"position":{"x":13933,"y":14169}},{"unitID":4,"position":{"x":2561,"y":12037}}]},{"time":810,"playerPositions":[{"unitID":1,"position":{"x":9495,"y":4457}},{"unitID":3,"position":{"x":9793,"y":4529}},{"unitID":9,"position":{"x":8281,"y":8273}},{"unitID":2,"position":{"x":13155,"y":5175}},{"unitID":8,"position":{"x":9379,"y":3867}},{"unitID":5,"position":{"x":10175,"y":4425}},{"unitID":6,"position":{"x":1801,"y":12321}},{"unitID":7,"position":{"x":2709,"y":12771}},{"unitID":0,"position":{"x":13933,"y":14169}},{"unitID":4,"position":{"x":2479,"y":12685}}]},{"time":815,"playerPositions":[{"unitID":8,"position":{"x":9379,"y":3867}},{"unitID":5,"position":{"x":10919,"y":3913}},{"unitID":6,"position":{"x":1489,"y":11959}},{"unitID":7,"position":{"x":3253,"y":13145}},{"unitID":0,"position":{"x":13933,"y":14169}},{"unitID":4,"position":{"x":2653,"y":12537}},{"unitID":1,"position":{"x":9513,"y":4511}},{"unitID":3,"position":{"x":10719,"y":4185}},{"unitID":9,"position":{"x":8291,"y":8205}},{"unitID":2,"position":{"x":13355,"y":5259}}]},{"time":820,"playerPositions":[{"unitID":1,"position":{"x":8023,"y":11301}},{"unitID":3,"position":{"x":12137,"y":2991}},{"unitID":9,"position":{"x":7893,"y":7811}},{"unitID":2,"position":{"x":13259,"y":5199}},{"unitID":8,"position":{"x":9379,"y":3867}},{"unitID":5,"position":{"x":10989,"y":5315}},{"unitID":6,"position":{"x":2179,"y":12245}},{"unitID":7,"position":{"x":3253,"y":13145}},{"unitID":0,"position":{"x":13931,"y":14151}},{"unitID":4,"position":{"x":2387,"y":12509}}]},{"time":825,"playerPositions":[{"unitID":8,"position":{"x":9379,"y":3867}},{"unitID":5,"position":{"x":12117,"y":5273}},{"unitID":6,"position":{"x":1929,"y":12301}},{"unitID":7,"position":{"x":2883,"y":12883}},{"unitID":0,"position":{"x":13769,"y":12379}},{"unitID":4,"position":{"x":2501,"y":12451}},{"unitID":1,"position":{"x":2601,"y":11467}},{"unitID":3,"position":{"x":12841,"y":4153}},{"unitID":9,"position":{"x":7945,"y":7655}},{"unitID":2,"position":{"x":13291,"y":5793}}]},{"time":830,"playerPositions":[{"unitID":1,"position":{"x":2629,"y":12427}},{"unitID":3,"position":{"x":12803,"y":3731}},{"unitID":9,"position":{"x":6679,"y":7961}},{"unitID":2,"position":{"x":13079,"y":6525}},{"unitID":8,"position":{"x":9379,"y":3867}},{"unitID":5,"position":{"x":12403,"y":4923}},{"unitID":6,"position":{"x":2569,"y":12431}},{"unitID":7,"position":{"x":3135,"y":12949}},{"unitID":0,"position":{"x":13653,"y":11267}},{"unitID":4,"position":{"x":2935,"y":12647}}]},{"time":835,"playerPositions":[{"unitID":1,"position":{"x":2931,"y":12797}},{"unitID":3,"position":{"x":12991,"y":4047}},{"unitID":9,"position":{"x":6165,"y":8335}},{"unitID":2,"position":{"x":13425,"y":7595}},{"unitID":8,"position":{"x":103,"y":377}},{"unitID":5,"position":{"x":13101,"y":3849}},{"unitID":6,"position":{"x":2943,"y":12723}},{"unitID":7,"position":{"x":3109,"y":12839}},{"unitID":0,"position":{"x":13653,"y":11267}},{"unitID":4,"position":{"x":2935,"y":12647}}]},{"time":840,"playerPositions":[{"unitID":1,"position":{"x":2637,"y":12879}},{"unitID":3,"position":{"x":13565,"y":3775}},{"unitID":9,"position":{"x":6165,"y":8335}},{"unitID":2,"position":{"x":13425,"y":7595}},{"unitID":8,"position":{"x":103,"y":377}},{"unitID":5,"position":{"x":13009,"y":3937}},{"unitID":6,"position":{"x":3235,"y":12947}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13353,"y":8411}},{"unitID":4,"position":{"x":2935,"y":12647}}]},{"time":845,"playerPositions":[{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":13011,"y":4045}},{"unitID":9,"position":{"x":3451,"y":10415}},{"unitID":2,"position":{"x":13125,"y":6361}},{"unitID":8,"position":{"x":3047,"y":3823}},{"unitID":5,"position":{"x":12963,"y":4323}},{"unitID":6,"position":{"x":2311,"y":12609}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13035,"y":6015}},{"unitID":4,"position":{"x":2935,"y":12647}}]},{"time":850,"playerPositions":[{"unitID":8,"position":{"x":4047,"y":4707}},{"unitID":5,"position":{"x":12947,"y":4377}},{"unitID":6,"position":{"x":2311,"y":12609}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13435,"y":5793}},{"unitID":4,"position":{"x":2935,"y":12647}},{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":13195,"y":5019}},{"unitID":9,"position":{"x":3495,"y":11247}},{"unitID":2,"position":{"x":12877,"y":6537}}]},{"time":855,"playerPositions":[{"unitID":8,"position":{"x":5399,"y":5825}},{"unitID":5,"position":{"x":13205,"y":6069}},{"unitID":6,"position":{"x":2563,"y":12779}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13231,"y":6211}},{"unitID":4,"position":{"x":2935,"y":12647}},{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":12939,"y":5801}},{"unitID":9,"position":{"x":3867,"y":12039}},{"unitID":2,"position":{"x":12979,"y":6891}}]},{"time":860,"playerPositions":[{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":13005,"y":6275}},{"unitID":9,"position":{"x":3823,"y":12469}},{"unitID":2,"position":{"x":12821,"y":7241}},{"unitID":8,"position":{"x":6099,"y":6771}},{"unitID":5,"position":{"x":13209,"y":5917}},{"unitID":6,"position":{"x":2717,"y":12769}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13075,"y":6859}},{"unitID":4,"position":{"x":13483,"y":13537}}]},{"time":865,"playerPositions":[{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":12715,"y":6761}},{"unitID":9,"position":{"x":4163,"y":13397}},{"unitID":2,"position":{"x":12869,"y":7597}},{"unitID":8,"position":{"x":6595,"y":7185}},{"unitID":5,"position":{"x":13197,"y":6105}},{"unitID":6,"position":{"x":2987,"y":13009}},{"unitID":7,"position":{"x":3491,"y":13083}},{"unitID":0,"position":{"x":13265,"y":8087}},{"unitID":4,"position":{"x":12557,"y":13329}}]},{"time":870,"playerPositions":[{"unitID":8,"position":{"x":6211,"y":8105}},{"unitID":5,"position":{"x":13059,"y":6929}},{"unitID":6,"position":{"x":3143,"y":12929}},{"unitID":7,"position":{"x":13915,"y":14161}},{"unitID":0,"position":{"x":13257,"y":8185}},{"unitID":4,"position":{"x":12557,"y":13329}},{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":12727,"y":7147}},{"unitID":9,"position":{"x":5041,"y":12943}},{"unitID":2,"position":{"x":12705,"y":7229}}]},{"time":875,"playerPositions":[{"unitID":1,"position":{"x":2087,"y":13403}},{"unitID":3,"position":{"x":12821,"y":7221}},{"unitID":9,"position":{"x":4573,"y":12149}},{"unitID":2,"position":{"x":13181,"y":8037}},{"unitID":8,"position":{"x":5895,"y":8689}},{"unitID":5,"position":{"x":11767,"y":7065}},{"unitID":6,"position":{"x":3333,"y":13307}},{"unitID":7,"position":{"x":11455,"y":13905}},{"unitID":0,"position":{"x":13233,"y":8267}},{"unitID":4,"position":{"x":11761,"y":8361}}]},{"time":880,"playerPositions":[{"unitID":1,"position":{"x":61,"y":293}},{"unitID":3,"position":{"x":11071,"y":6399}},{"unitID":9,"position":{"x":4195,"y":12269}},{"unitID":2,"position":{"x":13083,"y":7765}},{"unitID":8,"position":{"x":4981,"y":11151}},{"unitID":5,"position":{"x":10815,"y":6067}},{"unitID":6,"position":{"x":2605,"y":12943}},{"unitID":7,"position":{"x":3379,"y":13343}},{"unitID":0,"position":{"x":12853,"y":7625}},{"unitID":4,"position":{"x":12069,"y":7201}}]},{"time":885,"playerPositions":[{"unitID":1,"position":{"x":1019,"y":3209}},{"unitID":3,"position":{"x":10827,"y":5205}},{"unitID":9,"position":{"x":5135,"y":11389}},{"unitID":2,"position":{"x":11681,"y":6995}},{"unitID":8,"position":{"x":5157,"y":11435}},{"unitID":5,"position":{"x":9839,"y":5369}},{"unitID":6,"position":{"x":2635,"y":13011}},{"unitID":7,"position":{"x":3477,"y":12907}},{"unitID":0,"position":{"x":11957,"y":7183}},{"unitID":4,"position":{"x":10711,"y":6275}}]},{"time":890,"playerPositions":[{"unitID":1,"position":{"x":1019,"y":3209}},{"unitID":3,"position":{"x":9517,"y":5179}},{"unitID":9,"position":{"x":5135,"y":11389}},{"unitID":2,"position":{"x":11189,"y":6303}},{"unitID":8,"position":{"x":4159,"y":11865}},{"unitID":5,"position":{"x":8309,"y":5259}},{"unitID":6,"position":{"x":2843,"y":13121}},{"unitID":7,"position":{"x":3847,"y":13391}},{"unitID":0,"position":{"x":11139,"y":6803}},{"unitID":4,"position":{"x":9911,"y":4657}}]},{"time":895,"playerPositions":[{"unitID":8,"position":{"x":4967,"y":12283}},{"unitID":5,"position":{"x":8155,"y":4911}},{"unitID":6,"position":{"x":2971,"y":13201}},{"unitID":7,"position":{"x":3705,"y":13537}},{"unitID":0,"position":{"x":10525,"y":4741}},{"unitID":4,"position":{"x":11007,"y":3909}},{"unitID":1,"position":{"x":2413,"y":6677}},{"unitID":3,"position":{"x":8189,"y":4569}},{"unitID":9,"position":{"x":5135,"y":11389}},{"unitID":2,"position":{"x":10969,"y":4497}}]},{"time":900,"playerPositions":[{"unitID":1,"position":{"x":2413,"y":6677}},{"unitID":3,"position":{"x":8189,"y":4569}},{"unitID":9,"position":{"x":5135,"y":11389}},{"unitID":2,"position":{"x":11529,"y":3527}},{"unitID":8,"position":{"x":4365,"y":13171}},{"unitID":5,"position":{"x":8471,"y":4103}},{"unitID":6,"position":{"x":3507,"y":13433}},{"unitID":7,"position":{"x":3733,"y":13697}},{"unitID":0,"position":{"x":11279,"y":3817}},{"unitID":4,"position":{"x":11607,"y":3419}}]}],
+			[{"killTime":262.2112,"respawnTime":274.9612,"killerUnitID":5,"victimUnitID":2,"assistersUnitIDs":[3]},{"killTime":290.63208,"respawnTime":305.93207,"killerUnitID":8,"victimUnitID":9,"assistersUnitIDs":[]},{"killTime":303.20612,"respawnTime":315.95612,"killerUnitID":5,"victimUnitID":0,"assistersUnitIDs":[3]},{"killTime":335.2179,"respawnTime":353.0679,"killerUnitID":6,"victimUnitID":7,"assistersUnitIDs":[]},{"killTime":410.81906,"respawnTime":428.66907,"killerUnitID":6,"victimUnitID":4,"assistersUnitIDs":[1]},{"killTime":427.44778,"respawnTime":445.2978,"killerUnitID":6,"victimUnitID":7,"assistersUnitIDs":[1]},{"killTime":503.92728,"respawnTime":524.3273,"killerUnitID":4,"victimUnitID":5,"assistersUnitIDs":[0,2]},{"killTime":515.5155,"respawnTime":535.9155,"killerUnitID":2,"victimUnitID":3,"assistersUnitIDs":[0,4]},{"killTime":523.5293,"respawnTime":543.9293,"killerUnitID":8,"victimUnitID":9,"assistersUnitIDs":[]},{"killTime":598.6216,"respawnTime":621.5716,"killerUnitID":6,"victimUnitID":7,"assistersUnitIDs":[]},{"killTime":603.1,"respawnTime":623.5,"killerUnitID":0,"victimUnitID":1,"assistersUnitIDs":[]},{"killTime":606.1,"respawnTime":634.14996,"killerUnitID":4,"victimUnitID":6,"assistersUnitIDs":[7]},{"killTime":632.1759,"respawnTime":652.5759,"killerUnitID":8,"victimUnitID":9,"assistersUnitIDs":[]},{"killTime":642.52423,"respawnTime":670.5742,"killerUnitID":4,"victimUnitID":8,"assistersUnitIDs":[9]},{"killTime":677.12714,"respawnTime":700.07715,"killerUnitID":5,"victimUnitID":2,"assistersUnitIDs":[3]},{"killTime":688.2117,"respawnTime":25000,"killerUnitID":3,"victimUnitID":600,"assistersUnitIDs":[5],"x":13460,"y":4284},{"killTime":742.6385,"respawnTime":765.5885,"killerUnitID":8,"victimUnitID":9,"assistersUnitIDs":[]},{"killTime":747.1385,"respawnTime":772.6385,"killerUnitID":8,"victimUnitID":4,"assistersUnitIDs":[1]},{"killTime":768.4853,"respawnTime":25000,"killerUnitID":8,"victimUnitID":600,"assistersUnitIDs":[1],"x":8549,"y":8289},{"killTime":771.9853,"respawnTime":794.9353,"killerUnitID":5,"victimUnitID":0,"assistersUnitIDs":[3]},{"killTime":831.3971,"respawnTime":856.8971,"killerUnitID":6,"victimUnitID":4,"assistersUnitIDs":[1]},{"killTime":839.35443,"respawnTime":867.4044,"killerUnitID":6,"victimUnitID":7,"assistersUnitIDs":[1]},{"killTime":884.88403,"respawnTime":910.38403,"killerUnitID":8,"victimUnitID":9,"assistersUnitIDs":[]}],
+			[{"startTime":103.44922,"endTime":163.44922,"wardUnitID":500,"casterUnitID":2,"x":10110,"y":6465},{"startTime":106.94922,"endTime":166.94922,"wardUnitID":500,"casterUnitID":9,"x":6581,"y":10311},{"startTime":120.97867,"endTime":180.97867,"wardUnitID":500,"casterUnitID":7,"x":3963,"y":11593},{"startTime":171.89923,"endTime":351.89923,"wardUnitID":500,"casterUnitID":0,"x":13216,"y":2462},{"startTime":181.13297,"endTime":241.13297,"wardUnitID":500,"casterUnitID":5,"x":11467,"y":3573},{"startTime":247.63205,"endTime":307.63205,"wardUnitID":500,"casterUnitID":7,"x":5127,"y":12476},{"startTime":248.63205,"endTime":428.63205,"wardUnitID":500,"casterUnitID":3,"x":11486,"y":3576},{"startTime":252.22034,"endTime":312.22034,"wardUnitID":500,"casterUnitID":1,"x":7777,"y":3341},{"startTime":259.72034,"endTime":319.72034,"wardUnitID":500,"casterUnitID":8,"x":6099,"y":8085},{"startTime":366.8307,"endTime":546.8307,"wardUnitID":500,"casterUnitID":0,"x":13193,"y":2696},{"startTime":382.41623,"endTime":442.41623,"wardUnitID":500,"casterUnitID":8,"x":6117,"y":8113},{"startTime":419.42316,"endTime":479.42316,"wardUnitID":500,"casterUnitID":1,"x":2106,"y":13358},{"startTime":420.76633,"endTime":480.76633,"wardUnitID":500,"casterUnitID":7,"x":1538,"y":12994},{"startTime":423.44778,"endTime":483.44778,"wardUnitID":500,"casterUnitID":6,"x":1003,"y":12465},{"startTime":448.84558,"endTime":508.84558,"wardUnitID":500,"casterUnitID":5,"x":11524,"y":3616},{"startTime":526.0293,"endTime":586.0293,"wardUnitID":500,"casterUnitID":2,"x":11476,"y":3505},{"startTime":541.131,"endTime":601.131,"wardUnitID":500,"casterUnitID":1,"x":3365,"y":10716},{"startTime":596.6216,"endTime":729.0878,"wardUnitID":500,"casterUnitID":3,"x":11439,"y":3618},{"startTime":664.5784,"endTime":844.5785,"wardUnitID":500,"casterUnitID":3,"x":10069,"y":2829},{"startTime":665.0784,"endTime":725.0784,"wardUnitID":500,"casterUnitID":2,"x":13261,"y":2757},{"startTime":712.27155,"endTime":832.27155,"wardUnitID":500,"casterUnitID":6,"x":2660,"y":10603},{"startTime":714.27155,"endTime":774.27155,"wardUnitID":500,"casterUnitID":9,"x":8298,"y":6538},{"startTime":717.77155,"endTime":837.77155,"wardUnitID":500,"casterUnitID":8,"x":6099,"y":8075},{"startTime":723.0878,"endTime":758.15283,"wardUnitID":501,"casterUnitID":0,"x":11474,"y":3654},{"startTime":748.1385,"endTime":898.94684,"wardUnitID":501,"casterUnitID":3,"x":11477,"y":3576},{"startTime":775.4853,"endTime":835.4853,"wardUnitID":500,"casterUnitID":7,"x":5100,"y":12550},{"startTime":775.4853,"endTime":835.4853,"wardUnitID":500,"casterUnitID":1,"x":11017,"y":6853},{"startTime":811.503,"endTime":871.503,"wardUnitID":500,"casterUnitID":2,"x":12126,"y":4989},{"startTime":847.39606,"endTime":907.39606,"wardUnitID":500,"casterUnitID":9,"x":2518,"y":10848},{"startTime":873.76074,"endTime":993.76074,"wardUnitID":500,"casterUnitID":5,"x":11495,"y":7211},{"startTime":886.38403,"endTime":1066.384,"wardUnitID":500,"casterUnitID":0,"x":11090,"y":6928},{"startTime":896.44684,"endTime":1076.4468,"wardUnitID":500,"casterUnitID":0,"x":11455,"y":3721}],
+			[{"spawnTime":114.96823,"deathTime":131.37894,"campUnitID":302,"killerUnitID":1,"x":3633,"y":7600},{"spawnTime":114.96823,"deathTime":136.37894,"campUnitID":304,"killerUnitID":1,"x":3553,"y":7799},{"spawnTime":114.96823,"deathTime":140.52594,"campUnitID":304,"killerUnitID":1,"x":3453,"y":7590},{"spawnTime":114.96823,"deathTime":266.7112,"campUnitID":303,"killerUnitID":1,"x":7456,"y":3890},{"spawnTime":114.96823,"deathTime":263.7112,"campUnitID":304,"killerUnitID":1,"x":7461,"y":3710},{"spawnTime":114.96823,"deathTime":263.7112,"campUnitID":304,"killerUnitID":1,"x":7238,"y":3890},{"spawnTime":114.96823,"deathTime":127.47867,"campUnitID":302,"killerUnitID":4,"x":10387,"y":6811},{"spawnTime":114.96823,"deathTime":132.87894,"campUnitID":304,"killerUnitID":4,"x":10587,"y":6831},{"spawnTime":114.96823,"deathTime":138.37894,"campUnitID":304,"killerUnitID":4,"x":10527,"y":6601},{"spawnTime":114.96823,"deathTime":191.10172,"campUnitID":303,"killerUnitID":4,"x":6504,"y":10585},{"spawnTime":114.96823,"deathTime":196.10172,"campUnitID":304,"killerUnitID":4,"x":6704,"y":10585},{"spawnTime":114.96823,"deathTime":201.61829,"campUnitID":304,"killerUnitID":4,"x":6504,"y":10785},{"spawnTime":124.97867,"deathTime":164.07692,"campUnitID":305,"killerUnitID":1,"x":3374,"y":6223},{"spawnTime":124.97867,"deathTime":167.57692,"campUnitID":306,"killerUnitID":1,"x":3524,"y":6223},{"spawnTime":124.97867,"deathTime":166.07692,"campUnitID":306,"killerUnitID":1,"x":3324,"y":6373},{"spawnTime":124.97867,"deathTime":238.18678,"campUnitID":307,"killerUnitID":1,"x":6300,"y":5300},{"spawnTime":124.97867,"deathTime":241.13205,"campUnitID":308,"killerUnitID":1,"x":6523,"y":5427},{"spawnTime":124.97867,"deathTime":242.63205,"campUnitID":308,"killerUnitID":1,"x":6654,"y":5278},{"spawnTime":124.97867,"deathTime":239.68678,"campUnitID":308,"killerUnitID":1,"x":6583,"y":5108},{"spawnTime":124.97867,"deathTime":286.18076,"campUnitID":310,"killerUnitID":1,"x":7917,"y":2534},{"spawnTime":124.97867,"deathTime":294.63208,"campUnitID":309,"killerUnitID":1,"x":8217,"y":2534},{"spawnTime":124.97867,"deathTime":342.1753,"campUnitID":305,"killerUnitID":4,"x":10652,"y":8116},{"spawnTime":124.97867,"deathTime":344.6753,"campUnitID":306,"killerUnitID":4,"x":10652,"y":7916},{"spawnTime":124.97867,"deathTime":344.1753,"campUnitID":306,"killerUnitID":4,"x":10452,"y":8116},{"spawnTime":124.97867,"deathTime":221.18855,"campUnitID":307,"killerUnitID":4,"x":7580,"y":9250},{"spawnTime":124.97867,"deathTime":225.68855,"campUnitID":308,"killerUnitID":4,"x":7480,"y":9091},{"spawnTime":124.97867,"deathTime":230.58978,"campUnitID":308,"killerUnitID":4,"x":7350,"y":9230},{"spawnTime":124.97867,"deathTime":227.68855,"campUnitID":308,"killerUnitID":4,"x":7450,"y":9350},{"spawnTime":124.97867,"deathTime":251.22034,"campUnitID":310,"killerUnitID":4,"x":5810,"y":11925},{"spawnTime":124.97867,"deathTime":246.63205,"campUnitID":309,"killerUnitID":4,"x":6140,"y":11935},{"spawnTime":124.97867,"deathTime":561.24567,"campUnitID":311,"killerUnitID":1,"x":1684,"y":8207},{"spawnTime":124.97867,"deathTime":158.34605,"campUnitID":311,"killerUnitID":4,"x":12337,"y":6263},{"spawnTime":150.00255,"deathTime":811.503,"campUnitID":301,"killerUnitID":1,"x":9460,"y":4193},{"spawnTime":208.61829,"deathTime":298.13208,"campUnitID":311,"killerUnitID":4,"x":12337,"y":6263},{"spawnTime":218.00568,"deathTime":721.0878,"campUnitID":305,"killerUnitID":1,"x":3374,"y":6223},{"spawnTime":218.00568,"deathTime":722.0878,"campUnitID":306,"killerUnitID":1,"x":3524,"y":6223},{"spawnTime":218.00568,"deathTime":723.5878,"campUnitID":306,"killerUnitID":1,"x":3324,"y":6373},{"spawnTime":281.18076,"deathTime":0,"campUnitID":307,"killerUnitID":-1,"x":7580,"y":9250},{"spawnTime":281.18076,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":7480,"y":9091},{"spawnTime":281.18076,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":7350,"y":9230},{"spawnTime":281.18076,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":7450,"y":9350},{"spawnTime":292.63208,"deathTime":320.82407,"campUnitID":307,"killerUnitID":1,"x":6300,"y":5300},{"spawnTime":292.63208,"deathTime":314.17297,"campUnitID":308,"killerUnitID":1,"x":6523,"y":5427},{"spawnTime":292.63208,"deathTime":314.17297,"campUnitID":308,"killerUnitID":1,"x":6654,"y":5278},{"spawnTime":292.63208,"deathTime":314.17297,"campUnitID":308,"killerUnitID":1,"x":6583,"y":5108},{"spawnTime":301.70612,"deathTime":0,"campUnitID":310,"killerUnitID":-1,"x":5810,"y":11925},{"spawnTime":301.70612,"deathTime":0,"campUnitID":309,"killerUnitID":-1,"x":6140,"y":11935},{"spawnTime":344.6753,"deathTime":0,"campUnitID":310,"killerUnitID":-1,"x":7917,"y":2534},{"spawnTime":344.6753,"deathTime":0,"campUnitID":309,"killerUnitID":-1,"x":8217,"y":2534},{"spawnTime":348.6753,"deathTime":489.29364,"campUnitID":311,"killerUnitID":4,"x":12337,"y":6263},{"spawnTime":370.7061,"deathTime":697.62885,"campUnitID":307,"killerUnitID":1,"x":6300,"y":5300},{"spawnTime":370.7061,"deathTime":691.12885,"campUnitID":308,"killerUnitID":1,"x":6523,"y":5427},{"spawnTime":370.7061,"deathTime":691.0204,"campUnitID":308,"killerUnitID":1,"x":6654,"y":5278},{"spawnTime":370.7061,"deathTime":691.0204,"campUnitID":308,"killerUnitID":1,"x":6583,"y":5108},{"spawnTime":394.88913,"deathTime":0,"campUnitID":305,"killerUnitID":-1,"x":10652,"y":8116},{"spawnTime":394.88913,"deathTime":0,"campUnitID":306,"killerUnitID":-1,"x":10652,"y":7916},{"spawnTime":394.88913,"deathTime":0,"campUnitID":306,"killerUnitID":-1,"x":10452,"y":8116},{"spawnTime":438.93875,"deathTime":467.70566,"campUnitID":302,"killerUnitID":4,"x":10387,"y":6811},{"spawnTime":438.93875,"deathTime":471.50153,"campUnitID":304,"killerUnitID":4,"x":10587,"y":6831},{"spawnTime":438.93875,"deathTime":475.00153,"campUnitID":304,"killerUnitID":4,"x":10527,"y":6601},{"spawnTime":441.34558,"deathTime":524.5293,"campUnitID":302,"killerUnitID":1,"x":3633,"y":7600},{"spawnTime":441.34558,"deathTime":518.0155,"campUnitID":304,"killerUnitID":1,"x":3553,"y":7799},{"spawnTime":441.34558,"deathTime":518.0155,"campUnitID":304,"killerUnitID":1,"x":3453,"y":7590},{"spawnTime":501.92728,"deathTime":570.91254,"campUnitID":303,"killerUnitID":4,"x":6504,"y":10585},{"spawnTime":501.92728,"deathTime":573.58276,"campUnitID":304,"killerUnitID":4,"x":6704,"y":10585},{"spawnTime":501.92728,"deathTime":577.58276,"campUnitID":304,"killerUnitID":4,"x":6504,"y":10785},{"spawnTime":540.505,"deathTime":701.6713,"campUnitID":311,"killerUnitID":4,"x":12337,"y":6263},{"spawnTime":566.74567,"deathTime":677.62714,"campUnitID":303,"killerUnitID":1,"x":7456,"y":3890},{"spawnTime":566.74567,"deathTime":670.5784,"campUnitID":304,"killerUnitID":1,"x":7461,"y":3710},{"spawnTime":566.74567,"deathTime":670.5784,"campUnitID":304,"killerUnitID":1,"x":7238,"y":3890},{"spawnTime":611.5663,"deathTime":0,"campUnitID":311,"killerUnitID":-1,"x":1684,"y":8207},{"spawnTime":748.1385,"deathTime":0,"campUnitID":307,"killerUnitID":-1,"x":6300,"y":5300},{"spawnTime":748.1385,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":6523,"y":5427},{"spawnTime":748.1385,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":6654,"y":5278},{"spawnTime":748.1385,"deathTime":0,"campUnitID":308,"killerUnitID":-1,"x":6583,"y":5108},{"spawnTime":751.65283,"deathTime":0,"campUnitID":311,"killerUnitID":-1,"x":12337,"y":6263},{"spawnTime":773.9853,"deathTime":0,"campUnitID":305,"killerUnitID":-1,"x":3374,"y":6223},{"spawnTime":773.9853,"deathTime":0,"campUnitID":306,"killerUnitID":-1,"x":3524,"y":6223},{"spawnTime":773.9853,"deathTime":0,"campUnitID":306,"killerUnitID":-1,"x":3324,"y":6373},{"spawnTime":775.9853,"deathTime":788.81384,"campUnitID":302,"killerUnitID":8,"x":10387,"y":6811},{"spawnTime":775.9853,"deathTime":792.24115,"campUnitID":304,"killerUnitID":8,"x":10587,"y":6831},{"spawnTime":775.9853,"deathTime":880.26074,"campUnitID":304,"killerUnitID":5,"x":10527,"y":6601},{"spawnTime":824.8971,"deathTime":0,"campUnitID":302,"killerUnitID":-1,"x":3633,"y":7600},{"spawnTime":824.8971,"deathTime":0,"campUnitID":304,"killerUnitID":-1,"x":3553,"y":7799},{"spawnTime":824.8971,"deathTime":0,"campUnitID":304,"killerUnitID":-1,"x":3453,"y":7590},{"spawnTime":877.76074,"deathTime":0,"campUnitID":303,"killerUnitID":-1,"x":6504,"y":10585},{"spawnTime":877.76074,"deathTime":0,"campUnitID":304,"killerUnitID":-1,"x":6704,"y":10585},{"spawnTime":877.76074,"deathTime":0,"campUnitID":304,"killerUnitID":-1,"x":6504,"y":10785},{"spawnTime":899.94684,"deathTime":0,"campUnitID":300,"killerUnitID":-1,"x":4600,"y":10250}]);
+
+	minimap.render();
+
+	$(document).on('cleanup', function() {
+		delete minimap.positionFrames;
+		delete minimap.killFrames;
+		delete minimap.wardFrames;
+		delete minimap.campFrames;
+	});
+
+	$('input[type="range"]').rangeslider({polyfill: false});
+</script>
+<script src="/js/rickshaw.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+var commas = d3.format(",");
+
+var graphs = [{"className":"gold-earned","series":[{"name":"Blue Team","data":[{"x":0,"y":2375},{"x":5,"y":2375},{"x":10,"y":2375},{"x":15,"y":2375},{"x":20,"y":2375},{"x":25,"y":2375},{"x":30,"y":2375},{"x":35,"y":2375},{"x":40,"y":2375},{"x":45,"y":2375},{"x":50,"y":2375},{"x":55,"y":2375},{"x":60,"y":2375},{"x":65,"y":2375},{"x":70,"y":2375},{"x":75,"y":2375},{"x":80,"y":2375},{"x":85,"y":2375},{"x":90,"y":2379.75},{"x":95,"y":2427.2507},{"x":100,"y":2474.7512},{"x":105,"y":2522.252},{"x":110,"y":2569.7524},{"x":115,"y":2617.2532},{"x":120,"y":2664.7537},{"x":125,"y":2727.4546},{"x":130,"y":2773.055},{"x":135,"y":2919.5054},{"x":140,"y":2993.006},{"x":145,"y":3099.2568},{"x":150,"y":3191.8574},{"x":155,"y":3230.8079},{"x":160,"y":3303.0085},{"x":165,"y":3461.5093},{"x":170,"y":3581.7598},{"x":175,"y":3690.2605},{"x":180,"y":3779.761},{"x":185,"y":3841.5117},{"x":190,"y":3908.0122},{"x":195,"y":4035.313},{"x":200,"y":4115.2134},{"x":205,"y":4235.4644},{"x":210,"y":4331.2646},{"x":215,"y":4434.515},{"x":220,"y":4513.3154},{"x":225,"y":4615.3154},{"x":230,"y":4673.2153},{"x":235,"y":4763.3154},{"x":240,"y":4854.5654},{"x":245,"y":4919.7656},{"x":250,"y":5005.6646},{"x":255,"y":5096.3135},{"x":260,"y":5139.0127},{"x":265,"y":5834.661},{"x":270,"y":5981.908},{"x":275,"y":6095.955},{"x":280,"y":6162.6523},{"x":285,"y":6244.0005},{"x":290,"y":6348.698},{"x":295,"y":6754.9956},{"x":300,"y":6813.8433},{"x":305,"y":7395.2905},{"x":310,"y":7479.688},{"x":315,"y":7619.995},{"x":320,"y":7709.743},{"x":325,"y":7834.5903},{"x":330,"y":7881.138},{"x":335,"y":7932.4355},{"x":340,"y":8299.333},{"x":345,"y":8384.68},{"x":350,"y":8499.777},{"x":355,"y":8581.075},{"x":360,"y":8642.023},{"x":365,"y":8693.32},{"x":370,"y":8801.218},{"x":375,"y":8865.266},{"x":380,"y":9026.413},{"x":385,"y":9095.11},{"x":390,"y":9164.857},{"x":395,"y":9252.405},{"x":400,"y":9313.203},{"x":405,"y":9429.15},{"x":410,"y":9505.849},{"x":415,"y":10028.746},{"x":420,"y":10125.793},{"x":425,"y":10173.291},{"x":430,"y":10769.188},{"x":435,"y":10899.936},{"x":440,"y":10969.885},{"x":445,"y":11045.632},{"x":450,"y":11102.031},{"x":455,"y":11173.878},{"x":460,"y":11260.576},{"x":465,"y":11348.622},{"x":470,"y":11468.72},{"x":475,"y":11513.368},{"x":480,"y":11610.365},{"x":485,"y":11677.663},{"x":490,"y":11744.011},{"x":495,"y":11819.459},{"x":500,"y":11874.556},{"x":505,"y":11962.254},{"x":510,"y":12018.853},{"x":515,"y":12070.149},{"x":520,"y":12148.348},{"x":525,"y":12566.445},{"x":530,"y":12648.542},{"x":535,"y":12742.34},{"x":540,"y":12824.4375},{"x":545,"y":12899.636},{"x":550,"y":12974.834},{"x":555,"y":13074.831},{"x":560,"y":13128.027},{"x":565,"y":13250.576},{"x":570,"y":13300.923},{"x":575,"y":13364.622},{"x":580,"y":13537.469},{"x":585,"y":13649.716},{"x":590,"y":13742.214},{"x":595,"y":13804.711},{"x":600,"y":14087.26},{"x":605,"y":14170.006},{"x":610,"y":14292.505},{"x":615,"y":14389.751},{"x":620,"y":14434.398},{"x":625,"y":14480.947},{"x":630,"y":14544.645},{"x":635,"y":14866.636},{"x":640,"y":14954.134},{"x":645,"y":15042.23},{"x":650,"y":15119.729},{"x":655,"y":15171.977},{"x":660,"y":15221.374},{"x":665,"y":15299.321},{"x":670,"y":15409.52},{"x":675,"y":15562.146},{"x":680,"y":16213.297},{"x":685,"y":16316.3955},{"x":690,"y":17016.746},{"x":695,"y":17140.875},{"x":700,"y":17300.576},{"x":705,"y":17409.826},{"x":710,"y":17568.28},{"x":715,"y":17630.031},{"x":720,"y":17677.533},{"x":725,"y":17827.057},{"x":730,"y":17894.758},{"x":735,"y":17995.012},{"x":740,"y":18062.713},{"x":745,"y":18414.97},{"x":750,"y":19154.277},{"x":755,"y":19237.33},{"x":760,"y":19314.836},{"x":765,"y":19362.34},{"x":770,"y":20080.246},{"x":775,"y":20633.951},{"x":780,"y":20783.955},{"x":785,"y":20876.31},{"x":790,"y":21051.715},{"x":795,"y":21234.33},{"x":800,"y":21312.635},{"x":805,"y":21352.54},{"x":810,"y":21398.145},{"x":815,"y":22495.4},{"x":820,"y":22542.902},{"x":825,"y":22610.809},{"x":830,"y":22658.312},{"x":835,"y":23299.867},{"x":840,"y":23792.17},{"x":845,"y":23937.98},{"x":850,"y":24032.287},{"x":855,"y":24115.994},{"x":860,"y":24255.754},{"x":865,"y":24369.81},{"x":870,"y":24424.367},{"x":875,"y":24492.225},{"x":880,"y":24539.732},{"x":885,"y":24816.803},{"x":890,"y":24900.512},{"x":895,"y":24948.016},{"x":900,"y":24975.572}],"color":"rgba(41, 128, 185, 1)"},{"name":"Red Team","data":[{"x":0,"y":2375},{"x":5,"y":2375},{"x":10,"y":2375},{"x":15,"y":2375},{"x":20,"y":2375},{"x":25,"y":2375},{"x":30,"y":2375},{"x":35,"y":2375},{"x":40,"y":2375},{"x":45,"y":2375},{"x":50,"y":2375},{"x":55,"y":2375},{"x":60,"y":2375},{"x":65,"y":2375},{"x":70,"y":2375},{"x":75,"y":2375},{"x":80,"y":2375},{"x":85,"y":2375},{"x":90,"y":2379.75},{"x":95,"y":2427.2507},{"x":100,"y":2474.7512},{"x":105,"y":2522.252},{"x":110,"y":2569.7524},{"x":115,"y":2617.2532},{"x":120,"y":2664.7537},{"x":125,"y":2707.5044},{"x":130,"y":2853.005},{"x":135,"y":2945.5054},{"x":140,"y":3017.8062},{"x":145,"y":3117.307},{"x":150,"y":3161.0073},{"x":155,"y":3229.8577},{"x":160,"y":3401.0085},{"x":165,"y":3533.5093},{"x":170,"y":3607.3594},{"x":175,"y":3681.4604},{"x":180,"y":3742.261},{"x":185,"y":3841.5117},{"x":190,"y":3903.2622},{"x":195,"y":4038.313},{"x":200,"y":4118.2134},{"x":205,"y":4213.664},{"x":210,"y":4272.5645},{"x":215,"y":4417.265},{"x":220,"y":4474.0156},{"x":225,"y":4576.6665},{"x":230,"y":4664.417},{"x":235,"y":4727.2676},{"x":240,"y":4801.2676},{"x":245,"y":4862.967},{"x":250,"y":5005.7666},{"x":255,"y":5071.1157},{"x":260,"y":5105.5156},{"x":265,"y":5175.814},{"x":270,"y":5261.2124},{"x":275,"y":5351.8604},{"x":280,"y":5399.3584},{"x":285,"y":5446.8066},{"x":290,"y":5544.3047},{"x":295,"y":5596.5527},{"x":300,"y":5700.8516},{"x":305,"y":5768.249},{"x":310,"y":5816.5986},{"x":315,"y":5942.996},{"x":320,"y":6002.8438},{"x":325,"y":6059.0425},{"x":330,"y":6150.6904},{"x":335,"y":6226.9883},{"x":340,"y":6297.6865},{"x":345,"y":6468.785},{"x":350,"y":6516.2827},{"x":355,"y":6564.73},{"x":360,"y":6646.028},{"x":365,"y":6736.725},{"x":370,"y":6784.222},{"x":375,"y":6851.12},{"x":380,"y":6918.018},{"x":385,"y":6993.216},{"x":390,"y":7083.0635},{"x":395,"y":7244.0615},{"x":400,"y":7354.008},{"x":405,"y":7420.1562},{"x":410,"y":7498.0537},{"x":415,"y":7544.601},{"x":420,"y":7604.799},{"x":425,"y":7689.0967},{"x":430,"y":7756.1934},{"x":435,"y":7838.141},{"x":440,"y":7919.839},{"x":445,"y":7985.7363},{"x":450,"y":8024.6846},{"x":455,"y":8108.0312},{"x":460,"y":8155.5293},{"x":465,"y":8220.727},{"x":470,"y":8349.874},{"x":475,"y":8401.872},{"x":480,"y":8478.919},{"x":485,"y":8582.916},{"x":490,"y":8737.614},{"x":495,"y":8839.762},{"x":500,"y":8951.159},{"x":505,"y":9543.008},{"x":510,"y":9591.455},{"x":515,"y":9678.553},{"x":520,"y":10229.65},{"x":525,"y":10316.498},{"x":530,"y":10361.1455},{"x":535,"y":10411.492},{"x":540,"y":10542.291},{"x":545,"y":10610.539},{"x":550,"y":10648.536},{"x":555,"y":10762.584},{"x":560,"y":10834.381},{"x":565,"y":10877.129},{"x":570,"y":10922.726},{"x":575,"y":11052.425},{"x":580,"y":11155.661},{"x":585,"y":11206.009},{"x":590,"y":11262.106},{"x":595,"y":11322.904},{"x":600,"y":11370.401},{"x":605,"y":11713.148},{"x":610,"y":12487.173},{"x":615,"y":12570.42},{"x":620,"y":12651.967},{"x":625,"y":12694.715},{"x":630,"y":12761.962},{"x":635,"y":12809.459},{"x":640,"y":12855.058},{"x":645,"y":13550.456},{"x":650,"y":13681.404},{"x":655,"y":13898.052},{"x":660,"y":14022.447},{"x":665,"y":14065.196},{"x":670,"y":14132.893},{"x":675,"y":14179.441},{"x":680,"y":14227.889},{"x":685,"y":14305.786},{"x":690,"y":14343.784},{"x":695,"y":14405.531},{"x":700,"y":14481.528},{"x":705,"y":14610.326},{"x":710,"y":14668.275},{"x":715,"y":14750.221},{"x":720,"y":14797.719},{"x":725,"y":14945.717},{"x":730,"y":15024.164},{"x":735,"y":15066.911},{"x":740,"y":15154.809},{"x":745,"y":15313.006},{"x":750,"y":15386.153},{"x":755,"y":15481.401},{"x":760,"y":15534.599},{"x":765,"y":15587.795},{"x":770,"y":15635.293},{"x":775,"y":15680.892},{"x":780,"y":15726.489},{"x":785,"y":15787.486},{"x":790,"y":15855.134},{"x":795,"y":15907.381},{"x":800,"y":15954.878},{"x":805,"y":15992.378},{"x":810,"y":16097.774},{"x":815,"y":16210.0205},{"x":820,"y":16329.121},{"x":825,"y":16471.322},{"x":830,"y":16503.621},{"x":835,"y":16571.07},{"x":840,"y":16609.07},{"x":845,"y":16661.322},{"x":850,"y":16708.82},{"x":855,"y":16756.32},{"x":860,"y":16803.82},{"x":865,"y":16856.07},{"x":870,"y":16914.22},{"x":875,"y":17003.871},{"x":880,"y":17076.672},{"x":885,"y":17169.871},{"x":890,"y":17217.371},{"x":895,"y":17285.47},{"x":900,"y":17309.223}],"color":"rgba(192, 57, 43, 1)"}]},{"className":"experience-earned","series":[{"name":"Blue Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":0},{"x":120,"y":0},{"x":125,"y":58.88},{"x":130,"y":156.16},{"x":135,"y":454.56},{"x":140,"y":680.16003},{"x":145,"y":777.44006},{"x":150,"y":943.8401},{"x":155,"y":1002.7201},{"x":160,"y":1129.4401},{"x":165,"y":1425.04},{"x":170,"y":1581.28},{"x":175,"y":1766.8799},{"x":180,"y":1844.9597},{"x":185,"y":1992.1597},{"x":190,"y":2186.7195},{"x":195,"y":2313.4392},{"x":200,"y":2484.6392},{"x":205,"y":2581.919},{"x":210,"y":2641.919},{"x":215,"y":2737.9187},{"x":220,"y":2814.7185},{"x":225,"y":3097.598},{"x":230,"y":3253.7576},{"x":235,"y":3302.3975},{"x":240,"y":3471.2773},{"x":245,"y":3629.037},{"x":250,"y":3794.1567},{"x":255,"y":3950.3164},{"x":260,"y":4009.1963},{"x":265,"y":4259.276},{"x":270,"y":4587.116},{"x":275,"y":4802.156},{"x":280,"y":5017.1953},{"x":285,"y":5244.875},{"x":290,"y":5753.4756},{"x":295,"y":6012.3555},{"x":300,"y":6071.2354},{"x":305,"y":6331.235},{"x":310,"y":6605.1543},{"x":315,"y":6771.394},{"x":320,"y":6939.474},{"x":325,"y":7007.3145},{"x":330,"y":7007.3145},{"x":335,"y":7419.7144},{"x":340,"y":7419.7144},{"x":345,"y":7555.394},{"x":350,"y":7662.914},{"x":355,"y":7779.3945},{"x":360,"y":7897.1543},{"x":365,"y":7956.034},{"x":370,"y":8183.714},{"x":375,"y":8300.195},{"x":380,"y":8389.636},{"x":385,"y":8428.036},{"x":390,"y":8504.837},{"x":395,"y":8709.639},{"x":400,"y":8827.398},{"x":405,"y":8961.8},{"x":410,"y":9412.601},{"x":415,"y":9491.801},{"x":420,"y":9608.281},{"x":425,"y":9764.441},{"x":430,"y":10011.282},{"x":435,"y":10242.965},{"x":440,"y":10338.966},{"x":445,"y":10377.366},{"x":450,"y":10377.366},{"x":455,"y":10492.567},{"x":460,"y":10569.368},{"x":465,"y":10744.569},{"x":470,"y":10862.17},{"x":475,"y":10919.7705},{"x":480,"y":10919.7705},{"x":485,"y":10996.571},{"x":490,"y":11034.972},{"x":495,"y":11054.172},{"x":500,"y":11102.8125},{"x":505,"y":11220.573},{"x":510,"y":11279.454},{"x":515,"y":11367.774},{"x":520,"y":11466.654},{"x":525,"y":12211.014},{"x":530,"y":12299.335},{"x":535,"y":12417.096},{"x":540,"y":12652.616},{"x":545,"y":12862.377},{"x":550,"y":12980.138},{"x":555,"y":13127.338},{"x":560,"y":13366.538},{"x":565,"y":13634.299},{"x":570,"y":13785.179},{"x":575,"y":13922.139},{"x":580,"y":14205.02},{"x":585,"y":14370.142},{"x":590,"y":14476.383},{"x":595,"y":14525.023},{"x":600,"y":14997.503},{"x":605,"y":15192.063},{"x":610,"y":15249.664},{"x":615,"y":15346.945},{"x":620,"y":15376.386},{"x":625,"y":15376.386},{"x":630,"y":15435.266},{"x":635,"y":15913.547},{"x":640,"y":16010.827},{"x":645,"y":16090.027},{"x":650,"y":16128.428},{"x":655,"y":16128.428},{"x":660,"y":16128.428},{"x":665,"y":16216.748},{"x":670,"y":16427.148},{"x":675,"y":16612.748},{"x":680,"y":17501.467},{"x":685,"y":17608.986},{"x":690,"y":17667.865},{"x":695,"y":17863.547},{"x":700,"y":18168.588},{"x":705,"y":18392.586},{"x":710,"y":18460.424},{"x":715,"y":18460.424},{"x":720,"y":18519.305},{"x":725,"y":18767.625},{"x":730,"y":18918.506},{"x":735,"y":19124.588},{"x":740,"y":19216.588},{"x":745,"y":19476.506},{"x":750,"y":19783.607},{"x":755,"y":19860.406},{"x":760,"y":19938.486},{"x":765,"y":19997.367},{"x":770,"y":20056.248},{"x":775,"y":20534.488},{"x":780,"y":20821.045},{"x":785,"y":20956.725},{"x":790,"y":21352.406},{"x":795,"y":21488.885},{"x":800,"y":21577.203},{"x":805,"y":21577.203},{"x":810,"y":21577.203},{"x":815,"y":21644.703},{"x":820,"y":21644.703},{"x":825,"y":21741.984},{"x":830,"y":21840.385},{"x":835,"y":22476.184},{"x":840,"y":22806.783},{"x":845,"y":22941.182},{"x":850,"y":23056.38},{"x":855,"y":23212.541},{"x":860,"y":23448.059},{"x":865,"y":23563.26},{"x":870,"y":23620.857},{"x":875,"y":23620.857},{"x":880,"y":23699.738},{"x":885,"y":24199.7},{"x":890,"y":24229.139},{"x":895,"y":24288.018},{"x":900,"y":24288.018}],"color":"rgba(41, 128, 185, 1)"},{"name":"Red Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":0},{"x":120,"y":0},{"x":125,"y":0},{"x":130,"y":436.64},{"x":135,"y":612.80005},{"x":140,"y":700.6401},{"x":145,"y":827.3601},{"x":150,"y":876.0001},{"x":155,"y":1023.20013},{"x":160,"y":1280.7201},{"x":165,"y":1426.64},{"x":170,"y":1659.6},{"x":175,"y":1659.6},{"x":180,"y":1718.48},{"x":185,"y":1893.8398},{"x":190,"y":2020.5598},{"x":195,"y":2348.3997},{"x":200,"y":2436.2395},{"x":205,"y":2516.2395},{"x":210,"y":2633.9993},{"x":215,"y":2842.479},{"x":220,"y":2901.359},{"x":225,"y":3196.9585},{"x":230,"y":3469.918},{"x":235,"y":3528.7979},{"x":240,"y":3596.6377},{"x":245,"y":3733.5974},{"x":250,"y":3911.9973},{"x":255,"y":4010.8772},{"x":260,"y":4225.917},{"x":265,"y":4343.677},{"x":270,"y":4373.1167},{"x":275,"y":4549.7563},{"x":280,"y":4667.516},{"x":285,"y":4755.836},{"x":290,"y":4906.716},{"x":295,"y":4965.5957},{"x":300,"y":5115.5957},{"x":305,"y":5443.115},{"x":310,"y":5564.555},{"x":315,"y":5741.195},{"x":320,"y":5917.8345},{"x":325,"y":6212.234},{"x":330,"y":6271.114},{"x":335,"y":6418.3135},{"x":340,"y":6477.1934},{"x":345,"y":6843.273},{"x":350,"y":6902.153},{"x":355,"y":6902.153},{"x":360,"y":6980.233},{"x":365,"y":7136.393},{"x":370,"y":7263.113},{"x":375,"y":7369.3525},{"x":380,"y":7446.1523},{"x":385,"y":7567.5923},{"x":390,"y":7665.992},{"x":395,"y":7843.593},{"x":400,"y":7901.193},{"x":405,"y":8154.6323},{"x":410,"y":8328.713},{"x":415,"y":8328.713},{"x":420,"y":8347.913},{"x":425,"y":8533.514},{"x":430,"y":8571.914},{"x":435,"y":8766.475},{"x":440,"y":8815.115},{"x":445,"y":8893.196},{"x":450,"y":8893.196},{"x":455,"y":8912.396},{"x":460,"y":8950.797},{"x":465,"y":8989.197},{"x":470,"y":9455.998},{"x":475,"y":9515.998},{"x":480,"y":9604.318},{"x":485,"y":9720.8},{"x":490,"y":9989.68},{"x":495,"y":10116.4},{"x":500,"y":10302.002},{"x":505,"y":10542.283},{"x":510,"y":10542.283},{"x":515,"y":10803.043},{"x":520,"y":10920.803},{"x":525,"y":11009.123},{"x":530,"y":11038.563},{"x":535,"y":11087.204},{"x":540,"y":11260.006},{"x":545,"y":11298.406},{"x":550,"y":11375.207},{"x":555,"y":11454.407},{"x":560,"y":11492.808},{"x":565,"y":11492.808},{"x":570,"y":11971.129},{"x":575,"y":12266.089},{"x":580,"y":12413.851},{"x":585,"y":12413.851},{"x":590,"y":12564.73},{"x":595,"y":12623.61},{"x":600,"y":12711.931},{"x":605,"y":12741.371},{"x":610,"y":13183.652},{"x":615,"y":13271.973},{"x":620,"y":13478.053},{"x":625,"y":13595.813},{"x":630,"y":13684.135},{"x":635,"y":13713.575},{"x":640,"y":13869.736},{"x":645,"y":14856.376},{"x":650,"y":15007.256},{"x":655,"y":15343.578},{"x":660,"y":15470.3},{"x":665,"y":15470.3},{"x":670,"y":15588.06},{"x":675,"y":15588.06},{"x":680,"y":15588.06},{"x":685,"y":15646.94},{"x":690,"y":15764.7},{"x":695,"y":15853.0205},{"x":700,"y":15911.901},{"x":705,"y":16061.901},{"x":710,"y":16091.342},{"x":715,"y":16267.981},{"x":720,"y":16385.742},{"x":725,"y":16650.703},{"x":730,"y":16650.703},{"x":735,"y":16728.783},{"x":740,"y":16805.584},{"x":745,"y":16923.184},{"x":750,"y":17020.463},{"x":755,"y":17141.902},{"x":760,"y":17259.662},{"x":765,"y":17436.305},{"x":770,"y":17554.066},{"x":775,"y":17554.066},{"x":780,"y":17583.506},{"x":785,"y":17642.385},{"x":790,"y":17642.385},{"x":795,"y":17701.266},{"x":800,"y":17701.266},{"x":805,"y":17995.67},{"x":810,"y":18279.83},{"x":815,"y":18524.31},{"x":820,"y":18759.83},{"x":825,"y":18919.67},{"x":830,"y":18979.67},{"x":835,"y":18979.67},{"x":840,"y":18979.67},{"x":845,"y":18979.67},{"x":850,"y":18979.67},{"x":855,"y":18979.67},{"x":860,"y":18979.67},{"x":865,"y":19038.55},{"x":870,"y":19235.512},{"x":875,"y":19367.352},{"x":880,"y":19450.55},{"x":885,"y":19509.432},{"x":890,"y":19509.432},{"x":895,"y":19568.312},{"x":900,"y":19568.312}],"color":"rgba(192, 57, 43, 1)"}]},{"className":"damage-dealt","series":[{"name":"Blue Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":2.7807705},{"x":120,"y":739.1356},{"x":125,"y":1312.2893},{"x":130,"y":2015.3722},{"x":135,"y":2246.719},{"x":140,"y":2837.0845},{"x":145,"y":3160.9814},{"x":150,"y":3712.437},{"x":155,"y":4230.49},{"x":160,"y":5129.0034},{"x":165,"y":6042.1934},{"x":170,"y":6516.704},{"x":175,"y":6971.0156},{"x":180,"y":7208.52},{"x":185,"y":7673.8105},{"x":190,"y":8196.412},{"x":195,"y":8543.746},{"x":200,"y":8796.942},{"x":205,"y":9351.281},{"x":210,"y":9618.504},{"x":215,"y":10688.093},{"x":220,"y":11111.552},{"x":225,"y":11970.835},{"x":230,"y":12973.354},{"x":235,"y":13424.947},{"x":240,"y":14161.253},{"x":245,"y":14961.567},{"x":250,"y":15851.898},{"x":255,"y":16808.701},{"x":260,"y":18097.934},{"x":265,"y":19342.898},{"x":270,"y":20088.129},{"x":275,"y":20775.066},{"x":280,"y":21666.266},{"x":285,"y":22500.56},{"x":290,"y":23360.582},{"x":295,"y":24322.53},{"x":300,"y":25127.03},{"x":305,"y":26111.418},{"x":310,"y":27830.842},{"x":315,"y":29284.252},{"x":320,"y":30268.938},{"x":325,"y":30803.508},{"x":330,"y":30898.277},{"x":335,"y":31611.805},{"x":340,"y":31980.383},{"x":345,"y":32619.766},{"x":350,"y":33236.43},{"x":355,"y":33669.016},{"x":360,"y":33949.74},{"x":365,"y":34334.254},{"x":370,"y":34813.477},{"x":375,"y":35724.87},{"x":380,"y":36150.414},{"x":385,"y":36475.66},{"x":390,"y":37028.566},{"x":395,"y":38369.45},{"x":400,"y":38772.805},{"x":405,"y":40295.234},{"x":410,"y":41900.816},{"x":415,"y":42525.79},{"x":420,"y":43584.68},{"x":425,"y":44239.41},{"x":430,"y":45385.99},{"x":435,"y":46963.99},{"x":440,"y":47397.914},{"x":445,"y":48086.383},{"x":450,"y":48276.1},{"x":455,"y":49448.875},{"x":460,"y":50012.86},{"x":465,"y":51044.668},{"x":470,"y":51501.086},{"x":475,"y":51896.523},{"x":480,"y":52097.07},{"x":485,"y":52451.188},{"x":490,"y":52813.652},{"x":495,"y":53211.03},{"x":500,"y":54004.996},{"x":505,"y":54443.543},{"x":510,"y":55472.53},{"x":515,"y":56507.812},{"x":520,"y":57852.04},{"x":525,"y":58621.676},{"x":530,"y":59379.63},{"x":535,"y":60039.21},{"x":540,"y":60532.035},{"x":545,"y":61122.94},{"x":550,"y":61965.027},{"x":555,"y":63072.906},{"x":560,"y":64323.438},{"x":565,"y":65123.15},{"x":570,"y":65642.52},{"x":575,"y":67044.016},{"x":580,"y":69026.09},{"x":585,"y":69549.45},{"x":590,"y":70388.01},{"x":595,"y":71454.36},{"x":600,"y":72583.56},{"x":605,"y":73882.98},{"x":610,"y":74303.45},{"x":615,"y":75066.23},{"x":620,"y":75784.14},{"x":625,"y":76376.02},{"x":630,"y":76935.664},{"x":635,"y":78628.93},{"x":640,"y":79079.23},{"x":645,"y":79522.13},{"x":650,"y":79708.72},{"x":655,"y":79708.72},{"x":660,"y":80439.48},{"x":665,"y":81851.945},{"x":670,"y":83302.5},{"x":675,"y":85723.13},{"x":680,"y":87268.95},{"x":685,"y":87843.7},{"x":690,"y":89347.13},{"x":695,"y":92136.164},{"x":700,"y":93564.61},{"x":705,"y":95083.2},{"x":710,"y":96075.31},{"x":715,"y":96175.336},{"x":720,"y":98222.73},{"x":725,"y":99369.39},{"x":730,"y":100223.1},{"x":735,"y":101243.75},{"x":740,"y":102218.91},{"x":745,"y":103729.02},{"x":750,"y":105189.8},{"x":755,"y":105557.6},{"x":760,"y":106559.164},{"x":765,"y":107806.11},{"x":770,"y":109182.19},{"x":775,"y":109719.48},{"x":780,"y":113322.13},{"x":785,"y":115946.43},{"x":790,"y":117978.19},{"x":795,"y":119508.02},{"x":800,"y":120246.17},{"x":805,"y":121466.086},{"x":810,"y":124311.23},{"x":815,"y":125218.914},{"x":820,"y":125461.586},{"x":825,"y":126057.71},{"x":830,"y":127356.09},{"x":835,"y":129494.71},{"x":840,"y":131053.49},{"x":845,"y":132209},{"x":850,"y":133656.12},{"x":855,"y":134943.77},{"x":860,"y":138121.05},{"x":865,"y":139913.69},{"x":870,"y":140798.12},{"x":875,"y":140885.47},{"x":880,"y":141877.17},{"x":885,"y":143075.66},{"x":890,"y":143215.39},{"x":895,"y":143494.86},{"x":900,"y":144211.66}],"color":"rgba(41, 128, 185, 1)"},{"name":"Red Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":0},{"x":120,"y":638.1622},{"x":125,"y":1176.7397},{"x":130,"y":1528.9346},{"x":135,"y":1750.3867},{"x":140,"y":2128.9304},{"x":145,"y":2545.1472},{"x":150,"y":2849.7568},{"x":155,"y":3427.4182},{"x":160,"y":3810.2263},{"x":165,"y":4549.0415},{"x":170,"y":4917.9404},{"x":175,"y":4917.9404},{"x":180,"y":5308.8447},{"x":185,"y":5905.2593},{"x":190,"y":6287.8467},{"x":195,"y":7282.1035},{"x":200,"y":7844.2856},{"x":205,"y":8108.0703},{"x":210,"y":8394.264},{"x":215,"y":9515.6455},{"x":220,"y":10356.955},{"x":225,"y":11456.036},{"x":230,"y":12304.643},{"x":235,"y":12819.731},{"x":240,"y":13319.308},{"x":245,"y":14909.279},{"x":250,"y":15588.15},{"x":255,"y":15975.942},{"x":260,"y":16297.104},{"x":265,"y":16763.258},{"x":270,"y":16940.281},{"x":275,"y":17144.752},{"x":280,"y":17144.752},{"x":285,"y":17433.197},{"x":290,"y":17787.9},{"x":295,"y":18224.705},{"x":300,"y":19395.639},{"x":305,"y":19747.258},{"x":310,"y":19747.258},{"x":315,"y":20076.895},{"x":320,"y":20273.477},{"x":325,"y":21344.115},{"x":330,"y":21471.195},{"x":335,"y":21725.355},{"x":340,"y":22739.617},{"x":345,"y":24284.148},{"x":350,"y":24284.148},{"x":355,"y":24625.496},{"x":360,"y":25366.041},{"x":365,"y":25771.703},{"x":370,"y":25865.393},{"x":375,"y":26248.22},{"x":380,"y":26485.777},{"x":385,"y":27008.602},{"x":390,"y":27450.486},{"x":395,"y":28829.57},{"x":400,"y":29182.484},{"x":405,"y":30033.844},{"x":410,"y":30650.346},{"x":415,"y":30796.395},{"x":420,"y":31056.545},{"x":425,"y":31366.781},{"x":430,"y":31808.63},{"x":435,"y":32677.232},{"x":440,"y":32902.676},{"x":445,"y":33272.074},{"x":450,"y":33272.074},{"x":455,"y":33443.523},{"x":460,"y":33834.465},{"x":465,"y":34515.94},{"x":470,"y":34872.63},{"x":475,"y":34919.906},{"x":480,"y":35010.49},{"x":485,"y":35923.773},{"x":490,"y":36592.582},{"x":495,"y":37158.176},{"x":500,"y":37763.027},{"x":505,"y":38514.64},{"x":510,"y":38968.28},{"x":515,"y":39718.242},{"x":520,"y":39941.504},{"x":525,"y":40488.188},{"x":530,"y":40488.188},{"x":535,"y":41364.8},{"x":540,"y":41818.348},{"x":545,"y":42115.664},{"x":550,"y":42641.977},{"x":555,"y":43108.484},{"x":560,"y":43421.562},{"x":565,"y":43570.527},{"x":570,"y":44968.266},{"x":575,"y":47156.316},{"x":580,"y":48065.84},{"x":585,"y":48065.84},{"x":590,"y":48316.863},{"x":595,"y":48775.867},{"x":600,"y":49093.215},{"x":605,"y":49748.855},{"x":610,"y":50258.816},{"x":615,"y":50825.168},{"x":620,"y":51654.11},{"x":625,"y":51654.11},{"x":630,"y":52011.61},{"x":635,"y":52011.61},{"x":640,"y":53032.35},{"x":645,"y":53371.004},{"x":650,"y":54454.957},{"x":655,"y":56636.19},{"x":660,"y":57281.08},{"x":665,"y":57281.08},{"x":670,"y":57779.094},{"x":675,"y":57779.094},{"x":680,"y":57779.094},{"x":685,"y":58382.926},{"x":690,"y":59183.594},{"x":695,"y":59470.336},{"x":700,"y":61253.625},{"x":705,"y":61561.285},{"x":710,"y":62155.83},{"x":715,"y":62764.47},{"x":720,"y":62926.41},{"x":725,"y":63781.453},{"x":730,"y":63783.453},{"x":735,"y":63783.453},{"x":740,"y":65178.195},{"x":745,"y":66395.805},{"x":750,"y":66706.35},{"x":755,"y":66842.54},{"x":760,"y":67635.35},{"x":765,"y":67810.445},{"x":770,"y":68151.945},{"x":775,"y":68163.04},{"x":780,"y":68163.04},{"x":785,"y":68510.12},{"x":790,"y":68589.11},{"x":795,"y":68589.11},{"x":800,"y":68589.11},{"x":805,"y":69172.055},{"x":810,"y":70276.39},{"x":815,"y":72129.94},{"x":820,"y":72764.66},{"x":825,"y":73192.39},{"x":830,"y":73271.38},{"x":835,"y":73598.234},{"x":840,"y":73690.234},{"x":845,"y":73690.234},{"x":850,"y":73690.234},{"x":855,"y":74043.17},{"x":860,"y":74600.33},{"x":865,"y":75336.42},{"x":870,"y":75628.99},{"x":875,"y":76661.664},{"x":880,"y":77262.47},{"x":885,"y":77452.57},{"x":890,"y":77452.57},{"x":895,"y":77452.57},{"x":900,"y":77763.984}],"color":"rgba(192, 57, 43, 1)"}]},{"className":"damage-received","series":[{"name":"Blue Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":0},{"x":120,"y":52.218662},{"x":125,"y":195.33136},{"x":130,"y":259.73206},{"x":135,"y":294.86835},{"x":140,"y":309.6334},{"x":145,"y":309.6334},{"x":150,"y":331.58676},{"x":155,"y":399.58243},{"x":160,"y":496.00708},{"x":165,"y":526.6691},{"x":170,"y":673.4515},{"x":175,"y":673.4515},{"x":180,"y":677.37695},{"x":185,"y":775.8119},{"x":190,"y":805.84784},{"x":195,"y":805.84784},{"x":200,"y":891.0501},{"x":205,"y":969.31934},{"x":210,"y":969.31934},{"x":215,"y":969.31934},{"x":220,"y":1050.4807},{"x":225,"y":1111.4418},{"x":230,"y":1215.7522},{"x":235,"y":1272.1981},{"x":240,"y":1354.4938},{"x":245,"y":1389.849},{"x":250,"y":1480.8907},{"x":255,"y":1811.6475},{"x":260,"y":1921.5825},{"x":265,"y":2288.523},{"x":270,"y":2299.5996},{"x":275,"y":2304.9365},{"x":280,"y":2363.9224},{"x":285,"y":2495.0342},{"x":290,"y":2828.211},{"x":295,"y":2865.5625},{"x":300,"y":3014.2798},{"x":305,"y":3047.054},{"x":310,"y":3047.054},{"x":315,"y":3216.9983},{"x":320,"y":3443.6704},{"x":325,"y":3596.251},{"x":330,"y":3596.251},{"x":335,"y":3607.0862},{"x":340,"y":3627.8792},{"x":345,"y":3627.8792},{"x":350,"y":3649.286},{"x":355,"y":3649.286},{"x":360,"y":3649.286},{"x":365,"y":3751.762},{"x":370,"y":3770.9604},{"x":375,"y":3893.6938},{"x":380,"y":4033.9648},{"x":385,"y":4138.432},{"x":390,"y":4215.3423},{"x":395,"y":4407.5522},{"x":400,"y":4751.022},{"x":405,"y":5031.2983},{"x":410,"y":5178.7915},{"x":415,"y":5285.9873},{"x":420,"y":5343.827},{"x":425,"y":5354.0317},{"x":430,"y":5499.038},{"x":435,"y":5619.038},{"x":440,"y":5649.038},{"x":445,"y":5683.9614},{"x":450,"y":5710.188},{"x":455,"y":5796.851},{"x":460,"y":5807.4937},{"x":465,"y":5807.4937},{"x":470,"y":6026.523},{"x":475,"y":6026.523},{"x":480,"y":6026.523},{"x":485,"y":6026.523},{"x":490,"y":6026.523},{"x":495,"y":6351.1943},{"x":500,"y":6374.4814},{"x":505,"y":6877.734},{"x":510,"y":7198.1704},{"x":515,"y":7551.1074},{"x":520,"y":7698.6567},{"x":525,"y":8216.831},{"x":530,"y":8280.687},{"x":535,"y":8408.397},{"x":540,"y":8440.325},{"x":545,"y":8440.325},{"x":550,"y":8440.325},{"x":555,"y":8440.325},{"x":560,"y":8533.153},{"x":565,"y":8710.134},{"x":570,"y":9395.912},{"x":575,"y":9582.734},{"x":580,"y":9648.496},{"x":585,"y":9681.15},{"x":590,"y":9707.682},{"x":595,"y":9753.553},{"x":600,"y":10721.934},{"x":605,"y":11847.565},{"x":610,"y":11869.565},{"x":615,"y":11869.565},{"x":620,"y":12100.583},{"x":625,"y":12421.45},{"x":630,"y":12556.121},{"x":635,"y":12703.909},{"x":640,"y":13245.983},{"x":645,"y":13428.181},{"x":650,"y":13428.181},{"x":655,"y":13428.181},{"x":660,"y":13428.181},{"x":665,"y":13556.73},{"x":670,"y":13702.092},{"x":675,"y":13899.292},{"x":680,"y":14107.912},{"x":685,"y":14205.708},{"x":690,"y":14207.316},{"x":695,"y":14287.449},{"x":700,"y":14313.494},{"x":705,"y":14313.494},{"x":710,"y":14313.494},{"x":715,"y":14313.494},{"x":720,"y":14313.494},{"x":725,"y":14313.494},{"x":730,"y":14313.494},{"x":735,"y":14318.928},{"x":740,"y":14588.976},{"x":745,"y":14982.438},{"x":750,"y":14982.438},{"x":755,"y":15118.624},{"x":760,"y":15587.561},{"x":765,"y":15762.65},{"x":770,"y":16126.101},{"x":775,"y":16137.195},{"x":780,"y":16302.979},{"x":785,"y":16457.186},{"x":790,"y":16719.066},{"x":795,"y":16746.95},{"x":800,"y":16764.887},{"x":805,"y":17168.469},{"x":810,"y":17451.547},{"x":815,"y":17541.547},{"x":820,"y":17545.959},{"x":825,"y":17570.023},{"x":830,"y":17658.465},{"x":835,"y":18040.21},{"x":840,"y":18181.184},{"x":845,"y":18230.887},{"x":850,"y":18236.422},{"x":855,"y":18568.748},{"x":860,"y":18975.84},{"x":865,"y":18985.744},{"x":870,"y":19133.16},{"x":875,"y":19166.371},{"x":880,"y":19190.762},{"x":885,"y":19240.578},{"x":890,"y":19240.578},{"x":895,"y":19240.578},{"x":900,"y":19522.35}],"color":"rgba(41, 128, 185, 1)"},{"name":"Red Team","data":[{"x":0,"y":0},{"x":5,"y":0},{"x":10,"y":0},{"x":15,"y":0},{"x":20,"y":0},{"x":25,"y":0},{"x":30,"y":0},{"x":35,"y":0},{"x":40,"y":0},{"x":45,"y":0},{"x":50,"y":0},{"x":55,"y":0},{"x":60,"y":0},{"x":65,"y":0},{"x":70,"y":0},{"x":75,"y":0},{"x":80,"y":0},{"x":85,"y":0},{"x":90,"y":0},{"x":95,"y":0},{"x":100,"y":0},{"x":105,"y":0},{"x":110,"y":0},{"x":115,"y":0},{"x":120,"y":115.99498},{"x":125,"y":233.18893},{"x":130,"y":259.204},{"x":135,"y":276.27274},{"x":140,"y":284.66977},{"x":145,"y":489.09708},{"x":150,"y":905.24866},{"x":155,"y":1290.822},{"x":160,"y":1405.3715},{"x":165,"y":1474.3218},{"x":170,"y":1586.7346},{"x":175,"y":1586.7346},{"x":180,"y":1662.5587},{"x":185,"y":1908.4492},{"x":190,"y":2040.5814},{"x":195,"y":2129.0825},{"x":200,"y":2191.4744},{"x":205,"y":2260.39},{"x":210,"y":2432.4844},{"x":215,"y":2515.6655},{"x":220,"y":2772.1416},{"x":225,"y":2877.6702},{"x":230,"y":3091.443},{"x":235,"y":3220.8884},{"x":240,"y":3262.9102},{"x":245,"y":3385.8127},{"x":250,"y":3554.2827},{"x":255,"y":3897.3374},{"x":260,"y":4466.402},{"x":265,"y":5010.5117},{"x":270,"y":5010.5117},{"x":275,"y":5010.5117},{"x":280,"y":5186.2837},{"x":285,"y":5186.2837},{"x":290,"y":5507.7646},{"x":295,"y":5683.9575},{"x":300,"y":5993.999},{"x":305,"y":6298.749},{"x":310,"y":6327.331},{"x":315,"y":6442.4263},{"x":320,"y":6452.463},{"x":325,"y":6648.267},{"x":330,"y":6669.3037},{"x":335,"y":7046.6436},{"x":340,"y":7127.812},{"x":345,"y":7202.1724},{"x":350,"y":7202.1724},{"x":355,"y":7202.1724},{"x":360,"y":7219.1636},{"x":365,"y":7219.1636},{"x":370,"y":7289.5854},{"x":375,"y":7364.0728},{"x":380,"y":7375.091},{"x":385,"y":7449.1533},{"x":390,"y":7650.838},{"x":395,"y":8241.343},{"x":400,"y":8547.152},{"x":405,"y":8854.323},{"x":410,"y":9593.09},{"x":415,"y":9995.152},{"x":420,"y":10631.544},{"x":425,"y":10863.104},{"x":430,"y":11188.617},{"x":435,"y":11288.848},{"x":440,"y":11423.4},{"x":445,"y":11519.05},{"x":450,"y":11519.05},{"x":455,"y":11519.05},{"x":460,"y":11519.05},{"x":465,"y":11675.2},{"x":470,"y":11872.417},{"x":475,"y":11975.087},{"x":480,"y":11975.087},{"x":485,"y":12239.962},{"x":490,"y":12306.181},{"x":495,"y":12464.338},{"x":500,"y":12674.133},{"x":505,"y":12833.208},{"x":510,"y":13020.972},{"x":515,"y":13862.75},{"x":520,"y":14861.545},{"x":525,"y":15289.082},{"x":530,"y":15665.012},{"x":535,"y":15665.012},{"x":540,"y":15665.012},{"x":545,"y":15665.012},{"x":550,"y":15713.451},{"x":555,"y":15713.451},{"x":560,"y":15713.451},{"x":565,"y":16090.787},{"x":570,"y":16566.29},{"x":575,"y":17580.062},{"x":580,"y":17799.072},{"x":585,"y":17799.072},{"x":590,"y":18013.959},{"x":595,"y":18939.305},{"x":600,"y":19635.904},{"x":605,"y":19786.361},{"x":610,"y":19861.373},{"x":615,"y":19861.373},{"x":620,"y":19861.373},{"x":625,"y":19975.006},{"x":630,"y":20026.203},{"x":635,"y":20596.422},{"x":640,"y":20607.871},{"x":645,"y":20641.707},{"x":650,"y":20664.094},{"x":655,"y":20761.133},{"x":660,"y":20783.955},{"x":665,"y":20783.955},{"x":670,"y":20783.955},{"x":675,"y":21566.65},{"x":680,"y":21898.535},{"x":685,"y":21904.72},{"x":690,"y":21904.72},{"x":695,"y":21904.72},{"x":700,"y":22034.842},{"x":705,"y":22103.715},{"x":710,"y":22203.922},{"x":715,"y":22447.133},{"x":720,"y":22728.707},{"x":725,"y":22932.273},{"x":730,"y":22932.273},{"x":735,"y":22996.121},{"x":740,"y":23645.318},{"x":745,"y":24954.188},{"x":750,"y":25376.725},{"x":755,"y":25376.725},{"x":760,"y":26004.898},{"x":765,"y":26557.443},{"x":770,"y":27714.35},{"x":775,"y":27941.135},{"x":780,"y":28147.787},{"x":785,"y":28347.742},{"x":790,"y":28347.742},{"x":795,"y":28347.742},{"x":800,"y":28347.742},{"x":805,"y":28564.502},{"x":810,"y":28635.676},{"x":815,"y":28635.676},{"x":820,"y":28883.14},{"x":825,"y":29094.512},{"x":830,"y":29650.324},{"x":835,"y":30296.125},{"x":840,"y":30817.871},{"x":845,"y":30817.871},{"x":850,"y":30817.871},{"x":855,"y":31736.072},{"x":860,"y":32578.117},{"x":865,"y":32852.438},{"x":870,"y":33523.83},{"x":875,"y":33523.83},{"x":880,"y":33523.83},{"x":885,"y":34442.85},{"x":890,"y":34442.85},{"x":895,"y":34442.85},{"x":900,"y":34666.25}],"color":"rgba(192, 57, 43, 1)"}]}];
+
+for (var i = 0; i < graphs.length; i++) {
+	var graph = new Rickshaw.Graph( {
+		element: $('#'+graphs[i].className+'-graph')[0],
+		renderer: 'line',
+		height: 300,
+		width: 720,
+		series: graphs[i].series
+	} );
+
+	var y_ticks = new Rickshaw.Graph.Axis.Y( {
+		graph: graph,
+		orientation: 'left',
+		tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+		element: $('#'+graphs[i].className+'-y-axis')[0]
+	} );
+
+	var x_ticks = new Rickshaw.Graph.Axis.X({
+		graph: graph,
+		tickFormat: tickFormat,
+	});
+
+	var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+		graph: graph,
+		xFormatter: tickFormat,
+		yFormatter: yFormatter
+	} );
+
+	graph.render();
+}
+
+function tickFormat(x) {
+    var sec_num = x; 
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+	var time = "";
+
+	if (hours > 0) {
+		time = hours + ":";
+	}
+
+	if (minutes > 9) {
+		time += minutes;
+	} else {
+		time += "0" + minutes;
+	}
+
+	time += ":";
+
+	if (seconds > 9) {
+		time += seconds;
+	} else {
+		time += "0" + seconds;
+	}
+
+    return time;
+}
+
+function yFormatter(y) {
+	return commas(parseInt(y));
+}
+
+$(document).on('cleanup', function() {
+	graphs = null;
+});
+</script>
+</div>
+<div style="text-align:center;margin-top:60px;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-9113595788112078" data-ad-slot="4391652738" style="display:inline-block;width:728px;height:90px"></ins>
+<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+</div>
+<div style="height:70px;"></div>
+<div id="footer">
+<div class="container">
+© 2014, Riftwalk.gg. All rights reserved.
+ Images © 2014, Riot Games, Inc.
+<div class="nav">
+<a href="/game-archive">Game Archive</a>
+<a href="/cdn-cgi/l/email-protection#eb8884859f8a889fab99828d9f9c8a8780c58c8c">Contact</a>
+</div>
+Made with <span class="love fa fa-heart"></span> in Icathia.
+</div>
+</div>
+<script type="text/javascript">
+	var gameLength =  900.44684 ;
+	
+
+	function updateBody() {
+		$.ajaxSetup({ cache: true });
+		$.ajax({
+			url: '/game-length/na/1508611833',
+			dataType: 'json',
+			success: function(data) {
+				if (data.success) {
+					if (data.gameLength > gameLength) {
+						gameLength = data.gameLength;
+						$.ajax({
+							
+							url: '/game/na/1508611833',
+							
+							dataType: 'html',
+							headers: {'X-Body-Only': 'true'},
+							success: function(data) {
+								$('#meta-data-length > div:first-of-type').text((''+gameLength).toHHMMSS());
+								$('#content').html(data);
+								$('#content').find('script').each(function(i) {
+									if ($(this).attr('src') !== undefined) {
+										
+										
+										
+										
+									} else {
+										
+									}
+								});
+							}
+						});
+					}
+
+					if (data.gameState > 0) {
+						$('#meta-data-played .in-progress').hide();
+						$('#meta-data-played > div:first-of-type').text('3 mins ago');
+						clearInterval(intervalID);
+					}
+				}
+			}
+		});
+	}
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"/cdn-cgi/l/email-protection"==a.substr(0 ,27)){s='';j=28;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+</body>
+</html>

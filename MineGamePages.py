@@ -18,7 +18,7 @@ foreach page (p=x) until 100 pages (1000 matches):
     foreach match of the 10 matches on that page:
 
         grab page code
-        place page into mined-pages (overwrite old matches if exists already)
+        place page into mined-pages-all (overwrite old matches if exists already)
         DELAY
 
 """
@@ -55,7 +55,7 @@ for p in range(startingPage, endingPage+1):
 
         id = href[9:]
 
-        file = open("mined-pages/" + str(id) + ".html", "w+")
+        file = open("mined-pages-all/" + str(id) + ".html", "w+")
         file.write(str(linkSoup))
         file.close()
 
