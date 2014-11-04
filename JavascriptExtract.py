@@ -2,23 +2,31 @@ __author__ = 'amine'
 
 # pull a page and extract its main javascript lines
 
-import json
 from bs4 import BeautifulSoup as bs
 
-with open ("mined-pages-2/1508275077.html", "r") as myfile:
-    html = myfile.read()
+# takes a riftwalk html page as input and extracts the players and positions variables from the minimap javascript
+def extract_players_and_positions(html):
 
-soup = bs(html)
-script = soup.findAll('script')
+    with open (html, "r") as myfile:
+        html = myfile.read()
 
-map_JS = script[11].string
+    soup = bs(html)
+    script = soup.findAll('script')
 
-#print map_JS
+    map_JS = script[11].string
 
-vars = map_JS.split('\n')
+    #print map_JS
 
-names = str(vars[10].lstrip())[:-2] # names
-positions = str(vars[13].lstrip())[:-2] # positions
+    vars = map_JS.split('\n')
 
-print names
+    players = str(vars[10].lstrip())[:-2] # players
+    positions = str(vars[13].lstrip())[:-2] # positions
+
+    return players, positions
+
+"""
+players, positions = extract_players_and_positions('mined-pages-2/1508275077.html')
+
+print players
 print positions
+"""

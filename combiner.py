@@ -52,7 +52,7 @@ json_game_combined = json.dumps(game_combined)
 
 ##
 
-# combine the two game from 0-150
+# combine the two game from 0-420 (35 minute long game)
 
 game_combined_time = {}
 
@@ -64,15 +64,38 @@ json_game_combined_time = json.dumps(game_combined_time)
 
 # final output
 
-print json.dumps(game_1)
-print json.dumps(game_1_time)
+#print json.dumps(game_1)
+#print json.dumps(game_1_time)
 
-print '\n'
+#print '\n'
 
-print json_game_combined
-print json_game_combined_time
+#print json_game_combined
+#print json_game_combined_time
 
 
+
+
+
+import os
+import JavascriptExtract as je
+
+# takes directory and merges the player lists into one list and merges the position variables into one list
+def create_from_directory(dirname):
+
+    players_list = []
+    positions_list = []
+
+    for filename in os.listdir(dirname):
+        players, positions = je.extract_players_and_positions(dirname + '/' + filename)
+
+        print positions
+
+        players_list.append(json.loads(players))
+        positions_list.append(json.loads(positions))
+
+        print 'done with ' + filename + '\n'
+
+create_from_directory('mined-pages-2')
 
 """
 data = {}
