@@ -1,11 +1,11 @@
 __author__ = 'amine'
+
 import json
 import pprint
 
 # combine data points to essentially make one dataset that has 20 players rather than 10.
 # make the game cutoff at 30 mins, if game does not cut off by then, throw away points, if game does cutoff by then, make
 # position -1,-1 (for no longer in game)
-
 
 # todo # function that grabs box area, prints num players in area out to alert message or something
 # todo # play/pause button

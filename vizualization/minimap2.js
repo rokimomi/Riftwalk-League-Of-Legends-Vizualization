@@ -1,6 +1,6 @@
 // Modified from http://www.riftwalk.gg/
 
-function Minimap(mapID, mapName, gameLength, rangeValue, xMin, yMin, xMax, yMax, players, turrets, inhibitors, positionFrames, killFrames, wardFrames, campFrames) {
+function Minimap(mapID, mapName, gameLength, rangeValue, xMin, yMin, xMax, yMax, playersXYZZZZ, turrets, inhibitors, positionFramesXYZZZ, killFrames, wardFrames, campFrames) {
     
 	this.mapID = mapID;
     this.mapName = mapName;
@@ -11,14 +11,18 @@ function Minimap(mapID, mapName, gameLength, rangeValue, xMin, yMin, xMax, yMax,
     this.xMax = xMax;
     this.yMax = yMax;
 	
-    this.players = players;
+	this.players = players;
+	
+	console.log(this.players.length);
+    
     this.turrets = turrets;
     this.inhibitors = inhibitors;
     this.positionFrames = positionFrames;
-    this.killFrames = killFrames;
-    //this.wardFrames = wardFrames;
+    //this.killFrames = killFrames;
+	//this.wardFrames = wardFrames;
     //this.campFrames = campFrames;
-    this.playerTeamIDs = [];
+    
+	this.playerTeamIDs = [];
 	
     for (var i = 0; i < this.players.length; i++) {
         this.playerTeamIDs[this.players[i].unitID] = this.players[i].teamID;
@@ -32,6 +36,7 @@ Minimap.prototype.render = function() {
     svg.append("filter").attr("id", "grayscale").append("feColorMatrix").attr("type", "matrix").attr("values", "0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0");
     svg.append("image").attr("xlink:href", "img/minimap/" + mm.mapName + ".png").attr("x", 0).attr("y", 0).attr("height", 700).attr("width", 700);
     
+	
 	mm.turretNodes = [];
     for (var i = 0; i < mm.turrets.length; i++) {
         var n = svg.append("image").attr("xlink:href", "img/minimap/" + mm.turrets[i].team + "-turret.png").attr("x", mm.scaleX(mm.turrets[i].x)).attr("y", mm.scaleY(mm.turrets[i].y)).attr("width", 36).attr("height", 36);
@@ -78,10 +83,10 @@ Minimap.prototype.render = function() {
 }
 Minimap.prototype.updateMinimap = function(time) {
     this.updatePlayers(time);
-    this.updateTurrets(time);
-    this.updateInhibitors(time);
-    this.updateWards(time);
-    this.updateCamps(time);
+    //this.updateTurrets(time);
+    //this.updateInhibitors(time);
+    //this.updateWards(time);
+    //this.updateCamps(time);
 }
 
 Minimap.prototype.updatePlayers = function(time) {
@@ -104,6 +109,8 @@ Minimap.prototype.updatePlayers = function(time) {
 			
         }
     }
+	
+	/*
     for (var i = 0; i < this.killFrames.length; i++) {
         var killFrame = this.killFrames[i];
         if (killFrame.victimUnitID > 255) {
@@ -113,6 +120,7 @@ Minimap.prototype.updatePlayers = function(time) {
             this.playerNodes[killFrame.victimUnitID].select("image").attr("filter", "url(#grayscale)");
         }
     }
+	*/
 }
 
 Minimap.prototype.updateTurrets = function(time) {
